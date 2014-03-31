@@ -1,0 +1,12 @@
+c:\users\oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\bin\Debug\Desktop_project.exe.config
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\bin\Debug\BD.mdf
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\bin\Debug\BD_log.ldf
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\bin\Debug\Desktop_project.exe
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\bin\Debug\Desktop_project.pdb
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csprojResolveAssemblyReference.cache
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Properties.Resources.resources
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csproj.GenerateResource.Cache
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.exe
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.pdb
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form2.resources
+C:\Users\Oksana\documents\visual studio 2013\Projects\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form1.resources
