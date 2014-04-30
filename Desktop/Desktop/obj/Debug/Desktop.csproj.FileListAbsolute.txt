@@ -1,0 +1,12 @@
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.Main.resources
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.Incomes.resources
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.New_Incomes.resources
+C:\Users\Oksana\Documents\Visual Studio 2013\Projects\Desktop\Desktop\obj\Debug\Desktop.My_outlays.resources
