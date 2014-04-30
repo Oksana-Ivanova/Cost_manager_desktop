@@ -17,8 +17,11 @@ D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\bin\Debug\B
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\bin\Debug\BD_log.ldf
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\bin\Debug\Desktop_project.exe
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\bin\Debug\Desktop_project.pdb
-D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csprojResolveAssemblyReference.cache
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form1.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form2.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Properties.Resources.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csproj.GenerateResource.Cache
+D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.MainForm.resources
+D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.AboutBox1.resources
+D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.OutlaysForm.resources
+D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csprojResolveAssemblyReference.cache

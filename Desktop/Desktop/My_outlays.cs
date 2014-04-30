@@ -15,7 +15,7 @@ namespace Desktop
         public My_outlays()
         {
             InitializeComponent();
-            comboBox3.Text = "Chart";
+            comboBoxViewAs.Text = "Chart";
         }
 
         private void panel_table_Paint(object sender, PaintEventArgs e)
@@ -25,8 +25,8 @@ namespace Desktop
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.Text == "Table") { panel_table.Visible = true; panel_chart.Visible = false; }
-            else if (comboBox3.Text == "Chart") { panel_table.Visible = false; panel_chart.Visible = true; }
+            if (comboBoxViewAs.Text == "Table") { panel_table.Visible = true; panel_chart.Visible = false; }
+            else if (comboBoxViewAs.Text == "Chart") { panel_table.Visible = false; panel_chart.Visible = true; }
            
         }
 
@@ -38,7 +38,9 @@ namespace Desktop
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value > dateTimePicker2.Value) { MessageBox.Show("Error in date!"); }
+            if (dateTimePickerStart.Value > dateTimePickerEnd.Value) { MessageBox.Show("Error in date!"); }
         }
+
+
     }
 }

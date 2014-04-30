@@ -55,12 +55,6 @@ namespace Desktop
         {
             this.Close();
         }
-
-        private void chart_recent_cost_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-    
+   
     }
 }
