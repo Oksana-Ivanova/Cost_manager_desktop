@@ -15,17 +15,20 @@ namespace Desktop
         public Incomes()
         {
             InitializeComponent();
+            comboBox1.Text = "Yesterday";
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxPeriod.Text == "Custom") { panel_custom_date.Visible = true; }
+            
+            if (comboBox1.Text == "Custom") { panel_custom_date.Visible = true; }
             else panel_custom_date.Visible = false;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePickerStart.Value > dateTimePickerEnd.Value) { MessageBox.Show("Error in date!"); }
+            if (dateTimePicker1.Value > dateTimePicker2.Value) { MessageBox.Show("Error in date!"); }
         }
 
         private void button_ok_Click(object sender, EventArgs e)

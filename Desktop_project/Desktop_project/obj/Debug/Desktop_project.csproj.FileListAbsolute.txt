@@ -25,3 +25,14 @@ D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\D
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.AboutBox1.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.OutlaysForm.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csprojResolveAssemblyReference.cache
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\bin\Debug\Desktop_project.exe.config
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.exe
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.pdb
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csprojResolveAssemblyReference.cache
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.AboutBox1.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form1.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Form2.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.MainForm.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.OutlaysForm.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.Properties.Resources.resources
+C:\Users\Oksana\Cost_manager_desktop\Desktop_project\Desktop_project\obj\Debug\Desktop_project.csproj.GenerateResource.Cache

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class New_Incomes : Form
+    public partial class New_cost_form : Form
     {
-        public New_Incomes()
+        public New_cost_form()
         {
             InitializeComponent();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button_ok_Click(object sender, EventArgs e)
@@ -25,7 +30,6 @@ namespace Desktop
         private void button_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }

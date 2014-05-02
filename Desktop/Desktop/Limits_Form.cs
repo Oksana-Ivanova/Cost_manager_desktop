@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class New_Incomes : Form
+    public partial class Limits_Form : Form
     {
-        public New_Incomes()
+        public Limits_Form()
         {
             InitializeComponent();
-        }
-
-        private void button_ok_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button_cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
         }
     }
 }

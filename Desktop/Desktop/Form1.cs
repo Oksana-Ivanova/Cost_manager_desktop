@@ -21,6 +21,7 @@ namespace Desktop
                 chart_recent_cost.Series[0].Points.AddXY(x, Math.Sin(x));
                 x += i;
             }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -55,6 +56,30 @@ namespace Desktop
         {
             this.Close();
         }
-   
+
+        private void chart_recent_cost_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void newCostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            New_cost_form CostForm = new New_cost_form();
+            CostForm.Show();
+        }
+
+        private void newCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            New_Category_Form CategoryForm = new New_Category_Form();
+            CategoryForm.Show();
+        }
+
+        private void viewLimitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Limits_Form LimitForm = new Limits_Form();
+            LimitForm.Show();
+        }
+
+    
     }
 }

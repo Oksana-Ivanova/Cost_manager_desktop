@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class New_Incomes : Form
+    public partial class New_Category_Form : Form
     {
-        public New_Incomes()
+        public New_Category_Form()
         {
             InitializeComponent();
+            comboBox3.Text = "No Limit";
+            
         }
 
         private void button_ok_Click(object sender, EventArgs e)
@@ -25,7 +27,16 @@ namespace Desktop
         private void button_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
 
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // if (comboBox3.Text == "No Limit") { numericUpDown1.Enabled = false; }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

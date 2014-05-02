@@ -15,7 +15,10 @@ namespace Desktop
         public My_outlays()
         {
             InitializeComponent();
-            comboBoxViewAs.Text = "Chart";
+            comboBox3.Text = "Chart";
+            comboBox1.Text = "Yesterday";
+            comboBox2.Text = "Any";
+            
         }
 
         private void panel_table_Paint(object sender, PaintEventArgs e)
@@ -25,8 +28,16 @@ namespace Desktop
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxViewAs.Text == "Table") { panel_table.Visible = true; panel_chart.Visible = false; }
-            else if (comboBoxViewAs.Text == "Chart") { panel_table.Visible = false; panel_chart.Visible = true; }
+            if (comboBox3.Text == "Table") { panel_table.Visible = true; panel_chart.Visible = false; }
+            else if (comboBox3.Text == "Chart")
+            {
+                panel_table.Visible = false; panel_chart.Visible = true; double x = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    chart_outlays.Series[0].Points.AddXY(x, Math.Sin(x));
+                    x += i;
+                }
+            }
            
         }
 
@@ -38,9 +49,23 @@ namespace Desktop
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePickerStart.Value > dateTimePickerEnd.Value) { MessageBox.Show("Error in date!"); }
+            if (dateTimePicker1.Value > dateTimePicker2.Value) { MessageBox.Show("Error in date!"); }
         }
 
+        private void chart_outlays_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void button_new_cost_Click(object sender, EventArgs e)
+        {
+            New_cost_form CostForm = new New_cost_form();
+            CostForm.Show();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
