@@ -31,7 +31,8 @@ namespace Desktop
             if (comboBox3.Text == "Table") { panel_table.Visible = true; panel_chart.Visible = false; }
             else if (comboBox3.Text == "Chart")
             {
-                panel_table.Visible = false; panel_chart.Visible = true; double x = 0;
+                panel_table.Visible = false; panel_chart.Visible = true; 
+                double x = 0;
                 for (int i = 0; i < 4; i++)
                 {
                     chart_outlays.Series[0].Points.AddXY(x, Math.Sin(x));
@@ -64,6 +65,16 @@ namespace Desktop
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart_outlays_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_chart_Paint(object sender, PaintEventArgs e)
         {
 
         }

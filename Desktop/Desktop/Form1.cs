@@ -37,19 +37,19 @@ namespace Desktop
         private void viewOutlaysToolStripMenuItem_Click(object sender, EventArgs e)
         {
             My_outlays outlays_form = new My_outlays();
-            outlays_form.Show();
+            outlays_form.ShowDialog();
         }
 
         private void viewIncomesToolStripMenuItem_Click(object sender, EventArgs e)
         {
  Incomes inc_form = new Incomes();
-            inc_form.Show();
+            inc_form.ShowDialog();
         }
 
         private void newIncomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             New_Incomes new_inc = new New_Incomes();
-            new_inc.Show();
+            new_inc.ShowDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,19 +65,19 @@ namespace Desktop
         private void newCostToolStripMenuItem_Click(object sender, EventArgs e)
         {
             New_cost_form CostForm = new New_cost_form();
-            CostForm.Show();
+            CostForm.ShowDialog();
         }
 
         private void newCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             New_Category_Form CategoryForm = new New_Category_Form();
-            CategoryForm.Show();
+            CategoryForm.ShowDialog();
         }
 
         private void viewLimitsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Limits_Form LimitForm = new Limits_Form();
-            LimitForm.Show();
+            LimitForm.ShowDialog();
         }
 
     

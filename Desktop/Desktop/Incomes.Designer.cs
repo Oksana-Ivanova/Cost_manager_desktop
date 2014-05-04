@@ -36,12 +36,12 @@
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox_period = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.panel_custom_date = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel_custom_date = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox_period.SuspendLayout();
             this.panel_custom_date.SuspendLayout();
@@ -49,6 +49,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_num,
@@ -88,6 +93,7 @@
             // 
             // groupBox_period
             // 
+            this.groupBox_period.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.groupBox_period.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_period.Controls.Add(this.comboBox1);
             this.groupBox_period.Controls.Add(this.panel_custom_date);
@@ -114,20 +120,17 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // panel_custom_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 63);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(179, 20);
-            this.dateTimePicker2.TabIndex = 2;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.panel_custom_date.Controls.Add(this.label1);
+            this.panel_custom_date.Controls.Add(this.label2);
+            this.panel_custom_date.Controls.Add(this.dateTimePicker1);
+            this.panel_custom_date.Controls.Add(this.dateTimePicker2);
+            this.panel_custom_date.Location = new System.Drawing.Point(6, 67);
+            this.panel_custom_date.Name = "panel_custom_date";
+            this.panel_custom_date.Size = new System.Drawing.Size(188, 90);
+            this.panel_custom_date.TabIndex = 5;
+            this.panel_custom_date.Visible = false;
             // 
             // label1
             // 
@@ -147,8 +150,24 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "To:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(6, 63);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(179, 20);
+            this.dateTimePicker2.TabIndex = 2;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(730, 358);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -156,18 +175,6 @@
             this.button1.Text = "Add new";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel_custom_date
-            // 
-            this.panel_custom_date.Controls.Add(this.label1);
-            this.panel_custom_date.Controls.Add(this.label2);
-            this.panel_custom_date.Controls.Add(this.dateTimePicker1);
-            this.panel_custom_date.Controls.Add(this.dateTimePicker2);
-            this.panel_custom_date.Location = new System.Drawing.Point(6, 67);
-            this.panel_custom_date.Name = "panel_custom_date";
-            this.panel_custom_date.Size = new System.Drawing.Size(188, 90);
-            this.panel_custom_date.TabIndex = 5;
-            this.panel_custom_date.Visible = false;
             // 
             // Incomes
             // 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox_period = new System.Windows.Forms.GroupBox();
             this.panel_custom_date = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +43,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_table = new System.Windows.Forms.Panel();
-            this.panel_chart = new System.Windows.Forms.Panel();
-            this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,17 +50,20 @@
             this.Column_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel_chart = new System.Windows.Forms.Panel();
+            this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox_period.SuspendLayout();
             this.panel_custom_date.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel_table.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_chart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_period
             // 
+            this.groupBox_period.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.groupBox_period.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_period.Controls.Add(this.panel_custom_date);
             this.groupBox_period.Controls.Add(this.comboBox1);
@@ -136,6 +137,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button_new_cost);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -167,6 +169,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Chart",
@@ -179,6 +182,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
@@ -190,6 +194,10 @@
             // 
             // panel_table
             // 
+            this.panel_table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_table.BackColor = System.Drawing.Color.Transparent;
             this.panel_table.Controls.Add(this.panel_chart);
             this.panel_table.Controls.Add(this.dataGridView1);
             this.panel_table.Location = new System.Drawing.Point(225, 69);
@@ -199,32 +207,12 @@
             this.panel_table.Visible = false;
             this.panel_table.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_table_Paint);
             // 
-            // panel_chart
-            // 
-            this.panel_chart.Controls.Add(this.chart_outlays);
-            this.panel_chart.Location = new System.Drawing.Point(4, 0);
-            this.panel_chart.Name = "panel_chart";
-            this.panel_chart.Size = new System.Drawing.Size(645, 357);
-            this.panel_chart.TabIndex = 7;
-            this.panel_chart.Visible = false;
-            // 
-            // chart_outlays
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart_outlays.ChartAreas.Add(chartArea3);
-            this.chart_outlays.Location = new System.Drawing.Point(3, 3);
-            this.chart_outlays.Name = "chart_outlays";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.chart_outlays.Series.Add(series3);
-            this.chart_outlays.Size = new System.Drawing.Size(662, 349);
-            this.chart_outlays.TabIndex = 0;
-            this.chart_outlays.Text = "chart1";
-            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_num,
@@ -268,6 +256,35 @@
             this.Column_date.HeaderText = "Date";
             this.Column_date.Name = "Column_date";
             // 
+            // panel_chart
+            // 
+            this.panel_chart.BackColor = System.Drawing.Color.Transparent;
+            this.panel_chart.Controls.Add(this.chart_outlays);
+            this.panel_chart.Location = new System.Drawing.Point(0, 19);
+            this.panel_chart.Name = "panel_chart";
+            this.panel_chart.Size = new System.Drawing.Size(673, 342);
+            this.panel_chart.TabIndex = 7;
+            this.panel_chart.Visible = false;
+            this.panel_chart.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_chart_Paint);
+            // 
+            // chart_outlays
+            // 
+            this.chart_outlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chart_outlays.ChartAreas.Add(chartArea1);
+            this.chart_outlays.Location = new System.Drawing.Point(21, 9);
+            this.chart_outlays.Name = "chart_outlays";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chart_outlays.Series.Add(series1);
+            this.chart_outlays.Size = new System.Drawing.Size(632, 301);
+            this.chart_outlays.TabIndex = 0;
+            this.chart_outlays.Text = "chart1";
+            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
+            // 
             // My_outlays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,8 +292,8 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 442);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel_table);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.groupBox_period);
@@ -287,9 +304,9 @@
             this.panel_custom_date.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.panel_table.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel_chart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,13 +329,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
-        private System.Windows.Forms.Panel panel_chart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
         private System.Windows.Forms.Panel panel_custom_date;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Panel panel_chart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
 
     }
 }

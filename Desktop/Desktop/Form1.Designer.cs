@@ -32,7 +32,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -56,9 +55,7 @@
             this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +70,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -81,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart_recent_cost)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,20 +96,6 @@
             this.tabControl1.Size = new System.Drawing.Size(777, 403);
             this.tabControl1.TabIndex = 1;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.YellowGreen;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel1.Location = new System.Drawing.Point(636, 2);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(61, 22);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Logout";
-            // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::Desktop.Properties.Resources.bg;
@@ -127,7 +111,9 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(53, 116);
             this.label7.Name = "label7";
@@ -141,11 +127,11 @@
             // 
             this.tabPage2.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.chart_recent_cost);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -157,8 +143,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label9.Location = new System.Drawing.Point(535, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(188, 24);
@@ -167,6 +155,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button3.Location = new System.Drawing.Point(539, 312);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 23);
@@ -176,6 +165,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
@@ -215,6 +205,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -256,6 +247,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(16, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 24);
@@ -264,9 +256,12 @@
             // 
             // chart_recent_cost
             // 
+            this.chart_recent_cost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart_recent_cost.ChartAreas.Add(chartArea1);
-            this.chart_recent_cost.Location = new System.Drawing.Point(20, 90);
+            this.chart_recent_cost.Location = new System.Drawing.Point(20, 91);
             this.chart_recent_cost.Name = "chart_recent_cost";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -281,9 +276,10 @@
             // 
             this.tabPage3.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(769, 377);
@@ -293,7 +289,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(375, 346);
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button4.Location = new System.Drawing.Point(438, 346);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 23);
             this.button4.TabIndex = 7;
@@ -303,6 +300,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_num,
@@ -310,9 +311,9 @@
             this.Column_Decription,
             this.Column_Value,
             this.Column_date});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 256);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -341,33 +342,20 @@
             this.Column_date.HeaderText = "Date";
             this.Column_date.Name = "Column_date";
             // 
-            // groupBox3
+            // linkLabel1
             // 
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(46, 330);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(296, 39);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(146, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Total income per last week";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Total income per last week";
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.YellowGreen;
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabel1.Location = new System.Drawing.Point(636, 2);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(61, 22);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Logout";
             // 
             // menuStrip1
             // 
@@ -397,28 +385,28 @@
             // newCostToolStripMenuItem
             // 
             this.newCostToolStripMenuItem.Name = "newCostToolStripMenuItem";
-            this.newCostToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newCostToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newCostToolStripMenuItem.Text = "New Cost";
             this.newCostToolStripMenuItem.Click += new System.EventHandler(this.newCostToolStripMenuItem_Click);
             // 
             // newCategoryToolStripMenuItem
             // 
             this.newCategoryToolStripMenuItem.Name = "newCategoryToolStripMenuItem";
-            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newCategoryToolStripMenuItem.Text = "New Category";
             this.newCategoryToolStripMenuItem.Click += new System.EventHandler(this.newCategoryToolStripMenuItem_Click);
             // 
             // newIncomeToolStripMenuItem
             // 
             this.newIncomeToolStripMenuItem.Name = "newIncomeToolStripMenuItem";
-            this.newIncomeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newIncomeToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newIncomeToolStripMenuItem.Text = "New Income";
             this.newIncomeToolStripMenuItem.Click += new System.EventHandler(this.newIncomeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -435,21 +423,21 @@
             // viewOutlaysToolStripMenuItem
             // 
             this.viewOutlaysToolStripMenuItem.Name = "viewOutlaysToolStripMenuItem";
-            this.viewOutlaysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewOutlaysToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.viewOutlaysToolStripMenuItem.Text = "View Outlays";
             this.viewOutlaysToolStripMenuItem.Click += new System.EventHandler(this.viewOutlaysToolStripMenuItem_Click);
             // 
             // viewIncomesToolStripMenuItem
             // 
             this.viewIncomesToolStripMenuItem.Name = "viewIncomesToolStripMenuItem";
-            this.viewIncomesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewIncomesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.viewIncomesToolStripMenuItem.Text = "View Incomes";
             this.viewIncomesToolStripMenuItem.Click += new System.EventHandler(this.viewIncomesToolStripMenuItem_Click);
             // 
             // viewLimitsToolStripMenuItem
             // 
             this.viewLimitsToolStripMenuItem.Name = "viewLimitsToolStripMenuItem";
-            this.viewLimitsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewLimitsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.viewLimitsToolStripMenuItem.Text = "View Limits";
             this.viewLimitsToolStripMenuItem.Click += new System.EventHandler(this.viewLimitsToolStripMenuItem_Click);
             // 
@@ -481,6 +469,28 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(386, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(27, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "total";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(246, 351);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Total income per last week";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,7 +505,6 @@
             this.Text = "Cost Manager";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -504,9 +513,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_recent_cost)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -551,13 +559,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Decription;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem viewLimitsToolStripMenuItem;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
     }
 }
 
