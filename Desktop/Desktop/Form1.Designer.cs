@@ -32,14 +32,13 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.tabPageStart = new System.Windows.Forms.TabPage();
             this.labelSrartPage = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelTotalOutlays = new System.Windows.Forms.Panel();
             this.buttonDetailedOutlays = new System.Windows.Forms.Button();
-            this.labelTotalPerWeek2 = new System.Windows.Forms.Label();
-            this.labelTotalOutlayPerWeekRef2 = new System.Windows.Forms.Label();
+            this.labelTotalOutlayPerWeek = new System.Windows.Forms.Label();
+            this.labelTotalOutlayPerWeekRef = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxMostOften = new System.Windows.Forms.GroupBox();
             this.labelWeekOutlay = new System.Windows.Forms.Label();
@@ -57,14 +56,15 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelTotalIncome = new System.Windows.Forms.Panel();
             this.buttonDetalisedIncomes = new System.Windows.Forms.Button();
-            this.labelTotalIncomePerLastWeek = new System.Windows.Forms.Label();
             this.labelTotalIncomePerWeek = new System.Windows.Forms.Label();
+            this.labelTotalIncomePerWeekRef = new System.Windows.Forms.Label();
             this.dataGridViewRecentIncomes = new System.Windows.Forms.DataGridView();
             this.col_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,22 +107,6 @@
             this.tabControl.Size = new System.Drawing.Size(896, 400);
             this.tabControl.TabIndex = 1;
             // 
-            // linkLabelLogOut
-            // 
-            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
-            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelLogOut.AutoSize = true;
-            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
-            this.linkLabelLogOut.Name = "linkLabelLogOut";
-            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
-            this.linkLabelLogOut.TabIndex = 2;
-            this.linkLabelLogOut.TabStop = true;
-            this.linkLabelLogOut.Text = "LogOut";
-            // 
             // tabPageStart
             // 
             this.tabPageStart.BackgroundImage = global::Desktop.Properties.Resources.bg;
@@ -142,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelSrartPage.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
+            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
             this.labelSrartPage.Location = new System.Drawing.Point(50, 30);
             this.labelSrartPage.Name = "labelSrartPage";
             this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -170,11 +154,10 @@
             // 
             this.panelTotalOutlays.AutoSize = true;
             this.panelTotalOutlays.BackColor = System.Drawing.Color.Transparent;
-            this.panelTotalOutlays.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.panelTotalOutlays.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTotalOutlays.Controls.Add(this.buttonDetailedOutlays);
-            this.panelTotalOutlays.Controls.Add(this.labelTotalPerWeek2);
-            this.panelTotalOutlays.Controls.Add(this.labelTotalOutlayPerWeekRef2);
+            this.panelTotalOutlays.Controls.Add(this.labelTotalOutlayPerWeek);
+            this.panelTotalOutlays.Controls.Add(this.labelTotalOutlayPerWeekRef);
             this.panelTotalOutlays.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelTotalOutlays.Location = new System.Drawing.Point(3, 337);
             this.panelTotalOutlays.Name = "panelTotalOutlays";
@@ -192,23 +175,23 @@
             this.buttonDetailedOutlays.UseVisualStyleBackColor = true;
             this.buttonDetailedOutlays.Click += new System.EventHandler(this.buttonDetailedOutlays_Click);
             // 
-            // labelTotalPerWeek2
+            // labelTotalOutlayPerWeek
             // 
-            this.labelTotalPerWeek2.AutoSize = true;
-            this.labelTotalPerWeek2.Location = new System.Drawing.Point(200, 9);
-            this.labelTotalPerWeek2.Name = "labelTotalPerWeek2";
-            this.labelTotalPerWeek2.Size = new System.Drawing.Size(169, 17);
-            this.labelTotalPerWeek2.TabIndex = 8;
-            this.labelTotalPerWeek2.Text = "labelTotalOutlayPerWeek";
+            this.labelTotalOutlayPerWeek.AutoSize = true;
+            this.labelTotalOutlayPerWeek.Location = new System.Drawing.Point(200, 9);
+            this.labelTotalOutlayPerWeek.Name = "labelTotalOutlayPerWeek";
+            this.labelTotalOutlayPerWeek.Size = new System.Drawing.Size(169, 17);
+            this.labelTotalOutlayPerWeek.TabIndex = 8;
+            this.labelTotalOutlayPerWeek.Text = "labelTotalOutlayPerWeek";
             // 
-            // labelTotalOutlayPerWeekRef2
+            // labelTotalOutlayPerWeekRef
             // 
-            this.labelTotalOutlayPerWeekRef2.AutoSize = true;
-            this.labelTotalOutlayPerWeekRef2.Location = new System.Drawing.Point(30, 9);
-            this.labelTotalOutlayPerWeekRef2.Name = "labelTotalOutlayPerWeekRef2";
-            this.labelTotalOutlayPerWeekRef2.Size = new System.Drawing.Size(176, 17);
-            this.labelTotalOutlayPerWeekRef2.TabIndex = 1;
-            this.labelTotalOutlayPerWeekRef2.Text = "Total outlays per last week";
+            this.labelTotalOutlayPerWeekRef.AutoSize = true;
+            this.labelTotalOutlayPerWeekRef.Location = new System.Drawing.Point(30, 9);
+            this.labelTotalOutlayPerWeekRef.Name = "labelTotalOutlayPerWeekRef";
+            this.labelTotalOutlayPerWeekRef.Size = new System.Drawing.Size(180, 17);
+            this.labelTotalOutlayPerWeekRef.TabIndex = 1;
+            this.labelTotalOutlayPerWeekRef.Text = "Total outlays per last week:";
             // 
             // panel1
             // 
@@ -378,11 +361,10 @@
             // 
             this.panelTotalIncome.AutoSize = true;
             this.panelTotalIncome.BackColor = System.Drawing.Color.Transparent;
-            this.panelTotalIncome.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.panelTotalIncome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTotalIncome.Controls.Add(this.buttonDetalisedIncomes);
-            this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerLastWeek);
             this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerWeek);
+            this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerWeekRef);
             this.panelTotalIncome.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelTotalIncome.Location = new System.Drawing.Point(0, 340);
             this.panelTotalIncome.Name = "panelTotalIncome";
@@ -399,23 +381,23 @@
             this.buttonDetalisedIncomes.UseVisualStyleBackColor = true;
             this.buttonDetalisedIncomes.Click += new System.EventHandler(this.buttonDetalisedIncomes_Click);
             // 
-            // labelTotalIncomePerLastWeek
-            // 
-            this.labelTotalIncomePerLastWeek.AutoSize = true;
-            this.labelTotalIncomePerLastWeek.Location = new System.Drawing.Point(200, 9);
-            this.labelTotalIncomePerLastWeek.Name = "labelTotalIncomePerLastWeek";
-            this.labelTotalIncomePerLastWeek.Size = new System.Drawing.Size(200, 17);
-            this.labelTotalIncomePerLastWeek.TabIndex = 8;
-            this.labelTotalIncomePerLastWeek.Text = "labelTotalIncomePerLastWeek";
-            // 
             // labelTotalIncomePerWeek
             // 
             this.labelTotalIncomePerWeek.AutoSize = true;
-            this.labelTotalIncomePerWeek.Location = new System.Drawing.Point(30, 9);
+            this.labelTotalIncomePerWeek.Location = new System.Drawing.Point(200, 9);
             this.labelTotalIncomePerWeek.Name = "labelTotalIncomePerWeek";
-            this.labelTotalIncomePerWeek.Size = new System.Drawing.Size(176, 17);
-            this.labelTotalIncomePerWeek.TabIndex = 1;
-            this.labelTotalIncomePerWeek.Text = "Total income per last week";
+            this.labelTotalIncomePerWeek.Size = new System.Drawing.Size(200, 17);
+            this.labelTotalIncomePerWeek.TabIndex = 8;
+            this.labelTotalIncomePerWeek.Text = "labelTotalIncomePerLastWeek";
+            // 
+            // labelTotalIncomePerWeekRef
+            // 
+            this.labelTotalIncomePerWeekRef.AutoSize = true;
+            this.labelTotalIncomePerWeekRef.Location = new System.Drawing.Point(30, 9);
+            this.labelTotalIncomePerWeekRef.Name = "labelTotalIncomePerWeekRef";
+            this.labelTotalIncomePerWeekRef.Size = new System.Drawing.Size(180, 17);
+            this.labelTotalIncomePerWeekRef.TabIndex = 1;
+            this.labelTotalIncomePerWeekRef.Text = "Total income per last week:";
             // 
             // dataGridViewRecentIncomes
             // 
@@ -460,6 +442,22 @@
             // 
             this.Column_date.HeaderText = "Date";
             this.Column_date.Name = "Column_date";
+            // 
+            // linkLabelLogOut
+            // 
+            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
+            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelLogOut.AutoSize = true;
+            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
+            this.linkLabelLogOut.Name = "linkLabelLogOut";
+            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
+            this.linkLabelLogOut.TabIndex = 2;
+            this.linkLabelLogOut.TabStop = true;
+            this.linkLabelLogOut.Text = "LogOut";
             // 
             // menuStrip1
             // 
@@ -559,19 +557,19 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -587,6 +585,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Cost Manager v0.04";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -655,12 +654,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_recent_cost;
         private System.Windows.Forms.Panel panelTotalOutlays;
         private System.Windows.Forms.Button buttonDetailedOutlays;
-        private System.Windows.Forms.Label labelTotalPerWeek2;
-        private System.Windows.Forms.Label labelTotalOutlayPerWeekRef2;
+        private System.Windows.Forms.Label labelTotalOutlayPerWeek;
+        private System.Windows.Forms.Label labelTotalOutlayPerWeekRef;
         private System.Windows.Forms.Panel panelTotalIncome;
         private System.Windows.Forms.Button buttonDetalisedIncomes;
-        private System.Windows.Forms.Label labelTotalIncomePerLastWeek;
         private System.Windows.Forms.Label labelTotalIncomePerWeek;
+        private System.Windows.Forms.Label labelTotalIncomePerWeekRef;
     }
 }
 

@@ -98,6 +98,12 @@ namespace Desktop
             AboutBoxForm.ShowDialog();
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            labelTotalIncomePerWeek.Visible = false;
+            labelTotalOutlayPerWeek.Visible = false;
+        }
+
     
     }
 }
