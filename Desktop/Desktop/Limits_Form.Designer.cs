@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLimits = new System.Windows.Forms.DataGridView();
             this.Column_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonNewLimit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLimits)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewLimits
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewLimits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewLimits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewLimits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLimits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_category,
             this.Column_limit});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(260, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewLimits.Location = new System.Drawing.Point(12, 53);
+            this.dataGridViewLimits.Name = "dataGridViewLimits";
+            this.dataGridViewLimits.Size = new System.Drawing.Size(260, 150);
+            this.dataGridViewLimits.TabIndex = 0;
             // 
             // Column_category
             // 
@@ -60,15 +60,15 @@
             this.Column_limit.HeaderText = "Limits";
             this.Column_limit.Name = "Column_limit";
             // 
-            // button1
+            // buttonNewLimit
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(197, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "New limit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonNewLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNewLimit.Location = new System.Drawing.Point(197, 226);
+            this.buttonNewLimit.Name = "buttonNewLimit";
+            this.buttonNewLimit.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewLimit.TabIndex = 1;
+            this.buttonNewLimit.Text = "New limit";
+            this.buttonNewLimit.UseVisualStyleBackColor = true;
             // 
             // Limits_Form
             // 
@@ -77,23 +77,20 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.buttonNewLimit);
+            this.Controls.Add(this.dataGridViewLimits);
             this.Name = "Limits_Form";
             this.Text = "Limits";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLimits)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewLimits;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_limit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonNewLimit;
     }
 }

@@ -28,73 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.tbTitleNewIncome = new System.Windows.Forms.TextBox();
+            this.richTextBoxDescriptionNewIncome = new System.Windows.Forms.RichTextBox();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.tbValueNewIncome = new System.Windows.Forms.TextBox();
+            this.labelValue = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.dateTimePickerNewIncome = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(41, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Title";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitle.Location = new System.Drawing.Point(41, 12);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(27, 13);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Title";
             // 
-            // textBox1
+            // tbTitleNewIncome
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbTitleNewIncome.Location = new System.Drawing.Point(87, 9);
+            this.tbTitleNewIncome.Name = "tbTitleNewIncome";
+            this.tbTitleNewIncome.Size = new System.Drawing.Size(170, 20);
+            this.tbTitleNewIncome.TabIndex = 1;
             // 
-            // richTextBox1
+            // richTextBoxDescriptionNewIncome
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(87, 73);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(170, 69);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.richTextBoxDescriptionNewIncome.Location = new System.Drawing.Point(87, 35);
+            this.richTextBoxDescriptionNewIncome.Name = "richTextBoxDescriptionNewIncome";
+            this.richTextBoxDescriptionNewIncome.Size = new System.Drawing.Size(170, 69);
+            this.richTextBoxDescriptionNewIncome.TabIndex = 2;
+            this.richTextBoxDescriptionNewIncome.Text = "";
             // 
-            // label2
+            // labelDescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(12, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Description";
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescription.Location = new System.Drawing.Point(12, 35);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(60, 13);
+            this.labelDescription.TabIndex = 3;
+            this.labelDescription.Text = "Description";
             // 
-            // textBox2
+            // tbValueNewIncome
             // 
-            this.textBox2.Location = new System.Drawing.Point(87, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 4;
+            this.tbValueNewIncome.Location = new System.Drawing.Point(87, 111);
+            this.tbValueNewIncome.Name = "tbValueNewIncome";
+            this.tbValueNewIncome.Size = new System.Drawing.Size(170, 20);
+            this.tbValueNewIncome.TabIndex = 4;
             // 
-            // label3
+            // labelValue
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(38, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Value";
+            this.labelValue.AutoSize = true;
+            this.labelValue.BackColor = System.Drawing.Color.Transparent;
+            this.labelValue.Location = new System.Drawing.Point(38, 115);
+            this.labelValue.Name = "labelValue";
+            this.labelValue.Size = new System.Drawing.Size(34, 13);
+            this.labelValue.TabIndex = 5;
+            this.labelValue.Text = "Value";
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(182, 201);
+            this.button_cancel.Location = new System.Drawing.Point(182, 175);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 7;
@@ -104,7 +104,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(87, 201);
+            this.button_ok.Location = new System.Drawing.Point(87, 175);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 6;
@@ -112,40 +112,41 @@
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // label4
+            // labelDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(38, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Date";
+            this.labelDate.AutoSize = true;
+            this.labelDate.BackColor = System.Drawing.Color.Transparent;
+            this.labelDate.Location = new System.Drawing.Point(38, 141);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(30, 13);
+            this.labelDate.TabIndex = 9;
+            this.labelDate.Text = "Date";
             // 
-            // dateTimePicker1
+            // dateTimePickerNewIncome
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(87, 175);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePickerNewIncome.Location = new System.Drawing.Point(87, 137);
+            this.dateTimePickerNewIncome.Name = "dateTimePickerNewIncome";
+            this.dateTimePickerNewIncome.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePickerNewIncome.TabIndex = 10;
             // 
             // New_Incomes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 242);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(284, 206);
+            this.Controls.Add(this.dateTimePickerNewIncome);
+            this.Controls.Add(this.labelDate);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelValue);
+            this.Controls.Add(this.tbValueNewIncome);
+            this.Controls.Add(this.labelDescription);
+            this.Controls.Add(this.richTextBoxDescriptionNewIncome);
+            this.Controls.Add(this.tbTitleNewIncome);
+            this.Controls.Add(this.labelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -159,15 +160,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.TextBox tbTitleNewIncome;
+        private System.Windows.Forms.RichTextBox richTextBoxDescriptionNewIncome;
+        private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.TextBox tbValueNewIncome;
+        private System.Windows.Forms.Label labelValue;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_ok;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNewIncome;
     }
 }

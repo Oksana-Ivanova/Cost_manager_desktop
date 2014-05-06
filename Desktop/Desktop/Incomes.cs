@@ -15,31 +15,52 @@ namespace Desktop
         public Incomes()
         {
             InitializeComponent();
-            comboBox1.Text = "Yesterday";
+            //comboBoxPeriod.Text = "Yesterday";
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxPeriod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (comboBox1.Text == "Custom") { panel_custom_date.Visible = true; }
-            else panel_custom_date.Visible = false;
+            switch (comboBoxPeriod.Text)
+            {
+                case "Custom": 
+                    panel_custom_date.Visible = true; 
+                    break;
+                case "Yesterday":
+                    //change chart;
+                    break;
+                default: comboBoxPeriod.Text = "Yesterday"; break;
+
+            }
+       
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            if (dateTimePicker1.Value > dateTimePicker2.Value) { MessageBox.Show("Error in date!"); }
-        }
+     
 
         private void button_ok_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+        private void buttonNewIncome_Click(object sender, EventArgs e)
         {
             New_Incomes new_inc = new New_Incomes();
             new_inc.Show();
+
         }
+
+        private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePickerStart.Value > dateTimePickerEnd.Value) 
+            {
+                MessageBox.Show("Error in date!"); 
+                dateTimePickerEnd.Value=DateTime.Now;
+                dateTimePickerStart.Value = DateTime.Now;
+            }
+        }
+
+      
+
     }
 }

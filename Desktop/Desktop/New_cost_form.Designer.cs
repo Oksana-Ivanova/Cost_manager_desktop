@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePickerNewCost = new System.Windows.Forms.DateTimePicker();
+            this.labelDateNewCost = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelValue = new System.Windows.Forms.Label();
+            this.tbValue = new System.Windows.Forms.TextBox();
+            this.labelDescriotion = new System.Windows.Forms.Label();
+            this.richTextBoxDescriptionNewCost = new System.Windows.Forms.RichTextBox();
+            this.tbNameNewCost = new System.Windows.Forms.TextBox();
+            this.labelNameNewCost = new System.Windows.Forms.Label();
+            this.labelCategoryNewCost = new System.Windows.Forms.Label();
+            this.comboBoxCategoryNewCost = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusNewCost = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dateTimePickerNewCost
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 220);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dateTimePickerNewCost.Location = new System.Drawing.Point(84, 177);
+            this.dateTimePickerNewCost.Name = "dateTimePickerNewCost";
+            this.dateTimePickerNewCost.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePickerNewCost.TabIndex = 20;
             // 
-            // label4
+            // labelDateNewCost
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(51, 228);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Date";
+            this.labelDateNewCost.AutoSize = true;
+            this.labelDateNewCost.BackColor = System.Drawing.Color.Transparent;
+            this.labelDateNewCost.Location = new System.Drawing.Point(40, 181);
+            this.labelDateNewCost.Name = "labelDateNewCost";
+            this.labelDateNewCost.Size = new System.Drawing.Size(30, 13);
+            this.labelDateNewCost.TabIndex = 19;
+            this.labelDateNewCost.Text = "Date";
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(190, 247);
+            this.button_cancel.Location = new System.Drawing.Point(179, 230);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 18;
@@ -74,7 +74,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(95, 247);
+            this.button_ok.Location = new System.Drawing.Point(84, 230);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 17;
@@ -82,116 +82,117 @@
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
-            // label3
+            // labelValue
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(47, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Value";
+            this.labelValue.AutoSize = true;
+            this.labelValue.BackColor = System.Drawing.Color.Transparent;
+            this.labelValue.Location = new System.Drawing.Point(36, 156);
+            this.labelValue.Name = "labelValue";
+            this.labelValue.Size = new System.Drawing.Size(34, 13);
+            this.labelValue.TabIndex = 16;
+            this.labelValue.Text = "Value";
             // 
-            // textBox2
+            // tbValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 15;
+            this.tbValue.Location = new System.Drawing.Point(84, 152);
+            this.tbValue.Name = "tbValue";
+            this.tbValue.Size = new System.Drawing.Size(170, 20);
+            this.tbValue.TabIndex = 15;
             // 
-            // label2
+            // labelDescriotion
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(21, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Description";
+            this.labelDescriotion.AutoSize = true;
+            this.labelDescriotion.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescriotion.Location = new System.Drawing.Point(10, 45);
+            this.labelDescriotion.Name = "labelDescriotion";
+            this.labelDescriotion.Size = new System.Drawing.Size(60, 13);
+            this.labelDescriotion.TabIndex = 14;
+            this.labelDescriotion.Text = "Description";
             // 
-            // richTextBox1
+            // richTextBoxDescriptionNewCost
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(95, 84);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(170, 82);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.richTextBoxDescriptionNewCost.Location = new System.Drawing.Point(84, 41);
+            this.richTextBoxDescriptionNewCost.Name = "richTextBoxDescriptionNewCost";
+            this.richTextBoxDescriptionNewCost.Size = new System.Drawing.Size(170, 82);
+            this.richTextBoxDescriptionNewCost.TabIndex = 13;
+            this.richTextBoxDescriptionNewCost.Text = "";
             // 
-            // textBox1
+            // tbNameNewCost
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 12;
+            this.tbNameNewCost.Location = new System.Drawing.Point(84, 18);
+            this.tbNameNewCost.Name = "tbNameNewCost";
+            this.tbNameNewCost.Size = new System.Drawing.Size(170, 20);
+            this.tbNameNewCost.TabIndex = 12;
             // 
-            // label1
+            // labelNameNewCost
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(46, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Name";
+            this.labelNameNewCost.AutoSize = true;
+            this.labelNameNewCost.BackColor = System.Drawing.Color.Transparent;
+            this.labelNameNewCost.Location = new System.Drawing.Point(35, 21);
+            this.labelNameNewCost.Name = "labelNameNewCost";
+            this.labelNameNewCost.Size = new System.Drawing.Size(35, 13);
+            this.labelNameNewCost.TabIndex = 11;
+            this.labelNameNewCost.Text = "Name";
             // 
-            // label5
+            // labelCategoryNewCost
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(32, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Category";
+            this.labelCategoryNewCost.AutoSize = true;
+            this.labelCategoryNewCost.BackColor = System.Drawing.Color.Transparent;
+            this.labelCategoryNewCost.Location = new System.Drawing.Point(21, 131);
+            this.labelCategoryNewCost.Name = "labelCategoryNewCost";
+            this.labelCategoryNewCost.Size = new System.Drawing.Size(49, 13);
+            this.labelCategoryNewCost.TabIndex = 21;
+            this.labelCategoryNewCost.Text = "Category";
             // 
-            // comboBox1
+            // comboBoxCategoryNewCost
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 170);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.TabIndex = 22;
+            this.comboBoxCategoryNewCost.FormattingEnabled = true;
+            this.comboBoxCategoryNewCost.Location = new System.Drawing.Point(84, 127);
+            this.comboBoxCategoryNewCost.Name = "comboBoxCategoryNewCost";
+            this.comboBoxCategoryNewCost.Size = new System.Drawing.Size(170, 21);
+            this.comboBoxCategoryNewCost.TabIndex = 22;
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 299);
+            this.StatusNewCost});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 261);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(298, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 23;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // StatusNewCost
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabel1.Text = "Status:";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.StatusNewCost.Name = "StatusNewCost";
+            this.StatusNewCost.Size = new System.Drawing.Size(42, 17);
+            this.StatusNewCost.Text = "Status:";
+            this.StatusNewCost.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // New_cost_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(298, 321);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(298, 283);
+            this.Controls.Add(this.comboBoxCategoryNewCost);
+            this.Controls.Add(this.labelCategoryNewCost);
+            this.Controls.Add(this.dateTimePickerNewCost);
+            this.Controls.Add(this.labelDateNewCost);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelValue);
+            this.Controls.Add(this.tbValue);
+            this.Controls.Add(this.labelDescriotion);
+            this.Controls.Add(this.richTextBoxDescriptionNewCost);
+            this.Controls.Add(this.tbNameNewCost);
+            this.Controls.Add(this.labelNameNewCost);
             this.Controls.Add(this.statusStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -206,19 +207,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNewCost;
+        private System.Windows.Forms.Label labelDateNewCost;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_ok;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label labelValue;
+        private System.Windows.Forms.TextBox tbValue;
+        private System.Windows.Forms.Label labelDescriotion;
+        private System.Windows.Forms.RichTextBox richTextBoxDescriptionNewCost;
+        private System.Windows.Forms.TextBox tbNameNewCost;
+        private System.Windows.Forms.Label labelNameNewCost;
+        private System.Windows.Forms.Label labelCategoryNewCost;
+        private System.Windows.Forms.ComboBox comboBoxCategoryNewCost;
+        private System.Windows.Forms.ToolStripStatusLabel StatusNewCost;
         private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

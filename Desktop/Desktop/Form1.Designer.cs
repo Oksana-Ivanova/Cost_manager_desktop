@@ -31,31 +31,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
+            this.tabPageStart = new System.Windows.Forms.TabPage();
+            this.labelSrartPage = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelTotalOutlays = new System.Windows.Forms.Panel();
+            this.buttonDetailedOutlays = new System.Windows.Forms.Button();
+            this.labelTotalPerWeek2 = new System.Windows.Forms.Label();
+            this.labelTotalOutlayPerWeekRef2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBoxMostOften = new System.Windows.Forms.GroupBox();
+            this.labelWeekOutlay = new System.Windows.Forms.Label();
+            this.labelCategoryName = new System.Windows.Forms.Label();
+            this.buttonExamine = new System.Windows.Forms.Button();
+            this.labelOutlayRef = new System.Windows.Forms.Label();
+            this.labelCategoryRef = new System.Windows.Forms.Label();
+            this.groupBoxBiggestCost = new System.Windows.Forms.GroupBox();
+            this.labelWeekOutlay2 = new System.Windows.Forms.Label();
+            this.labelCategoryName2 = new System.Windows.Forms.Label();
+            this.buttonExamine2 = new System.Windows.Forms.Button();
+            this.labelOutlayRef2 = new System.Windows.Forms.Label();
+            this.labelCategoryRef2 = new System.Windows.Forms.Label();
             this.chart_recent_cost = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelTotalIncome = new System.Windows.Forms.Panel();
+            this.buttonDetalisedIncomes = new System.Windows.Forms.Button();
+            this.labelTotalIncomePerLastWeek = new System.Windows.Forms.Label();
+            this.labelTotalIncomePerWeek = new System.Windows.Forms.Label();
+            this.dataGridViewRecentIncomes = new System.Windows.Forms.DataGridView();
             this.col_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,252 +79,362 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPageStart.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panelTotalOutlays.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBoxMostOften.SuspendLayout();
+            this.groupBoxBiggestCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_recent_cost)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelTotalIncome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecentIncomes)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(777, 403);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl.Controls.Add(this.tabPageStart);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.tabControl.Location = new System.Drawing.Point(0, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(896, 400);
+            this.tabControl.TabIndex = 1;
             // 
-            // tabPage1
+            // linkLabelLogOut
             // 
-            this.tabPage1.BackgroundImage = global::Desktop.Properties.Resources.bg;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(769, 377);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "StartPage";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
+            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelLogOut.AutoSize = true;
+            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
+            this.linkLabelLogOut.Name = "linkLabelLogOut";
+            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
+            this.linkLabelLogOut.TabIndex = 2;
+            this.linkLabelLogOut.TabStop = true;
+            this.linkLabelLogOut.Text = "LogOut";
             // 
-            // label7
+            // tabPageStart
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabPageStart.BackgroundImage = global::Desktop.Properties.Resources.bg;
+            this.tabPageStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageStart.Controls.Add(this.labelSrartPage);
+            this.tabPageStart.Location = new System.Drawing.Point(4, 25);
+            this.tabPageStart.Name = "tabPageStart";
+            this.tabPageStart.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStart.Size = new System.Drawing.Size(888, 371);
+            this.tabPageStart.TabIndex = 0;
+            this.tabPageStart.Text = "StartPage";
+            this.tabPageStart.UseVisualStyleBackColor = true;
+            // 
+            // labelSrartPage
+            // 
+            this.labelSrartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(53, 116);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(653, 180);
-            this.label7.TabIndex = 0;
-            this.label7.Text = resources.GetString("label7.Text");
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSrartPage.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
+            this.labelSrartPage.Location = new System.Drawing.Point(50, 30);
+            this.labelSrartPage.Name = "labelSrartPage";
+            this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelSrartPage.Size = new System.Drawing.Size(772, 308);
+            this.labelSrartPage.TabIndex = 0;
+            this.labelSrartPage.Text = resources.GetString("labelSrartPage.Text");
+            this.labelSrartPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.panelTotalOutlays);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.chart_recent_cost);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(769, 377);
+            this.tabPage2.Size = new System.Drawing.Size(888, 371);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recent Cost";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // panelTotalOutlays
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(535, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 24);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Total outlay per week";
+            this.panelTotalOutlays.AutoSize = true;
+            this.panelTotalOutlays.BackColor = System.Drawing.Color.Transparent;
+            this.panelTotalOutlays.BackgroundImage = global::Desktop.Properties.Resources.bg;
+            this.panelTotalOutlays.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTotalOutlays.Controls.Add(this.buttonDetailedOutlays);
+            this.panelTotalOutlays.Controls.Add(this.labelTotalPerWeek2);
+            this.panelTotalOutlays.Controls.Add(this.labelTotalOutlayPerWeekRef2);
+            this.panelTotalOutlays.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelTotalOutlays.Location = new System.Drawing.Point(3, 337);
+            this.panelTotalOutlays.Name = "panelTotalOutlays";
+            this.panelTotalOutlays.Size = new System.Drawing.Size(882, 31);
+            this.panelTotalOutlays.TabIndex = 12;
             // 
-            // button3
+            // buttonDetailedOutlays
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.Location = new System.Drawing.Point(539, 312);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "View more";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonDetailedOutlays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonDetailedOutlays.Location = new System.Drawing.Point(400, 3);
+            this.buttonDetailedOutlays.Name = "buttonDetailedOutlays";
+            this.buttonDetailedOutlays.Size = new System.Drawing.Size(120, 25);
+            this.buttonDetailedOutlays.TabIndex = 7;
+            this.buttonDetailedOutlays.Text = "View more";
+            this.buttonDetailedOutlays.UseVisualStyleBackColor = true;
+            this.buttonDetailedOutlays.Click += new System.EventHandler(this.buttonDetailedOutlays_Click);
             // 
-            // groupBox2
+            // labelTotalPerWeek2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(539, 198);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "The biggest cost";
+            this.labelTotalPerWeek2.AutoSize = true;
+            this.labelTotalPerWeek2.Location = new System.Drawing.Point(200, 9);
+            this.labelTotalPerWeek2.Name = "labelTotalPerWeek2";
+            this.labelTotalPerWeek2.Size = new System.Drawing.Size(169, 17);
+            this.labelTotalPerWeek2.TabIndex = 8;
+            this.labelTotalPerWeek2.Text = "labelTotalOutlayPerWeek";
             // 
-            // button2
+            // labelTotalOutlayPerWeekRef2
             // 
-            this.button2.Location = new System.Drawing.Point(10, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Examine";
-            this.button2.UseVisualStyleBackColor = true;
+            this.labelTotalOutlayPerWeekRef2.AutoSize = true;
+            this.labelTotalOutlayPerWeekRef2.Location = new System.Drawing.Point(30, 9);
+            this.labelTotalOutlayPerWeekRef2.Name = "labelTotalOutlayPerWeekRef2";
+            this.labelTotalOutlayPerWeekRef2.Size = new System.Drawing.Size(176, 17);
+            this.labelTotalOutlayPerWeekRef2.TabIndex = 1;
+            this.labelTotalOutlayPerWeekRef2.Text = "Total outlays per last week";
             // 
-            // label4
+            // panel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Total outlay";
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.groupBoxMostOften);
+            this.panel1.Controls.Add(this.groupBoxBiggestCost);
+            this.panel1.Location = new System.Drawing.Point(590, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(298, 321);
+            this.panel1.TabIndex = 9;
             // 
-            // label5
+            // groupBoxMostOften
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Category";
+            this.groupBoxMostOften.Controls.Add(this.labelWeekOutlay);
+            this.groupBoxMostOften.Controls.Add(this.labelCategoryName);
+            this.groupBoxMostOften.Controls.Add(this.buttonExamine);
+            this.groupBoxMostOften.Controls.Add(this.labelOutlayRef);
+            this.groupBoxMostOften.Controls.Add(this.labelCategoryRef);
+            this.groupBoxMostOften.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxMostOften.Location = new System.Drawing.Point(15, 22);
+            this.groupBoxMostOften.Name = "groupBoxMostOften";
+            this.groupBoxMostOften.Size = new System.Drawing.Size(275, 120);
+            this.groupBoxMostOften.TabIndex = 2;
+            this.groupBoxMostOften.TabStop = false;
+            this.groupBoxMostOften.Text = "The most often cost:";
             // 
-            // groupBox1
+            // labelWeekOutlay
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(539, 83);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "The most often cost";
+            this.labelWeekOutlay.AutoSize = true;
+            this.labelWeekOutlay.Location = new System.Drawing.Point(120, 60);
+            this.labelWeekOutlay.Name = "labelWeekOutlay";
+            this.labelWeekOutlay.Size = new System.Drawing.Size(82, 17);
+            this.labelWeekOutlay.TabIndex = 6;
+            this.labelWeekOutlay.Text = "outlayValue";
             // 
-            // button1
+            // labelCategoryName
             // 
-            this.button1.Location = new System.Drawing.Point(10, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Examine";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelCategoryName.AutoSize = true;
+            this.labelCategoryName.Location = new System.Drawing.Point(120, 30);
+            this.labelCategoryName.Name = "labelCategoryName";
+            this.labelCategoryName.Size = new System.Drawing.Size(100, 17);
+            this.labelCategoryName.TabIndex = 5;
+            this.labelCategoryName.Text = "categoryName";
             // 
-            // label3
+            // buttonExamine
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Total outlay";
+            this.buttonExamine.Location = new System.Drawing.Point(120, 90);
+            this.buttonExamine.Name = "buttonExamine";
+            this.buttonExamine.Size = new System.Drawing.Size(75, 23);
+            this.buttonExamine.TabIndex = 4;
+            this.buttonExamine.Text = "Examine";
+            this.buttonExamine.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // labelOutlayRef
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Category";
+            this.labelOutlayRef.AutoSize = true;
+            this.labelOutlayRef.Location = new System.Drawing.Point(10, 60);
+            this.labelOutlayRef.Name = "labelOutlayRef";
+            this.labelOutlayRef.Size = new System.Drawing.Size(86, 17);
+            this.labelOutlayRef.TabIndex = 1;
+            this.labelOutlayRef.Text = "Total outlay:";
             // 
-            // label1
+            // labelCategoryRef
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(16, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Last week";
+            this.labelCategoryRef.AutoSize = true;
+            this.labelCategoryRef.Location = new System.Drawing.Point(10, 30);
+            this.labelCategoryRef.Name = "labelCategoryRef";
+            this.labelCategoryRef.Size = new System.Drawing.Size(69, 17);
+            this.labelCategoryRef.TabIndex = 0;
+            this.labelCategoryRef.Text = "Category:";
+            // 
+            // groupBoxBiggestCost
+            // 
+            this.groupBoxBiggestCost.Controls.Add(this.labelWeekOutlay2);
+            this.groupBoxBiggestCost.Controls.Add(this.labelCategoryName2);
+            this.groupBoxBiggestCost.Controls.Add(this.buttonExamine2);
+            this.groupBoxBiggestCost.Controls.Add(this.labelOutlayRef2);
+            this.groupBoxBiggestCost.Controls.Add(this.labelCategoryRef2);
+            this.groupBoxBiggestCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxBiggestCost.Location = new System.Drawing.Point(15, 160);
+            this.groupBoxBiggestCost.Name = "groupBoxBiggestCost";
+            this.groupBoxBiggestCost.Size = new System.Drawing.Size(275, 120);
+            this.groupBoxBiggestCost.TabIndex = 5;
+            this.groupBoxBiggestCost.TabStop = false;
+            this.groupBoxBiggestCost.Text = "The biggest cost:";
+            // 
+            // labelWeekOutlay2
+            // 
+            this.labelWeekOutlay2.AutoSize = true;
+            this.labelWeekOutlay2.Location = new System.Drawing.Point(120, 60);
+            this.labelWeekOutlay2.Name = "labelWeekOutlay2";
+            this.labelWeekOutlay2.Size = new System.Drawing.Size(82, 17);
+            this.labelWeekOutlay2.TabIndex = 6;
+            this.labelWeekOutlay2.Text = "outlayValue";
+            // 
+            // labelCategoryName2
+            // 
+            this.labelCategoryName2.AutoSize = true;
+            this.labelCategoryName2.Location = new System.Drawing.Point(120, 30);
+            this.labelCategoryName2.Name = "labelCategoryName2";
+            this.labelCategoryName2.Size = new System.Drawing.Size(100, 17);
+            this.labelCategoryName2.TabIndex = 5;
+            this.labelCategoryName2.Text = "categoryName";
+            // 
+            // buttonExamine2
+            // 
+            this.buttonExamine2.Location = new System.Drawing.Point(120, 90);
+            this.buttonExamine2.Name = "buttonExamine2";
+            this.buttonExamine2.Size = new System.Drawing.Size(75, 23);
+            this.buttonExamine2.TabIndex = 4;
+            this.buttonExamine2.Text = "Examine";
+            this.buttonExamine2.UseVisualStyleBackColor = true;
+            // 
+            // labelOutlayRef2
+            // 
+            this.labelOutlayRef2.AutoSize = true;
+            this.labelOutlayRef2.Location = new System.Drawing.Point(10, 60);
+            this.labelOutlayRef2.Name = "labelOutlayRef2";
+            this.labelOutlayRef2.Size = new System.Drawing.Size(86, 17);
+            this.labelOutlayRef2.TabIndex = 1;
+            this.labelOutlayRef2.Text = "Total outlay:";
+            // 
+            // labelCategoryRef2
+            // 
+            this.labelCategoryRef2.AutoSize = true;
+            this.labelCategoryRef2.Location = new System.Drawing.Point(10, 30);
+            this.labelCategoryRef2.Name = "labelCategoryRef2";
+            this.labelCategoryRef2.Size = new System.Drawing.Size(69, 17);
+            this.labelCategoryRef2.TabIndex = 0;
+            this.labelCategoryRef2.Text = "Category:";
             // 
             // chart_recent_cost
             // 
             this.chart_recent_cost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
+            this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
             chartArea1.Name = "ChartArea1";
             this.chart_recent_cost.ChartAreas.Add(chartArea1);
-            this.chart_recent_cost.Location = new System.Drawing.Point(20, 91);
+            this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "Series1";
             this.chart_recent_cost.Series.Add(series1);
-            this.chart_recent_cost.Size = new System.Drawing.Size(467, 244);
-            this.chart_recent_cost.TabIndex = 0;
-            this.chart_recent_cost.Text = "chart1";
-            this.chart_recent_cost.Click += new System.EventHandler(this.chart_recent_cost_Click);
+            this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
+            this.chart_recent_cost.TabIndex = 8;
+            this.chart_recent_cost.Text = "Last week";
             // 
             // tabPage3
             // 
             this.tabPage3.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Controls.Add(this.panelTotalIncome);
+            this.tabPage3.Controls.Add(this.dataGridViewRecentIncomes);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(769, 377);
+            this.tabPage3.Size = new System.Drawing.Size(888, 371);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Recent Incomes";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // panelTotalIncome
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.Location = new System.Drawing.Point(438, 346);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "View more";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.panelTotalIncome.AutoSize = true;
+            this.panelTotalIncome.BackColor = System.Drawing.Color.Transparent;
+            this.panelTotalIncome.BackgroundImage = global::Desktop.Properties.Resources.bg;
+            this.panelTotalIncome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTotalIncome.Controls.Add(this.buttonDetalisedIncomes);
+            this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerLastWeek);
+            this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerWeek);
+            this.panelTotalIncome.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelTotalIncome.Location = new System.Drawing.Point(0, 340);
+            this.panelTotalIncome.Name = "panelTotalIncome";
+            this.panelTotalIncome.Size = new System.Drawing.Size(888, 31);
+            this.panelTotalIncome.TabIndex = 12;
             // 
-            // dataGridView1
+            // buttonDetalisedIncomes
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonDetalisedIncomes.Location = new System.Drawing.Point(400, 3);
+            this.buttonDetalisedIncomes.Name = "buttonDetalisedIncomes";
+            this.buttonDetalisedIncomes.Size = new System.Drawing.Size(120, 25);
+            this.buttonDetalisedIncomes.TabIndex = 7;
+            this.buttonDetalisedIncomes.Text = "View more";
+            this.buttonDetalisedIncomes.UseVisualStyleBackColor = true;
+            this.buttonDetalisedIncomes.Click += new System.EventHandler(this.buttonDetalisedIncomes_Click);
+            // 
+            // labelTotalIncomePerLastWeek
+            // 
+            this.labelTotalIncomePerLastWeek.AutoSize = true;
+            this.labelTotalIncomePerLastWeek.Location = new System.Drawing.Point(200, 9);
+            this.labelTotalIncomePerLastWeek.Name = "labelTotalIncomePerLastWeek";
+            this.labelTotalIncomePerLastWeek.Size = new System.Drawing.Size(200, 17);
+            this.labelTotalIncomePerLastWeek.TabIndex = 8;
+            this.labelTotalIncomePerLastWeek.Text = "labelTotalIncomePerLastWeek";
+            // 
+            // labelTotalIncomePerWeek
+            // 
+            this.labelTotalIncomePerWeek.AutoSize = true;
+            this.labelTotalIncomePerWeek.Location = new System.Drawing.Point(30, 9);
+            this.labelTotalIncomePerWeek.Name = "labelTotalIncomePerWeek";
+            this.labelTotalIncomePerWeek.Size = new System.Drawing.Size(176, 17);
+            this.labelTotalIncomePerWeek.TabIndex = 1;
+            this.labelTotalIncomePerWeek.Text = "Total income per last week";
+            // 
+            // dataGridViewRecentIncomes
+            // 
+            this.dataGridViewRecentIncomes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewRecentIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRecentIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_num,
             this.Column_title,
             this.Column_Decription,
             this.Column_Value,
             this.Column_date});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 256);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewRecentIncomes.Location = new System.Drawing.Point(8, 42);
+            this.dataGridViewRecentIncomes.Name = "dataGridViewRecentIncomes";
+            this.dataGridViewRecentIncomes.Size = new System.Drawing.Size(872, 250);
+            this.dataGridViewRecentIncomes.TabIndex = 0;
+            this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // col_num
             // 
@@ -342,21 +461,6 @@
             this.Column_date.HeaderText = "Date";
             this.Column_date.Name = "Column_date";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.YellowGreen;
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel1.Location = new System.Drawing.Point(636, 2);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(61, 22);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Logout";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImage = global::Desktop.Properties.Resources.bg;
@@ -367,7 +471,7 @@
             this.moreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(777, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(896, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -378,35 +482,36 @@
             this.newCategoryToolStripMenuItem,
             this.newIncomeToolStripMenuItem,
             this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newCostToolStripMenuItem
             // 
             this.newCostToolStripMenuItem.Name = "newCostToolStripMenuItem";
-            this.newCostToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newCostToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.newCostToolStripMenuItem.Text = "New Cost";
             this.newCostToolStripMenuItem.Click += new System.EventHandler(this.newCostToolStripMenuItem_Click);
             // 
             // newCategoryToolStripMenuItem
             // 
             this.newCategoryToolStripMenuItem.Name = "newCategoryToolStripMenuItem";
-            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.newCategoryToolStripMenuItem.Text = "New Category";
             this.newCategoryToolStripMenuItem.Click += new System.EventHandler(this.newCategoryToolStripMenuItem_Click);
             // 
             // newIncomeToolStripMenuItem
             // 
             this.newIncomeToolStripMenuItem.Name = "newIncomeToolStripMenuItem";
-            this.newIncomeToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newIncomeToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.newIncomeToolStripMenuItem.Text = "New Income";
             this.newIncomeToolStripMenuItem.Click += new System.EventHandler(this.newIncomeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -417,7 +522,7 @@
             this.viewIncomesToolStripMenuItem,
             this.viewLimitsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // viewOutlaysToolStripMenuItem
@@ -448,73 +553,57 @@
             this.profileToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.moreToolStripMenuItem.Name = "moreToolStripMenuItem";
-            this.moreToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.moreToolStripMenuItem.Size = new System.Drawing.Size(47, 23);
             this.moreToolStripMenuItem.Text = "More";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(386, 351);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "total";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(246, 351);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Total income per last week";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(777, 427);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(896, 427);
+            this.Controls.Add(this.linkLabelLogOut);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.Text = "Cost Manager v0.04";
+            this.tabControl.ResumeLayout(false);
+            this.tabPageStart.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panelTotalOutlays.ResumeLayout(false);
+            this.panelTotalOutlays.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.groupBoxMostOften.ResumeLayout(false);
+            this.groupBoxMostOften.PerformLayout();
+            this.groupBoxBiggestCost.ResumeLayout(false);
+            this.groupBoxBiggestCost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_recent_cost)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelTotalIncome.ResumeLayout(false);
+            this.panelTotalIncome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecentIncomes)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -537,34 +626,41 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPageStart;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart_recent_cost;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridViewRecentIncomes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Decription;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelSrartPage;
         private System.Windows.Forms.ToolStripMenuItem viewLimitsToolStripMenuItem;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel linkLabelLogOut;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBoxMostOften;
+        private System.Windows.Forms.Label labelWeekOutlay;
+        private System.Windows.Forms.Label labelCategoryName;
+        private System.Windows.Forms.Button buttonExamine;
+        private System.Windows.Forms.Label labelOutlayRef;
+        private System.Windows.Forms.Label labelCategoryRef;
+        private System.Windows.Forms.GroupBox groupBoxBiggestCost;
+        private System.Windows.Forms.Label labelWeekOutlay2;
+        private System.Windows.Forms.Label labelCategoryName2;
+        private System.Windows.Forms.Button buttonExamine2;
+        private System.Windows.Forms.Label labelOutlayRef2;
+        private System.Windows.Forms.Label labelCategoryRef2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_recent_cost;
+        private System.Windows.Forms.Panel panelTotalOutlays;
+        private System.Windows.Forms.Button buttonDetailedOutlays;
+        private System.Windows.Forms.Label labelTotalPerWeek2;
+        private System.Windows.Forms.Label labelTotalOutlayPerWeekRef2;
+        private System.Windows.Forms.Panel panelTotalIncome;
+        private System.Windows.Forms.Button buttonDetalisedIncomes;
+        private System.Windows.Forms.Label labelTotalIncomePerLastWeek;
+        private System.Windows.Forms.Label labelTotalIncomePerWeek;
     }
 }
 

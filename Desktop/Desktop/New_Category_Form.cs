@@ -15,7 +15,7 @@ namespace Desktop
         public New_Category_Form()
         {
             InitializeComponent();
-            comboBox3.Text = "No Limit";
+            comboBox_Limit_Cheking.Text = "No Limit";
             
         }
 

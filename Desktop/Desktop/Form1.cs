@@ -80,6 +80,24 @@ namespace Desktop
             LimitForm.ShowDialog();
         }
 
+        private void buttonDetailedOutlays_Click(object sender, EventArgs e)
+        {
+            My_outlays outlaysForm = new My_outlays();
+            outlaysForm.ShowDialog();
+        }
+
+        private void buttonDetalisedIncomes_Click(object sender, EventArgs e)
+        {
+            Incomes incomesForm = new Incomes();
+            incomesForm.ShowDialog();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox AboutBoxForm = new AboutBox();
+            AboutBoxForm.ShowDialog();
+        }
+
     
     }
 }
