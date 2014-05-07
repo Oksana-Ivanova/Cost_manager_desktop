@@ -45,9 +45,9 @@
             this.dataGridViewLimits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_category,
             this.Column_limit});
-            this.dataGridViewLimits.Location = new System.Drawing.Point(12, 53);
+            this.dataGridViewLimits.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewLimits.Name = "dataGridViewLimits";
-            this.dataGridViewLimits.Size = new System.Drawing.Size(260, 150);
+            this.dataGridViewLimits.Size = new System.Drawing.Size(260, 148);
             this.dataGridViewLimits.TabIndex = 0;
             // 
             // Column_category
@@ -63,7 +63,7 @@
             // buttonNewLimit
             // 
             this.buttonNewLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNewLimit.Location = new System.Drawing.Point(197, 226);
+            this.buttonNewLimit.Location = new System.Drawing.Point(197, 166);
             this.buttonNewLimit.Name = "buttonNewLimit";
             this.buttonNewLimit.Size = new System.Drawing.Size(75, 23);
             this.buttonNewLimit.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 201);
             this.Controls.Add(this.buttonNewLimit);
             this.Controls.Add(this.dataGridViewLimits);
             this.Name = "Limits_Form";

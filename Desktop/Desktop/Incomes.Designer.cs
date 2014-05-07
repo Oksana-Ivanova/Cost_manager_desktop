@@ -63,9 +63,9 @@
             this.Column_Decription,
             this.Column_Value,
             this.Column_date});
-            this.dataGridViewIncomes.Location = new System.Drawing.Point(258, 61);
+            this.dataGridViewIncomes.Location = new System.Drawing.Point(258, 32);
             this.dataGridViewIncomes.Name = "dataGridViewIncomes";
-            this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 291);
+            this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 320);
             this.dataGridViewIncomes.TabIndex = 1;
             // 
             // col_num
@@ -169,6 +169,7 @@
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerStart.TabIndex = 1;
+            this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerEnd
             // 

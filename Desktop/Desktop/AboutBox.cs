@@ -15,8 +15,8 @@ namespace Desktop
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            //this.labelProductName.Text = AssemblyProduct;
+           // this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
            // this.labelCopyright.Text = AssemblyCopyright;
            // this.labelCompanyName.Text = AssemblyCompany;
             //this.textBoxDescription.Text = AssemblyDescription;
@@ -105,6 +105,11 @@ namespace Desktop
         private void labelCopyright_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

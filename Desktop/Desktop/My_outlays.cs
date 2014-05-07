@@ -96,11 +96,16 @@ namespace Desktop
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
             if (dateTimePickerStart.Value > dateTimePickerEnd.Value)
-            {
-                MessageBox.Show("Error in date!");
-                dateTimePickerEnd.Value = DateTime.Now;
+            { dateTimePickerEnd.Value = DateTime.Now;
                 dateTimePickerStart.Value = DateTime.Now;
+                MessageBox.Show("Error in date!");
+               
             }
+        }
+
+        private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
       

@@ -53,7 +53,7 @@
             // 
             this.tbTitle.Location = new System.Drawing.Point(44, 15);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(130, 20);
+            this.tbTitle.Size = new System.Drawing.Size(151, 20);
             this.tbTitle.TabIndex = 1;
             // 
             // gbLimitCategory
@@ -123,7 +123,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(227, 206);
+            this.ClientSize = new System.Drawing.Size(206, 206);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.gbLimitCategory);

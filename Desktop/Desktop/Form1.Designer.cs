@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.tabPageStart = new System.Windows.Forms.TabPage();
@@ -122,6 +122,7 @@
             this.linkLabelLogOut.TabIndex = 2;
             this.linkLabelLogOut.TabStop = true;
             this.linkLabelLogOut.Text = "LogOut";
+            this.linkLabelLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogOut_LinkClicked);
             // 
             // tabPageStart
             // 
@@ -170,7 +171,6 @@
             // 
             this.panelTotalOutlays.AutoSize = true;
             this.panelTotalOutlays.BackColor = System.Drawing.Color.Transparent;
-            this.panelTotalOutlays.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.panelTotalOutlays.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTotalOutlays.Controls.Add(this.buttonDetailedOutlays);
             this.panelTotalOutlays.Controls.Add(this.labelTotalPerWeek2);
@@ -349,14 +349,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
             this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea1.Name = "ChartArea1";
-            this.chart_recent_cost.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chart_recent_cost.ChartAreas.Add(chartArea2);
             this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.chart_recent_cost.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chart_recent_cost.Series.Add(series2);
             this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
             this.chart_recent_cost.TabIndex = 8;
             this.chart_recent_cost.Text = "Last week";
@@ -378,7 +378,6 @@
             // 
             this.panelTotalIncome.AutoSize = true;
             this.panelTotalIncome.BackColor = System.Drawing.Color.Transparent;
-            this.panelTotalIncome.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.panelTotalIncome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTotalIncome.Controls.Add(this.buttonDetalisedIncomes);
             this.panelTotalIncome.Controls.Add(this.labelTotalIncomePerLastWeek);
@@ -521,28 +520,29 @@
             this.viewOutlaysToolStripMenuItem,
             this.viewIncomesToolStripMenuItem,
             this.viewLimitsToolStripMenuItem});
+            this.viewToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // viewOutlaysToolStripMenuItem
             // 
             this.viewOutlaysToolStripMenuItem.Name = "viewOutlaysToolStripMenuItem";
-            this.viewOutlaysToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewOutlaysToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.viewOutlaysToolStripMenuItem.Text = "View Outlays";
             this.viewOutlaysToolStripMenuItem.Click += new System.EventHandler(this.viewOutlaysToolStripMenuItem_Click);
             // 
             // viewIncomesToolStripMenuItem
             // 
             this.viewIncomesToolStripMenuItem.Name = "viewIncomesToolStripMenuItem";
-            this.viewIncomesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewIncomesToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.viewIncomesToolStripMenuItem.Text = "View Incomes";
             this.viewIncomesToolStripMenuItem.Click += new System.EventHandler(this.viewIncomesToolStripMenuItem_Click);
             // 
             // viewLimitsToolStripMenuItem
             // 
             this.viewLimitsToolStripMenuItem.Name = "viewLimitsToolStripMenuItem";
-            this.viewLimitsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewLimitsToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.viewLimitsToolStripMenuItem.Text = "View Limits";
             this.viewLimitsToolStripMenuItem.Click += new System.EventHandler(this.viewLimitsToolStripMenuItem_Click);
             // 
@@ -552,26 +552,29 @@
             this.helpToolStripMenuItem,
             this.profileToolStripMenuItem,
             this.aboutToolStripMenuItem});
+            this.moreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.moreToolStripMenuItem.Name = "moreToolStripMenuItem";
-            this.moreToolStripMenuItem.Size = new System.Drawing.Size(47, 23);
+            this.moreToolStripMenuItem.Size = new System.Drawing.Size(54, 23);
             this.moreToolStripMenuItem.Text = "More";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -586,7 +589,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.04";
+            this.Text = "Cost Manager v0.05";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

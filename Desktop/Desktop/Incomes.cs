@@ -27,6 +27,7 @@ namespace Desktop
                     panel_custom_date.Visible = true; 
                     break;
                 case "Yesterday":
+                    panel_custom_date.Visible = false; 
                     //change chart;
                     break;
                 default: comboBoxPeriod.Text = "Yesterday"; break;
@@ -52,12 +53,19 @@ namespace Desktop
 
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
+        
             if (dateTimePickerStart.Value > dateTimePickerEnd.Value) 
             {
-                MessageBox.Show("Error in date!"); 
                 dateTimePickerEnd.Value=DateTime.Now;
                 dateTimePickerStart.Value = DateTime.Now;
+                MessageBox.Show("Error in date!"); 
+                
             }
+        }
+
+        private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
+        {
+           
         }
 
       

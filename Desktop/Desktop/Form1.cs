@@ -12,8 +12,11 @@ namespace Desktop
 {
     public partial class Main : Form
     {
+        
         public Main()
         {
+            //LoginForm Loginform = new LoginForm();
+            //Loginform.Close();
             InitializeComponent();
             double x = 0;
             for (int i = 0; i < 4; i++)
@@ -21,9 +24,10 @@ namespace Desktop
                 chart_recent_cost.Series[0].Points.AddXY(x, Math.Sin(x));
                 x += i;
             }
-            
-        }
 
+           // if (!loginForm.Visible) { loginForm.Close(); }
+        }
+        LoginForm loginForm = new LoginForm();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -54,7 +58,8 @@ namespace Desktop
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
+            Application.Exit();
         }
 
         private void chart_recent_cost_Click(object sender, EventArgs e)
@@ -97,6 +102,31 @@ namespace Desktop
             AboutBox AboutBoxForm = new AboutBox();
             AboutBoxForm.ShowDialog();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabelLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            Application.Exit();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.ShowDialog();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.ShowDialog();
+        }
+
+       
 
     
     }

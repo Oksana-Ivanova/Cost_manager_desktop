@@ -48,7 +48,7 @@
             this.button_Ok.TabIndex = 0;
             this.button_Ok.Text = "Ok";
             this.button_Ok.UseVisualStyleBackColor = true;
-            this.button_Ok.Click += new System.EventHandler(this.button1_Click);
+            this.button_Ok.Click += new System.EventHandler(this.button_Ok_Click);
             // 
             // linkLabel_ForgotPass
             // 
@@ -62,6 +62,7 @@
             this.linkLabel_ForgotPass.TabIndex = 1;
             this.linkLabel_ForgotPass.TabStop = true;
             this.linkLabel_ForgotPass.Text = "Forgot a password?";
+            this.linkLabel_ForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ForgotPass_LinkClicked);
             // 
             // tbLogin
             // 
@@ -77,7 +78,6 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(136, 20);
             this.tbPassword.TabIndex = 3;
-            this.tbPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // labelLogin
             // 
@@ -98,7 +98,6 @@
             this.labelPassword.Size = new System.Drawing.Size(53, 13);
             this.labelPassword.TabIndex = 5;
             this.labelPassword.Text = "Password";
-            this.labelPassword.Click += new System.EventHandler(this.label2_Click);
             // 
             // button_Cancel
             // 
@@ -109,7 +108,7 @@
             this.button_Cancel.TabIndex = 6;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
-            this.button_Cancel.Click += new System.EventHandler(this.button2_Click);
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // statusStrip1
             // 
