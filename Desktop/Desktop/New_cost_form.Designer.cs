@@ -151,6 +151,7 @@
             this.comboBoxCategoryNewCost.Name = "comboBoxCategoryNewCost";
             this.comboBoxCategoryNewCost.Size = new System.Drawing.Size(170, 21);
             this.comboBoxCategoryNewCost.TabIndex = 22;
+           
             // 
             // statusStrip1
             // 

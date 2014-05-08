@@ -21,7 +21,15 @@ namespace Desktop
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string id = New.generator();
+
+            int ID_user = LoginForm.user_ID;
+            string ID_limit = "1000";
+            string type_name = tbTitle.Text;
+            string Date = New.date();
+
+            SqlFunction.Insert_into_cost_type(id, ID_user, ID_limit, type_name, Date);
+            tbTitle.Clear();
         }
 
         private void button_cancel_Click(object sender, EventArgs e)

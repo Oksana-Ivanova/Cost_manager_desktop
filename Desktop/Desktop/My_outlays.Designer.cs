@@ -48,12 +48,6 @@
             this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_table = new System.Windows.Forms.Panel();
             this.dataGridViewOutlays = new System.Windows.Forms.DataGridView();
-            this.Column_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_chart = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,6 +103,7 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(184, 24);
             this.comboBoxCategory.TabIndex = 0;
             this.comboBoxCategory.Text = "Any";
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
             // button_new_category
             // 
@@ -274,47 +269,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOutlays.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOutlays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOutlays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column_num,
-            this.Column_Title,
-            this.Column_category,
-            this.Column_description,
-            this.Column_cost,
-            this.Column_date});
             this.dataGridViewOutlays.Location = new System.Drawing.Point(10, 10);
             this.dataGridViewOutlays.Name = "dataGridViewOutlays";
             this.dataGridViewOutlays.Size = new System.Drawing.Size(641, 377);
             this.dataGridViewOutlays.TabIndex = 0;
-            // 
-            // Column_num
-            // 
-            this.Column_num.HeaderText = " №";
-            this.Column_num.Name = "Column_num";
-            // 
-            // Column_Title
-            // 
-            this.Column_Title.HeaderText = "Title";
-            this.Column_Title.Name = "Column_Title";
-            // 
-            // Column_category
-            // 
-            this.Column_category.HeaderText = "Category";
-            this.Column_category.Name = "Column_category";
-            // 
-            // Column_description
-            // 
-            this.Column_description.HeaderText = "Description";
-            this.Column_description.Name = "Column_description";
-            // 
-            // Column_cost
-            // 
-            this.Column_cost.HeaderText = "Cost";
-            this.Column_cost.Name = "Column_cost";
-            // 
-            // Column_date
-            // 
-            this.Column_date.HeaderText = "Date";
-            this.Column_date.Name = "Column_date";
+            this.dataGridViewOutlays.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOutlays_CellContentClick);
+            this.dataGridViewOutlays.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewOutlays_ColumnAdded);
             // 
             // panel_chart
             // 
@@ -379,12 +339,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
         private System.Windows.Forms.Panel panel_table;
         private System.Windows.Forms.DataGridView dataGridViewOutlays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
         private System.Windows.Forms.Panel panel_chart;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxCategory;

@@ -17,18 +17,23 @@ namespace Desktop
             InitializeComponent();
             comboBoxViewAs.Text = "Chart";
             comboBoxCategoryOutlays.Text = "Yesterday";
-            comboBoxCategory.Text = "Any";
+            comboBoxCategory_Set();
             panel_chart.Visible = true;
              double x = 0;
                 for (int i = 0; i < 4; i++)
                 {
-                    chart_outlays.Series[0].Points.AddXY(x, Math.Sin(x));
+                    chart_outlays.Series[0].Points.AddXY(DateTime.Today.AddDays(-4+i),x );
                     x += i;
                 }
             
         }
+        const string host = "127.0.0.1";
+        const string database = "heroku_9e3361f1a2a704a";
+        const string user = "root";
+        const string password = "123";
 
-    
+        DBHandler controller = new DBHandler(host, database, user, password);
+        BindingSource outlays_binding = new BindingSource();
      
       
 
@@ -107,14 +112,70 @@ namespace Desktop
         {
 
         }
+        private void comboBoxCategory_Set()
+        {
+            List<CostType> categoryName = new List<CostType>();
+            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
+             CostType tempObject = new CostType();
+             categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+          
+            outlays_binding.DataSource = categoryName;        
+            comboBoxCategory.DataSource = outlays_binding.DataSource;
+            comboBoxCategory.DisplayMember = "Name";
+            comboBoxCategory.ValueMember = "Name";
+        }
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           string categoryName=comboBoxCategory.Text;        
+           string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
+           string connectionString =" Database=heroku_9e3361f1a2a704a;Data Source=127.0.0.1;User=root;Password=123";
+          // MessageBox.Show(connectionString);
+            DataSet ds = new DataSet();
+            ds = DBHandler.getAllCosts(connectionString, cost_type_id);
+            int i=0;
+            int n=2;
+            dataGridViewOutlays.DataSource = ds.Tables["costs"];
+            chart_outlays.Series[0].Points.Clear();
+            string Date; 
+            
+            {
+                Date = New.date_transform_to_sql_date(DateTime.UtcNow.ToString(), 9);
+               MessageBox.Show(Date);
+                double value = 0;
+                //value = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, Date);
+               
+                chart_outlays.Series[0].Points.AddXY(DateTime.UtcNow.AddDays(n-i),i);
+                i++;
+            }
+            while (i < 1);
+
+        }
+
+        private void dataGridViewOutlays_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewOutlays_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
+        {
+            if (dataGridViewOutlays.Columns.Contains("updated_at"))
+            {
+                try
+                {
+                    this.dataGridViewOutlays.Columns["id"].Visible = false;
+                    this.dataGridViewOutlays.Columns["user_id"].Visible = false;
+                    this.dataGridViewOutlays.Columns["cost_type_id"].Visible = false;
+                    this.dataGridViewOutlays.Columns["created_at"].Visible = false;
+                    this.dataGridViewOutlays.Columns["updated_at"].Visible = false;
+                    this.dataGridViewOutlays.Columns["name"].HeaderText = "Назва витрати";
+                    this.dataGridViewOutlays.Columns["description"].HeaderText = "Нотатки";
+                    this.dataGridViewOutlays.Columns["price"].HeaderText = "затрачена сумма";
+                }
+
+                catch { }
+            }
+        }
 
       
-
-      
-
-
-
-      
-
     }
 }
