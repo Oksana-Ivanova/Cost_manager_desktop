@@ -43,10 +43,8 @@ namespace Desktop
         public  void start()
         {
             try
-            {
-                string connectionString = "Database=heroku_9e3361f1a2a704a;Data Source=127.0.0.1;User=root;Password=123";
-                _Connection.ConnectionString = connectionString;
-
+            {               
+                
                 adap = new MySqlDataAdapter("SELECT *  FROM cost_types where user_id=  " + LoginForm.user_ID, _Connection);
 
                 ds = new System.Data.DataSet();
@@ -62,8 +60,7 @@ namespace Desktop
         }
         public  void Insert_into_cost_type(string id, int ID_user, string ID_limit, string type_name, string Date)//cost_types
         {
-            string connectionString = "Database=heroku_9e3361f1a2a704a;Data Source=127.0.0.1;User=root;Password=123";
-            _Connection.ConnectionString = connectionString;
+          
             try
             {
                 string qry = " insert into  heroku_9e3361f1a2a704a.cost_types values('" + id + "','" + ID_user + "','" + ID_limit + "','" + type_name + "','" + Date + "','" + Date + "')";
@@ -79,9 +76,7 @@ namespace Desktop
         public  void Insert_into_cost(string id, int ID_user, string ID_cost_type, string name, string description, double money, string Date)//costs
         {
 
-            string connectionString = "Database=heroku_9e3361f1a2a704a;Data Source=127.0.0.1;User=root;Password=123";
-            MessageBox.Show(connectionString);
-             _Connection.ConnectionString = connectionString;
+            MessageBox.Show(_Connection.ToString());          
             try
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.costs values('" + id + "','" + ID_user + "','" + ID_cost_type + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
