@@ -45,17 +45,21 @@ namespace Desktop
             mysqlQuery.CommandText = "SELECT * FROM users WHERE name =\"" + userName + "\" LIMIT 1 ;";
 
             MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
-
-            if (mysqlResult.Read())
+            try
             {
-                resultUser.Id = mysqlResult.GetString(0);
-                resultUser.Name = mysqlResult.GetString(1);
-                resultUser.Email = mysqlResult.GetString(2);
-                resultUser.Pasword = mysqlResult.GetString(3);
-                resultUser.SignInCount = Convert.ToUInt16(mysqlResult.GetString(7));
-                resultUser.CreateDate = Convert.ToDateTime(mysqlResult.GetString(12));
-                resultUser.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(13));
+                if (mysqlResult.Read())
+                {
+                    resultUser.Id = mysqlResult.GetString(0);
+                    resultUser.Name = mysqlResult.GetString(1);
+                    resultUser.Email = mysqlResult.GetString(2);
+                    resultUser.Pasword = mysqlResult.GetString(3);
+                    resultUser.SignInCount = Convert.ToUInt16(mysqlResult.GetString(7));
+                    resultUser.CreateDate = Convert.ToDateTime(mysqlResult.GetString(12));
+                    resultUser.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(13));
+                }
             }
+            catch { }
+
 
             _Connection.Close();
             return resultUser;

@@ -28,14 +28,16 @@ namespace Desktop
         SqlFunction connect = new SqlFunction(host, database, user, password);
         private void button_ok_Click(object sender, EventArgs e)
         {
-            string id = secondary_methods.generator();
+            string table_name = "cost_types";
+            string column_name = "id";
+            string id = connect.generator_id(table_name, column_name);
 
             int ID_user = LoginForm.user_ID;
-            string ID_limit = "1000";
+            double limit = 1000;
             string type_name = tbTitle.Text;
             string Date = secondary_methods.date();
 
-           connect.Insert_into_cost_type(id, ID_user, ID_limit, type_name, Date);
+           connect.Insert_into_cost_type(id, ID_user, limit, type_name, Date);
             tbTitle.Clear();
         }
 

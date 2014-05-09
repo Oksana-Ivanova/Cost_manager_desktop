@@ -58,9 +58,9 @@ namespace Desktop
             catch { }
             finally { _Connection.Close(); }
         }
-        public  void Insert_into_cost_type(string id, int ID_user, string ID_limit, string type_name, string Date)//cost_types
+        public  void Insert_into_cost_type(string id, int ID_user, double limit, string type_name, string Date)//cost_types
         {
-          
+            string ID_limit = create_limit(limit);          
             try
             {
                 string qry = " insert into  heroku_9e3361f1a2a704a.cost_types values('" + id + "','" + ID_user + "','" + ID_limit + "','" + type_name + "','" + Date + "','" + Date + "')";
@@ -73,10 +73,33 @@ namespace Desktop
             finally { _Connection.Close(); }
 
         }
+        private string create_limit(double limit) 
+        {
+            const string host = "127.0.0.1";
+            const string database = "heroku_9e3361f1a2a704a";
+            const string user = "root";
+            const string password = "123";
+
+            SqlFunction connect = new SqlFunction(host, database, user, password);
+            string table_name = "limits";
+            string column_name = "id";
+            string id = connect.generator_id(table_name, column_name);
+            string Date = secondary_methods.date();
+            try
+            {
+                string qry = " insert into  heroku_9e3361f1a2a704a.limits values('" + id + "',' ','" + limit + "','" + Date + "','" + Date + "')";
+                MessageBox.Show(qry);
+                _Connection.Open();
+                MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
+                comandInsert.ExecuteNonQuery();
+            }
+            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            finally { _Connection.Close(); }
+            return id;
+        }
         public  void Insert_into_cost(string id, int ID_user, string ID_cost_type, string name, string description, double money, string Date)//costs
         {
-
-            MessageBox.Show(_Connection.ToString());          
+                                
             try
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.costs values('" + id + "','" + ID_user + "','" + ID_cost_type + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
@@ -165,7 +188,34 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally {  _Connection.Close(); }
         }
-        public  void show() { MessageBox.Show("yes"); }
+      // public bool get_id_from_table() { }
+        public string generator_id(string table_name, string column_name)
+        {
+            string genereted_id;
+          bool b = false;
+          _Connection.Open();
+          MySqlCommand mysqlQuery = _Connection.CreateCommand();
+          do
+          {
+              genereted_id = secondary_methods.generator();
+              mysqlQuery.CommandText = "SELECT * FROM " + table_name + " WHERE " + column_name + "='" + genereted_id + "';";
+              MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+              while (mysqlResult.Read())
+              {
+                  try
+                  {
+                      string id;
+                      id = mysqlResult.GetString(0);
+                      if (genereted_id.Contains(id)) b = true;
+                  }
+                  catch { }
+              }
+             
+          } while (b);
+
+          _Connection.Close();
+          return genereted_id;
+        }
 
     }
 

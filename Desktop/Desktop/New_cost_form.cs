@@ -45,10 +45,12 @@ namespace Desktop
         }
         private void button_ok_Click(object sender, EventArgs e)
         {
+            string table_name="costs";
+            string column_name="id";
             try
             {
                 string categoryName = comboBoxCategoryNewCost.Text;
-                string id =secondary_methods.generator();
+                string id = connect.generator_id(table_name, column_name);
                 int ID_user = LoginForm.user_ID;             
                 string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
                 string name = tbNameNewCost.Text;

@@ -36,10 +36,25 @@ namespace Desktop
             List<string> list = new List<string>();
             user_name = tbLogin.Text;
             user_pasword = tbPassword.Text;
-
-           if (controller.getUserByName(user_name).Pasword.Contains(user_pasword))
+            bool error = true;
+            while (error)
             {
-                user_ID =int.Parse( controller.getUserByName(user_name).Id);
+                if (user_name.Equals(String.Empty) & user_pasword.Equals(String.Empty))
+                { MessageBox.Show("Заповніть поля Login та Pasword"); return; }
+                else
+                {
+                    if (user_name.Equals(String.Empty)) {MessageBox.Show("Заповніть поле Login");return;}
+                    else
+                    {
+                        if (user_pasword.Equals(String.Empty)) { MessageBox.Show("Заповніть поле Pasword"); return; } else { error = false; }
+                    }
+                }
+            }
+           if (controller.getUserByName(user_name).Pasword.Equals(user_pasword))
+           {
+             
+                   user_ID = int.Parse(controller.getUserByName(user_name).Id);
+               
               //  this.Hide();
                 Main mainform = new Main();
                 mainform.Show();
@@ -47,15 +62,10 @@ namespace Desktop
             }
             else
             {
-
                 tbLogin.Clear();
                 tbPassword.Clear();
-                MessageBox.Show("неправильно введений пароль або імя");
+                MessageBox.Show("Неправильно заповнені поля Login або Pasword");
             }
-            
-         
-
-          
            // if (!mainform.Enabled) { Application.Exit(); }
         }
 
