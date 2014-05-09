@@ -98,7 +98,7 @@
     <Compile Include="New Incomes.Designer.cs">
       <DependentUpon>New Incomes.cs</DependentUpon>
     </Compile>
-    <Compile Include="New.cs" />
+    <Compile Include="secondary_methods.cs" />
     <Compile Include="New_Category_Form.cs">
       <SubType>Form</SubType>
     </Compile>

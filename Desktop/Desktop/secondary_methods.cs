@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    class New
+    class secondary_methods
     {
         public static string generator()
         {
@@ -25,7 +25,7 @@ namespace Desktop
         }
         public static string date_transform_to_sql_date(string date, int n)
         {
-            MessageBox.Show(date);
+            //MessageBox.Show(date);
             try { 
             return date.Substring(6, 4) + "." + date.Substring(3, 2) + "." + date.Substring(0, 2) + " " + date.Substring(10, n);}
             catch

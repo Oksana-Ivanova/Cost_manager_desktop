@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
+        
     public partial class New_Category_Form : Form
     {
         public New_Category_Form()
@@ -18,17 +19,23 @@ namespace Desktop
             comboBox_Limit_Cheking.Text = "No Limit";
             
         }
+        const string host = "127.0.0.1";
+        const string database = "heroku_9e3361f1a2a704a";
+        const string user = "root";
+        const string password = "123";
 
+
+        SqlFunction connect = new SqlFunction(host, database, user, password);
         private void button_ok_Click(object sender, EventArgs e)
         {
-            string id = New.generator();
+            string id = secondary_methods.generator();
 
             int ID_user = LoginForm.user_ID;
             string ID_limit = "1000";
             string type_name = tbTitle.Text;
-            string Date = New.date();
+            string Date = secondary_methods.date();
 
-            SqlFunction.Insert_into_cost_type(id, ID_user, ID_limit, type_name, Date);
+           connect.Insert_into_cost_type(id, ID_user, ID_limit, type_name, Date);
             tbTitle.Clear();
         }
 

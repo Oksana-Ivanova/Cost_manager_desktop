@@ -104,22 +104,20 @@ namespace Desktop
             return resultCategory;
         }
 
-        public static DataSet getAllCosts(string connectionString, string ID_cost)
+        public  DataSet getAllCosts( string ID_cost)
         {
             DataSet ds = new DataSet();
-
-            MySqlConnection con = new MySqlConnection();
+            _Connection.Open();
+           
             try
             {
-                con.ConnectionString = connectionString;
-
-                MySqlDataAdapter adap = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "'", con);
+                MySqlDataAdapter adap = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "'", _Connection);
                 ds = new System.Data.DataSet();
                 adap.Fill(ds, "costs");
 
             }
             catch { }
-
+            finally { _Connection.Close(); }
             return ds;
         }
 
@@ -325,9 +323,8 @@ namespace Desktop
         {
             _Connection.Open();
             MySqlCommand mysqlQuery = _Connection.CreateCommand();
-            mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and cost_type_id='" + cost_type_id + "' and created_at<'"+Date+"';";
-            //select sum(price) from costs where user_id=2 and cost_type_id='a33b437e46' and created_at>'2014-05-08 00:00:00'and created_at<'2014-05-09 00:00:00';
-            MessageBox.Show(mysqlQuery.CommandText);
+            mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and cost_type_id='" + cost_type_id + "' and created_at<'2014-05-09 00:00:00';";
+           // mysqlQuery.CommandText = "select sum(price) from costs where user_id=2 and cost_type_id='a33b437e46' and created_at>'2014-05-08 00:00:00'and created_at<'2014-05-09 00:00:00';";
             MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
             double sum=0;
             while (mysqlResult.Read())
@@ -337,8 +334,7 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
-            }
-
+            }           
             _Connection.Close();
             return sum;
         }

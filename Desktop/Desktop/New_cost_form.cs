@@ -26,6 +26,7 @@ namespace Desktop
 
         DBHandler controller = new DBHandler(host, database, user, password);      
         BindingSource new_cost_binding = new BindingSource();
+        SqlFunction connect = new SqlFunction(host, database, user, password);
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
@@ -47,14 +48,14 @@ namespace Desktop
             try
             {
                 string categoryName = comboBoxCategoryNewCost.Text;
-                string id =New.generator();
+                string id =secondary_methods.generator();
                 int ID_user = LoginForm.user_ID;             
                 string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
                 string name = tbNameNewCost.Text;
                 string description = richTextBoxDescriptionNewCost.Text;
                 double money = double.Parse(tbValue.Text);
-                string Date = New.date();               
-                SqlFunction.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
+                string Date = secondary_methods.date();               
+               connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
                
                                 // DataGridView2__Drow(ID_cost); 
                          
