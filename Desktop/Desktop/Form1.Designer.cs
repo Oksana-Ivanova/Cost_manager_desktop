@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageStart = new System.Windows.Forms.TabPage();
             this.labelSrartPage = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelSrartPage.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
+            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
             this.labelSrartPage.Location = new System.Drawing.Point(50, 30);
             this.labelSrartPage.Name = "labelSrartPage";
             this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -332,14 +332,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
             this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea1.Name = "ChartArea1";
-            this.chart_recent_cost.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chart_recent_cost.ChartAreas.Add(chartArea2);
             this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.chart_recent_cost.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chart_recent_cost.Series.Add(series2);
             this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
             this.chart_recent_cost.TabIndex = 8;
             this.chart_recent_cost.Text = "Last week";
@@ -589,7 +589,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.05";
+            this.Text = "Cost Manager v0.07";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);

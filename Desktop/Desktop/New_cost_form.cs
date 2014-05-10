@@ -16,7 +16,6 @@ namespace Desktop
         {
             InitializeComponent();
             comboBoxCategoryNewCost_Set();
-            tbValue.AppendText("0");
         }
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
@@ -27,47 +26,88 @@ namespace Desktop
         DBHandler controller = new DBHandler(host, database, user, password);      
         BindingSource new_cost_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
+        
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
         }
-         private void   comboBoxCategoryNewCost_Set()
+        
+        private void   comboBoxCategoryNewCost_Set()
         {
             List<CostType> categoryName = new List<CostType>();
             categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
-             CostType tempObject = new CostType();
-             categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+            CostType tempObject = new CostType();
+            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Household", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Business", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Health", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
           
-              new_cost_binding.DataSource= categoryName;
-              comboBoxCategoryNewCost.DataSource = new_cost_binding.DataSource;
-              comboBoxCategoryNewCost.DisplayMember = "Name";
-              comboBoxCategoryNewCost.ValueMember = "Name";
+            new_cost_binding.DataSource= categoryName;
+            cboCategoryNewCost.DataSource = new_cost_binding.DataSource;
+            cboCategoryNewCost.DisplayMember = "Name";
+            cboCategoryNewCost.ValueMember = "Name";
         }
-        private void button_ok_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Validate fields on the form
+        /// </summary>
+        /// <returns>true if all fields on the form are filled correctly 
+        /// and there are no empty eesential fields</returns>
+        private bool validateFields()
         {
+            if (tbNameNewCost.Text == String.Empty)
+            {
+                MessageBox.Show("Please fill cost name!", "Empty cost name.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            }
+
+            if (numValue.Value == Decimal.Zero)
+            {
+                MessageBox.Show("Please set cost value!", "Empty cost value.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (validateFields() == false)
+                return;
+
             string table_name="costs";
             string column_name="id";
             try
             {
-                string categoryName = comboBoxCategoryNewCost.Text;
+                string categoryName = cboCategoryNewCost.Text;
                 string id = connect.generator_id(table_name, column_name);
                 int ID_user = LoginForm.user_ID;             
                 string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
                 string name = tbNameNewCost.Text;
                 string description = richTextBoxDescriptionNewCost.Text;
-                double money = double.Parse(tbValue.Text);
-                string Date = secondary_methods.date();               
-               connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
+                double money = Convert.ToDouble(numValue.Value);
+                string Date = secondary_methods.date();
+                connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
                
-                                // DataGridView2__Drow(ID_cost); 
-                         
+                // DataGridView2__Drow(ID_cost); 
+                
+                this.Close();
             }
             catch { }
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void New_cost_form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCategoryNewCost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
        

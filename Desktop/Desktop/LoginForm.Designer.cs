@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Ok = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.linkLabel_ForgotPass = new System.Windows.Forms.LinkLabel();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.button_Cancel = new System.Windows.Forms.Button();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LabelStatusLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button_Ok
+            // btnOk
             // 
-            this.button_Ok.Location = new System.Drawing.Point(89, 120);
-            this.button_Ok.Name = "button_Ok";
-            this.button_Ok.Size = new System.Drawing.Size(62, 23);
-            this.button_Ok.TabIndex = 0;
-            this.button_Ok.Text = "Ok";
-            this.button_Ok.UseVisualStyleBackColor = true;
-            this.button_Ok.Click += new System.EventHandler(this.button_Ok_Click);
+            this.btnOk.Location = new System.Drawing.Point(80, 115);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(62, 23);
+            this.btnOk.TabIndex = 3;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // linkLabel_ForgotPass
             // 
@@ -56,60 +56,60 @@
             this.linkLabel_ForgotPass.AutoSize = true;
             this.linkLabel_ForgotPass.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel_ForgotPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkLabel_ForgotPass.Location = new System.Drawing.Point(98, 97);
+            this.linkLabel_ForgotPass.Location = new System.Drawing.Point(80, 90);
             this.linkLabel_ForgotPass.Name = "linkLabel_ForgotPass";
             this.linkLabel_ForgotPass.Size = new System.Drawing.Size(100, 13);
-            this.linkLabel_ForgotPass.TabIndex = 1;
+            this.linkLabel_ForgotPass.TabIndex = 2;
             this.linkLabel_ForgotPass.TabStop = true;
             this.linkLabel_ForgotPass.Text = "Forgot a password?";
             this.linkLabel_ForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ForgotPass_LinkClicked);
             // 
             // tbLogin
             // 
-            this.tbLogin.Location = new System.Drawing.Point(89, 31);
+            this.tbLogin.Location = new System.Drawing.Point(80, 22);
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(136, 20);
-            this.tbLogin.TabIndex = 2;
+            this.tbLogin.TabIndex = 0;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(89, 63);
+            this.tbPassword.Location = new System.Drawing.Point(80, 57);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(136, 20);
-            this.tbPassword.TabIndex = 3;
+            this.tbPassword.TabIndex = 1;
             this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
-            // labelLogin
+            // lblLogin
             // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.BackColor = System.Drawing.Color.Transparent;
-            this.labelLogin.Location = new System.Drawing.Point(12, 31);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(33, 13);
-            this.labelLogin.TabIndex = 4;
-            this.labelLogin.Text = "Login";
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogin.Location = new System.Drawing.Point(10, 25);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.TabIndex = 5;
+            this.lblLogin.Text = "Login";
             // 
-            // labelPassword
+            // lblPassword
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.BackColor = System.Drawing.Color.Transparent;
-            this.labelPassword.Location = new System.Drawing.Point(12, 63);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(53, 13);
-            this.labelPassword.TabIndex = 5;
-            this.labelPassword.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Location = new System.Drawing.Point(10, 60);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.TabIndex = 6;
+            this.lblPassword.Text = "Password";
             // 
-            // button_Cancel
+            // btnCancel
             // 
-            this.button_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_Cancel.Location = new System.Drawing.Point(161, 120);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(64, 23);
-            this.button_Cancel.TabIndex = 6;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
-            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(152, 115);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 23);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // statusStrip1
             // 
@@ -122,6 +122,7 @@
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Visible = false;
             // 
             // LabelStatusLogin
             // 
@@ -138,14 +139,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(261, 168);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.labelLogin);
+            this.ClientSize = new System.Drawing.Size(254, 162);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.linkLabel_ForgotPass);
-            this.Controls.Add(this.button_Ok);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -163,13 +164,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_Ok;
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.LinkLabel linkLabel_ForgotPass;
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.Button button_Cancel;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LabelStatusLogin;
 
