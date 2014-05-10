@@ -343,11 +343,13 @@ namespace Desktop
             _Connection.Close();
             return resultCategory;
         }
-        public double get_sum_from_cost_by_date_and_cost_type_id(string cost_type_id,string Date) 
+        public double get_sum_from_cost_by_date_and_cost_type_id(string cost_type_id, DateTime period_begin_date, DateTime period_end_date) 
         {
+            string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date);
             _Connection.Open();
             MySqlCommand mysqlQuery = _Connection.CreateCommand();
-            mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and cost_type_id='" + cost_type_id + "' and created_at<'2014-05-09 00:00:00';";
+            mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and cost_type_id='" + cost_type_id + "' and created_at>'" + period_begin + "' and created_at<'" + period_end + "';";
            // mysqlQuery.CommandText = "select sum(price) from costs where user_id=2 and cost_type_id='a33b437e46' and created_at>'2014-05-08 00:00:00'and created_at<'2014-05-09 00:00:00';";
             MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
             double sum=0;
@@ -360,7 +362,8 @@ namespace Desktop
                 catch { }
             }           
             _Connection.Close();
-            return sum;
+            return sum;         
+           
         }
     }
 }
