@@ -83,7 +83,8 @@ namespace Desktop
             SqlFunction connect = new SqlFunction(host, database, user, password);
             string table_name = "limits";
             string column_name = "id";
-            string id = connect.generator_id(table_name, column_name);
+            //string id = connect.generator_id(table_name, column_name);
+            string id = SequenceGenerator.GenerateUniqueString();
             string Date = secondary_methods.date();
             try
             {
@@ -215,6 +216,24 @@ namespace Desktop
 
           _Connection.Close();
           return genereted_id;
+        }
+
+        
+        public static string UniqueIdGenerator()
+        {
+            long secondsCount = DateTime.Now.DayOfYear * 24 + DateTime.Now.Hour;
+            secondsCount = secondsCount * 60 + DateTime.Now.Minute;
+            secondsCount = secondsCount * 60 + DateTime.Now.Second;
+            secondsCount = secondsCount * 1000 + DateTime.Now.Millisecond;
+            
+            string resultString = secondsCount.ToString("X").ToLower();
+
+            while (resultString.Length < 10)
+            {
+                resultString = "0" + resultString;
+            }
+
+            return resultString;
         }
 
     }

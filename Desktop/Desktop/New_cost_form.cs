@@ -79,7 +79,8 @@ namespace Desktop
             try
             {
                 string categoryName = cboCategory.Text;
-                string id = connect.generator_id(table_name, column_name);
+                //string id = connect.generator_id(table_name, column_name);
+                string id = SequenceGenerator.GenerateUniqueString();
                 int ID_user = LoginForm.user_ID;             
                 string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
                 string name = tbNameNewCost.Text;

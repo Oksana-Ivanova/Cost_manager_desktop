@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequenceGenerator.cs" />
     <Compile Include="SqlFunction.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AboutBox.resx">
