@@ -63,6 +63,7 @@ namespace Desktop
                          
             }
             catch { }
+            this.Close();
         }
 
         private void button_cancel_Click(object sender, EventArgs e)

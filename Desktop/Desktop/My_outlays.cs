@@ -16,7 +16,7 @@ namespace Desktop
         {
             InitializeComponent();
             comboBoxViewAs.Text = "Chart";
-            comboBoxCategoryOutlays.Text = "Yesterday";
+            comboBoxCategoryOutlays.Text = "Last week";
             comboBoxCategory_Set();
             panel_chart.Visible = true;
              double x = 0;
@@ -25,6 +25,8 @@ namespace Desktop
                     chart_outlays.Series[0].Points.AddXY(DateTime.Today.AddDays(-4+i),x );
                     x += i;
                 }
+                period_begin_date = DateTime.Today.AddDays(-6);
+                period_end_date = DateTime.Today;
             
         }
         const string host = "127.0.0.1";
@@ -35,9 +37,10 @@ namespace Desktop
         DBHandler controller = new DBHandler(host, database, user, password);
         BindingSource outlays_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
-      
 
-
+        DateTime period_begin_date;
+        DateTime period_end_date;
+          
         private void button_new_cost_Click(object sender, EventArgs e)
         {
             New_cost_form CostForm = new New_cost_form();
@@ -65,7 +68,33 @@ namespace Desktop
 
 
         private void comboBoxCategoryOutlays_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
+            if (comboBoxCategoryOutlays.Text == "Custom") panel_custom_date.Visible = true;
+            else panel_custom_date.Visible = false;
+           
+            switch (comboBoxCategoryOutlays.Text)
+            { case "Last week":
+                    period_begin_date = DateTime.Today.AddDays(-6);
+                    period_end_date = DateTime.Today;
+                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
+                    break;
+            case "Last month":
+                    period_begin_date = DateTime.Today.AddMonths(-1);
+                    period_end_date = DateTime.Today;
+                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
+                    break;
+            case "Last year":
+                   period_begin_date = DateTime.Today.AddYears(-1);
+                    period_end_date = DateTime.Today;
+                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
+                    break;
+            case "Custom":
+                    period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+                  period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+                  MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
+                    break;
+            
+            }
             //switch (comboBoxCategory.Text)
             //{
             //    case "Custom":
@@ -78,8 +107,7 @@ namespace Desktop
             //    // default: comboBoxPeriod.Text = "Yesterday"; break;
 
             //}
-             if (comboBoxCategoryOutlays.Text == "Custom") panel_custom_date.Visible = true;
-             else panel_custom_date.Visible = false; 
+            
         }
 
         private void panel_custom_date_Paint(object sender, PaintEventArgs e)
@@ -116,9 +144,9 @@ namespace Desktop
         {
             List<CostType> categoryName = new List<CostType>();
             categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
-             CostType tempObject = new CostType();
-             categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-          
+            CostType tempObject = new CostType();
+            // categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+             categoryName.Insert(0, new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
             outlays_binding.DataSource = categoryName;        
             comboBoxCategory.DataSource = outlays_binding.DataSource;
             comboBoxCategory.DisplayMember = "Name";
@@ -130,7 +158,7 @@ namespace Desktop
            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
                    // MessageBox.Show(connectionString);
             DataSet ds = new DataSet();
-            ds = controller.getAllCosts(cost_type_id);
+            ds = controller.getAllCostsBySelectedPeriod(cost_type_id, period_begin_date, period_end_date);
           
             dataGridViewOutlays.DataSource = ds.Tables["costs"]; // ataGridViewOutlays end     
             draw_chart_outlays(cost_type_id);
@@ -139,15 +167,14 @@ namespace Desktop
         public void draw_chart_outlays(string cost_type_id)
         {
            
-            int i = 0;
-            int type_of_period = 1;
+            int i = 0;           
             int number_of_periods = 4;
             chart_outlays.Series[0].Points.Clear();
             string Date;
             do
             {
                 Date = secondary_methods.date_transform_to_sql_date(DateTime.UtcNow.ToString(), 9);
-                MessageBox.Show(Convert.ToDateTime(Date).ToString());
+              //  MessageBox.Show(Convert.ToDateTime(Date).ToString());
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, Date);
 

@@ -61,8 +61,7 @@ namespace Desktop
                 MessageBox.Show(user_ID.ToString());
             }
             else
-            {
-                tbLogin.Clear();
+            {                
                 tbPassword.Clear();
                 MessageBox.Show("Неправильно заповнені поля Login або Pasword");
             }

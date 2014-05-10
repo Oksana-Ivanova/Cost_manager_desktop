@@ -17,6 +17,8 @@ namespace Desktop
             long part_2 = rnd.Next(100, 999);
             return Convert.ToString(Convert.ToInt64(Convert.ToString(part_1) + Convert.ToString(part_2)), 16);
         }
+        public static string datetime_to_sql_format(DateTime date)
+        { return date.Year.ToString() + "." + date.Month.ToString() + "." + date.Day.ToString() + " " + date.Hour.ToString() + ":" + date.Minute.ToString() + ":" + date.Second.ToString(); }
         public static string date()
         {
             DateTime date = new DateTime();

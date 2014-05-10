@@ -124,7 +124,27 @@ namespace Desktop
             finally { _Connection.Close(); }
             return ds;
         }
+        public DataSet getAllCostsBySelectedPeriod(string ID_cost,DateTime period_begin_date,DateTime period_end_date)
+        {
+            DataSet ds = new DataSet();
+            _Connection.Open();
+            string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date);
+            try
+            {
+                //MySqlDataAdapter adap = new MySqlDataAdapter("select * from heroku_9e3361f1a2a704a.costs where cost_type_id='" + ID_cost + "'and created_at>'" + period_begin_date + "'and created_at<'" + period_end_date + "';", _Connection);
+                MySqlDataAdapter adap = new MySqlDataAdapter("select * from  costs where cost_type_id='"+ID_cost+"'and created_at>'"+period_begin+"' and created_at<'"+period_end+"';",_Connection);
+             // "select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='7b9c73541a'and created_at>'2014-04-13 0:00:00' and created_at<'2014-05-10 0:00:00';"
+                //  select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='7b9c73541a'and created_at>'2014-04-13 00:00:00' and created_at<'2014-05-10 00:00:00'
+                MessageBox.Show("select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='" + ID_cost + "'and created_at>'" + period_begin+ "' and created_at<'" + period_end + "';");
+                ds = new System.Data.DataSet();
+                adap.Fill(ds, "costs");
 
+            }
+            catch { }
+            finally { _Connection.Close(); }
+            return ds;
+        }
         public List<Cost> getCostByName(string costName, string userName)
         {
             string userId = getUserByName(userName).Id;

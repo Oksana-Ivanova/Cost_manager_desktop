@@ -33,12 +33,13 @@ namespace Desktop
             string id = connect.generator_id(table_name, column_name);
 
             int ID_user = LoginForm.user_ID;
-            double limit = 1000;
+            double limit = double.Parse(numericUpDownLimit.Value.ToString());
             string type_name = tbTitle.Text;
             string Date = secondary_methods.date();
 
            connect.Insert_into_cost_type(id, ID_user, limit, type_name, Date);
-            tbTitle.Clear();
+           
+            this.Close();
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
@@ -51,9 +52,6 @@ namespace Desktop
            // if (comboBox3.Text == "No Limit") { numericUpDown1.Enabled = false; }
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
+    
     }
 }

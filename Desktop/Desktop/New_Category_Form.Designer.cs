@@ -79,8 +79,7 @@
             0});
             this.numericUpDownLimit.Name = "numericUpDownLimit";
             this.numericUpDownLimit.Size = new System.Drawing.Size(151, 20);
-            this.numericUpDownLimit.TabIndex = 1;
-            this.numericUpDownLimit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDownLimit.TabIndex = 1;            
             // 
             // comboBox_Limit_Cheking
             // 
