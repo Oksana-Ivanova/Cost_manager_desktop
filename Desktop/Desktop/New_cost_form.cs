@@ -42,9 +42,9 @@ namespace Desktop
             categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Health", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
           
             new_cost_binding.DataSource= categoryName;
-            cboCategoryNewCost.DataSource = new_cost_binding.DataSource;
-            cboCategoryNewCost.DisplayMember = "Name";
-            cboCategoryNewCost.ValueMember = "Name";
+            cboCategory.DataSource = new_cost_binding.DataSource;
+            cboCategory.DisplayMember = "Name";
+            cboCategory.ValueMember = "Name";
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Desktop
             string column_name="id";
             try
             {
-                string categoryName = cboCategoryNewCost.Text;
+                string categoryName = cboCategory.Text;
                 string id = connect.generator_id(table_name, column_name);
                 int ID_user = LoginForm.user_ID;             
                 string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
@@ -100,14 +100,15 @@ namespace Desktop
             this.Close();
         }
 
-        private void New_cost_form_Load(object sender, EventArgs e)
+        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void cboCategoryNewCost_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnNewCategory_Click(object sender, EventArgs e)
         {
-
+            New_Category_Form newCategoryForm = new New_Category_Form();
+            newCategoryForm.Show();
         }
 
        

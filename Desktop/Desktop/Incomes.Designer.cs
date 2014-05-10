@@ -34,19 +34,19 @@
             this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox_period = new System.Windows.Forms.GroupBox();
-            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
-            this.panel_custom_date = new System.Windows.Forms.Panel();
-            this.labelStartDateRef = new System.Windows.Forms.Label();
-            this.labelEndDateRef = new System.Windows.Forms.Label();
+            this.leftPanel = new System.Windows.Forms.Panel();
+            this.groupBoxPeriod = new System.Windows.Forms.GroupBox();
+            this.cboPeriod = new System.Windows.Forms.ComboBox();
+            this.panelCustomDate = new System.Windows.Forms.Panel();
+            this.lblStartDateRef = new System.Windows.Forms.Label();
+            this.lblEndDateRef = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.buttonNewIncome = new System.Windows.Forms.Button();
+            this.btnNewIncome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncomes)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.groupBox_period.SuspendLayout();
-            this.panel_custom_date.SuspendLayout();
+            this.leftPanel.SuspendLayout();
+            this.groupBoxPeriod.SuspendLayout();
+            this.panelCustomDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewIncomes
@@ -67,6 +67,7 @@
             this.dataGridViewIncomes.Name = "dataGridViewIncomes";
             this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 320);
             this.dataGridViewIncomes.TabIndex = 1;
+            this.dataGridViewIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIncomes_CellContentClick);
             // 
             // col_num
             // 
@@ -93,102 +94,105 @@
             this.Column_date.HeaderText = "Date";
             this.Column_date.Name = "Column_date";
             // 
-            // panel1
+            // leftPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.groupBox_period);
-            this.panel1.Controls.Add(this.buttonNewIncome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 393);
-            this.panel1.TabIndex = 7;
+            this.leftPanel.BackColor = System.Drawing.Color.Transparent;
+            this.leftPanel.Controls.Add(this.groupBoxPeriod);
+            this.leftPanel.Controls.Add(this.btnNewIncome);
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(245, 393);
+            this.leftPanel.TabIndex = 7;
             // 
-            // groupBox_period
+            // groupBoxPeriod
             // 
-            this.groupBox_period.Controls.Add(this.comboBoxPeriod);
-            this.groupBox_period.Controls.Add(this.panel_custom_date);
-            this.groupBox_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox_period.Location = new System.Drawing.Point(12, 23);
-            this.groupBox_period.Name = "groupBox_period";
-            this.groupBox_period.Size = new System.Drawing.Size(219, 175);
-            this.groupBox_period.TabIndex = 2;
-            this.groupBox_period.TabStop = false;
-            this.groupBox_period.Text = "Period";
+            this.groupBoxPeriod.Controls.Add(this.cboPeriod);
+            this.groupBoxPeriod.Controls.Add(this.panelCustomDate);
+            this.groupBoxPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxPeriod.Location = new System.Drawing.Point(12, 23);
+            this.groupBoxPeriod.Name = "groupBoxPeriod";
+            this.groupBoxPeriod.Size = new System.Drawing.Size(219, 175);
+            this.groupBoxPeriod.TabIndex = 2;
+            this.groupBoxPeriod.TabStop = false;
+            this.groupBoxPeriod.Text = "Period";
             // 
-            // comboBoxPeriod
+            // cboPeriod
             // 
-            this.comboBoxPeriod.FormattingEnabled = true;
-            this.comboBoxPeriod.Items.AddRange(new object[] {
-            "Yesterday",
-            "Last 3 days",
+            this.cboPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPeriod.FormattingEnabled = true;
+            this.cboPeriod.Items.AddRange(new object[] {
             "Last week",
             "Last month",
             "Last year",
             "Custom"});
-            this.comboBoxPeriod.Location = new System.Drawing.Point(7, 20);
-            this.comboBoxPeriod.Name = "comboBoxPeriod";
-            this.comboBoxPeriod.Size = new System.Drawing.Size(185, 24);
-            this.comboBoxPeriod.TabIndex = 0;
-            this.comboBoxPeriod.Text = "Yesterday";
-            this.comboBoxPeriod.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriod_SelectedIndexChanged);
+            this.cboPeriod.Location = new System.Drawing.Point(7, 20);
+            this.cboPeriod.Name = "cboPeriod";
+            this.cboPeriod.Size = new System.Drawing.Size(185, 24);
+            this.cboPeriod.TabIndex = 0;
+            this.cboPeriod.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriod_SelectedIndexChanged);
             // 
-            // panel_custom_date
+            // panelCustomDate
             // 
-            this.panel_custom_date.Controls.Add(this.labelStartDateRef);
-            this.panel_custom_date.Controls.Add(this.labelEndDateRef);
-            this.panel_custom_date.Controls.Add(this.dateTimePickerStart);
-            this.panel_custom_date.Controls.Add(this.dateTimePickerEnd);
-            this.panel_custom_date.Location = new System.Drawing.Point(7, 63);
-            this.panel_custom_date.Name = "panel_custom_date";
-            this.panel_custom_date.Size = new System.Drawing.Size(195, 90);
-            this.panel_custom_date.TabIndex = 5;
-            this.panel_custom_date.Visible = false;
+            this.panelCustomDate.Controls.Add(this.lblStartDateRef);
+            this.panelCustomDate.Controls.Add(this.lblEndDateRef);
+            this.panelCustomDate.Controls.Add(this.dateTimePickerStart);
+            this.panelCustomDate.Controls.Add(this.dateTimePickerEnd);
+            this.panelCustomDate.Location = new System.Drawing.Point(7, 63);
+            this.panelCustomDate.Name = "panelCustomDate";
+            this.panelCustomDate.Size = new System.Drawing.Size(195, 90);
+            this.panelCustomDate.TabIndex = 5;
             // 
-            // labelStartDateRef
+            // lblStartDateRef
             // 
-            this.labelStartDateRef.AutoSize = true;
-            this.labelStartDateRef.Location = new System.Drawing.Point(3, 5);
-            this.labelStartDateRef.Name = "labelStartDateRef";
-            this.labelStartDateRef.Size = new System.Drawing.Size(44, 17);
-            this.labelStartDateRef.TabIndex = 3;
-            this.labelStartDateRef.Text = "From:";
+            this.lblStartDateRef.AutoSize = true;
+            this.lblStartDateRef.Location = new System.Drawing.Point(3, 5);
+            this.lblStartDateRef.Name = "lblStartDateRef";
+            this.lblStartDateRef.Size = new System.Drawing.Size(44, 17);
+            this.lblStartDateRef.TabIndex = 3;
+            this.lblStartDateRef.Text = "From:";
             // 
-            // labelEndDateRef
+            // lblEndDateRef
             // 
-            this.labelEndDateRef.AutoSize = true;
-            this.labelEndDateRef.Location = new System.Drawing.Point(3, 47);
-            this.labelEndDateRef.Name = "labelEndDateRef";
-            this.labelEndDateRef.Size = new System.Drawing.Size(29, 17);
-            this.labelEndDateRef.TabIndex = 4;
-            this.labelEndDateRef.Text = "To:";
+            this.lblEndDateRef.AutoSize = true;
+            this.lblEndDateRef.Location = new System.Drawing.Point(3, 47);
+            this.lblEndDateRef.Name = "lblEndDateRef";
+            this.lblEndDateRef.Size = new System.Drawing.Size(29, 17);
+            this.lblEndDateRef.TabIndex = 4;
+            this.lblEndDateRef.Text = "To:";
             // 
             // dateTimePickerStart
             // 
             this.dateTimePickerStart.Location = new System.Drawing.Point(6, 24);
+            this.dateTimePickerStart.MaxDate = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
+            this.dateTimePickerStart.MinDate = new System.DateTime(2009, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerStart.TabIndex = 1;
+            this.dateTimePickerStart.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerEnd
             // 
             this.dateTimePickerEnd.Location = new System.Drawing.Point(6, 63);
+            this.dateTimePickerEnd.MaxDate = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2009, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerEnd.TabIndex = 2;
+            this.dateTimePickerEnd.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePickerEnd_ValueChanged);
             // 
-            // buttonNewIncome
+            // btnNewIncome
             // 
-            this.buttonNewIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewIncome.Location = new System.Drawing.Point(19, 216);
-            this.buttonNewIncome.Name = "buttonNewIncome";
-            this.buttonNewIncome.Size = new System.Drawing.Size(87, 25);
-            this.buttonNewIncome.TabIndex = 3;
-            this.buttonNewIncome.Text = "Add new";
-            this.buttonNewIncome.UseVisualStyleBackColor = true;
-            this.buttonNewIncome.Click += new System.EventHandler(this.buttonNewIncome_Click);
+            this.btnNewIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnNewIncome.Location = new System.Drawing.Point(19, 216);
+            this.btnNewIncome.Name = "btnNewIncome";
+            this.btnNewIncome.Size = new System.Drawing.Size(87, 25);
+            this.btnNewIncome.TabIndex = 3;
+            this.btnNewIncome.Text = "Add new";
+            this.btnNewIncome.UseVisualStyleBackColor = true;
+            this.btnNewIncome.Click += new System.EventHandler(this.buttonNewIncome_Click);
             // 
             // Incomes
             // 
@@ -197,15 +201,15 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 393);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.dataGridViewIncomes);
             this.Name = "Incomes";
             this.Text = "Incomes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncomes)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.groupBox_period.ResumeLayout(false);
-            this.panel_custom_date.ResumeLayout(false);
-            this.panel_custom_date.PerformLayout();
+            this.leftPanel.ResumeLayout(false);
+            this.groupBoxPeriod.ResumeLayout(false);
+            this.panelCustomDate.ResumeLayout(false);
+            this.panelCustomDate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -218,14 +222,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Decription;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox_period;
-        private System.Windows.Forms.ComboBox comboBoxPeriod;
-        private System.Windows.Forms.Panel panel_custom_date;
-        private System.Windows.Forms.Label labelStartDateRef;
-        private System.Windows.Forms.Label labelEndDateRef;
+        private System.Windows.Forms.Panel leftPanel;
+        private System.Windows.Forms.GroupBox groupBoxPeriod;
+        private System.Windows.Forms.ComboBox cboPeriod;
+        private System.Windows.Forms.Panel panelCustomDate;
+        private System.Windows.Forms.Label lblStartDateRef;
+        private System.Windows.Forms.Label lblEndDateRef;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
-        private System.Windows.Forms.Button buttonNewIncome;
+        private System.Windows.Forms.Button btnNewIncome;
     }
 }

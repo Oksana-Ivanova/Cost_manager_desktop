@@ -38,10 +38,11 @@
             this.tbNameNewCost = new System.Windows.Forms.TextBox();
             this.lblNameNewCost = new System.Windows.Forms.Label();
             this.lblCategoryNewCost = new System.Windows.Forms.Label();
-            this.cboCategoryNewCost = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusNewCost = new System.Windows.Forms.ToolStripStatusLabel();
             this.numValue = new System.Windows.Forms.NumericUpDown();
+            this.btnNewCategory = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).BeginInit();
             this.SuspendLayout();
@@ -138,19 +139,19 @@
             this.lblCategoryNewCost.TabIndex = 21;
             this.lblCategoryNewCost.Text = "Category";
             // 
-            // cboCategoryNewCost
+            // cboCategory
             // 
-            this.cboCategoryNewCost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCategoryNewCost.FormattingEnabled = true;
-            this.cboCategoryNewCost.Items.AddRange(new object[] {
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Items.AddRange(new object[] {
             "Household,",
             "Business,",
             "Health"});
-            this.cboCategoryNewCost.Location = new System.Drawing.Point(84, 127);
-            this.cboCategoryNewCost.Name = "cboCategoryNewCost";
-            this.cboCategoryNewCost.Size = new System.Drawing.Size(170, 21);
-            this.cboCategoryNewCost.TabIndex = 3;
-            this.cboCategoryNewCost.SelectedIndexChanged += new System.EventHandler(this.cboCategoryNewCost_SelectedIndexChanged);
+            this.cboCategory.Location = new System.Drawing.Point(84, 127);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(141, 21);
+            this.cboCategory.TabIndex = 3;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // statusStrip1
             // 
@@ -185,6 +186,17 @@
             this.numValue.Size = new System.Drawing.Size(170, 20);
             this.numValue.TabIndex = 4;
             // 
+            // btnNewCategory
+            // 
+            this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnNewCategory.Location = new System.Drawing.Point(231, 125);
+            this.btnNewCategory.Name = "btnNewCategory";
+            this.btnNewCategory.Size = new System.Drawing.Size(23, 23);
+            this.btnNewCategory.TabIndex = 24;
+            this.btnNewCategory.Text = "+";
+            this.btnNewCategory.UseVisualStyleBackColor = true;
+            this.btnNewCategory.Click += new System.EventHandler(this.btnNewCategory_Click);
+            // 
             // New_cost_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,8 +205,9 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(294, 262);
+            this.Controls.Add(this.btnNewCategory);
             this.Controls.Add(this.numValue);
-            this.Controls.Add(this.cboCategoryNewCost);
+            this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.lblCategoryNewCost);
             this.Controls.Add(this.dateTimePickerNewCost);
             this.Controls.Add(this.lblDateNewCost);
@@ -212,7 +225,6 @@
             this.MinimizeBox = false;
             this.Name = "New_cost_form";
             this.Text = "New cost";
-            this.Load += new System.EventHandler(this.New_cost_form_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).EndInit();
@@ -233,9 +245,10 @@
         private System.Windows.Forms.TextBox tbNameNewCost;
         private System.Windows.Forms.Label lblNameNewCost;
         private System.Windows.Forms.Label lblCategoryNewCost;
-        private System.Windows.Forms.ComboBox cboCategoryNewCost;
+        private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.ToolStripStatusLabel StatusNewCost;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.NumericUpDown numValue;
+        private System.Windows.Forms.Button btnNewCategory;
     }
 }

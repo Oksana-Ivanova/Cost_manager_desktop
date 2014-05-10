@@ -30,135 +30,120 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.button_new_category = new System.Windows.Forms.Button();
-            this.groupBox_period = new System.Windows.Forms.GroupBox();
-            this.panel_custom_date = new System.Windows.Forms.Panel();
-            this.labelStartDateRef = new System.Windows.Forms.Label();
-            this.labelEndDateRef = new System.Windows.Forms.Label();
+            this.groupBoxCategory = new System.Windows.Forms.GroupBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.btnNewCost = new System.Windows.Forms.Button();
+            this.groupBoxPeriod = new System.Windows.Forms.GroupBox();
+            this.panelCustomDate = new System.Windows.Forms.Panel();
+            this.lblStartDateRef = new System.Windows.Forms.Label();
+            this.lblEndDateRef = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxCategoryOutlays = new System.Windows.Forms.ComboBox();
+            this.cboPeriod = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBoxViewAs = new System.Windows.Forms.ComboBox();
-            this.labelViewAsRef = new System.Windows.Forms.Label();
+            this.cboViewAs = new System.Windows.Forms.ComboBox();
+            this.lblViewAsRef = new System.Windows.Forms.Label();
             this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel_table = new System.Windows.Forms.Panel();
+            this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewOutlays = new System.Windows.Forms.DataGridView();
-            this.panel_chart = new System.Windows.Forms.Panel();
+            this.panelChart = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox_period.SuspendLayout();
-            this.panel_custom_date.SuspendLayout();
+            this.groupBoxCategory.SuspendLayout();
+            this.groupBoxPeriod.SuspendLayout();
+            this.panelCustomDate.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).BeginInit();
-            this.panel_table.SuspendLayout();
+            this.panelTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).BeginInit();
-            this.panel_chart.SuspendLayout();
+            this.panelChart.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(222, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "View As";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.button_new_category);
-            this.panel1.Controls.Add(this.groupBox_period);
+            this.panel1.Controls.Add(this.groupBoxCategory);
+            this.panel1.Controls.Add(this.btnNewCost);
+            this.panel1.Controls.Add(this.groupBoxPeriod);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(245, 442);
             this.panel1.TabIndex = 7;
             // 
-            // groupBox1
+            // groupBoxCategory
             // 
-            this.groupBox1.Controls.Add(this.comboBoxCategory);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 192);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(208, 65);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Category";
+            this.groupBoxCategory.Controls.Add(this.cboCategory);
+            this.groupBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxCategory.Location = new System.Drawing.Point(15, 192);
+            this.groupBoxCategory.Name = "groupBoxCategory";
+            this.groupBoxCategory.Size = new System.Drawing.Size(208, 65);
+            this.groupBoxCategory.TabIndex = 4;
+            this.groupBoxCategory.TabStop = false;
+            this.groupBoxCategory.Text = "Category";
             // 
-            // comboBoxCategory
+            // cboCategory
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(7, 20);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(184, 24);
-            this.comboBoxCategory.TabIndex = 0;
-            this.comboBoxCategory.Text = "Any";
-            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(7, 20);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(184, 24);
+            this.cboCategory.TabIndex = 0;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
-            // button_new_category
+            // btnNewCost
             // 
-            this.button_new_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_new_category.Location = new System.Drawing.Point(21, 279);
-            this.button_new_category.Name = "button_new_category";
-            this.button_new_category.Size = new System.Drawing.Size(117, 28);
-            this.button_new_category.TabIndex = 1;
-            this.button_new_category.Text = "New Category";
-            this.button_new_category.UseVisualStyleBackColor = true;
-            this.button_new_category.Click += new System.EventHandler(this.button_new_category_Click);
+            this.btnNewCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnNewCost.Location = new System.Drawing.Point(21, 279);
+            this.btnNewCost.Name = "btnNewCost";
+            this.btnNewCost.Size = new System.Drawing.Size(117, 28);
+            this.btnNewCost.TabIndex = 1;
+            this.btnNewCost.Text = "New Cost";
+            this.btnNewCost.UseVisualStyleBackColor = true;
+            this.btnNewCost.Click += new System.EventHandler(this.btnNewCost_Click);
             // 
-            // groupBox_period
+            // groupBoxPeriod
             // 
-            this.groupBox_period.AutoSize = true;
-            this.groupBox_period.Controls.Add(this.panel_custom_date);
-            this.groupBox_period.Controls.Add(this.comboBoxCategoryOutlays);
-            this.groupBox_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox_period.Location = new System.Drawing.Point(15, 20);
-            this.groupBox_period.Name = "groupBox_period";
-            this.groupBox_period.Size = new System.Drawing.Size(208, 166);
-            this.groupBox_period.TabIndex = 3;
-            this.groupBox_period.TabStop = false;
-            this.groupBox_period.Text = "Period";
+            this.groupBoxPeriod.AutoSize = true;
+            this.groupBoxPeriod.Controls.Add(this.panelCustomDate);
+            this.groupBoxPeriod.Controls.Add(this.cboPeriod);
+            this.groupBoxPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxPeriod.Location = new System.Drawing.Point(15, 20);
+            this.groupBoxPeriod.Name = "groupBoxPeriod";
+            this.groupBoxPeriod.Size = new System.Drawing.Size(208, 166);
+            this.groupBoxPeriod.TabIndex = 3;
+            this.groupBoxPeriod.TabStop = false;
+            this.groupBoxPeriod.Text = "Period";
             // 
-            // panel_custom_date
+            // panelCustomDate
             // 
-            this.panel_custom_date.Controls.Add(this.labelStartDateRef);
-            this.panel_custom_date.Controls.Add(this.labelEndDateRef);
-            this.panel_custom_date.Controls.Add(this.dateTimePickerStart);
-            this.panel_custom_date.Controls.Add(this.dateTimePickerEnd);
-            this.panel_custom_date.Location = new System.Drawing.Point(14, 49);
-            this.panel_custom_date.Name = "panel_custom_date";
-            this.panel_custom_date.Size = new System.Drawing.Size(177, 90);
-            this.panel_custom_date.TabIndex = 6;
-            this.panel_custom_date.Visible = false;
-            this.panel_custom_date.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_custom_date_Paint);
+            this.panelCustomDate.Controls.Add(this.lblStartDateRef);
+            this.panelCustomDate.Controls.Add(this.lblEndDateRef);
+            this.panelCustomDate.Controls.Add(this.dateTimePickerStart);
+            this.panelCustomDate.Controls.Add(this.dateTimePickerEnd);
+            this.panelCustomDate.Location = new System.Drawing.Point(14, 49);
+            this.panelCustomDate.Name = "panelCustomDate";
+            this.panelCustomDate.Size = new System.Drawing.Size(177, 90);
+            this.panelCustomDate.TabIndex = 6;
             // 
-            // labelStartDateRef
+            // lblStartDateRef
             // 
-            this.labelStartDateRef.AutoSize = true;
-            this.labelStartDateRef.Location = new System.Drawing.Point(3, 4);
-            this.labelStartDateRef.Name = "labelStartDateRef";
-            this.labelStartDateRef.Size = new System.Drawing.Size(44, 17);
-            this.labelStartDateRef.TabIndex = 3;
-            this.labelStartDateRef.Text = "From:";
+            this.lblStartDateRef.AutoSize = true;
+            this.lblStartDateRef.Location = new System.Drawing.Point(3, 4);
+            this.lblStartDateRef.Name = "lblStartDateRef";
+            this.lblStartDateRef.Size = new System.Drawing.Size(44, 17);
+            this.lblStartDateRef.TabIndex = 3;
+            this.lblStartDateRef.Text = "From:";
             // 
-            // labelEndDateRef
+            // lblEndDateRef
             // 
-            this.labelEndDateRef.AutoSize = true;
-            this.labelEndDateRef.Location = new System.Drawing.Point(3, 47);
-            this.labelEndDateRef.Name = "labelEndDateRef";
-            this.labelEndDateRef.Size = new System.Drawing.Size(29, 17);
-            this.labelEndDateRef.TabIndex = 4;
-            this.labelEndDateRef.Text = "To:";
+            this.lblEndDateRef.AutoSize = true;
+            this.lblEndDateRef.Location = new System.Drawing.Point(3, 47);
+            this.lblEndDateRef.Name = "lblEndDateRef";
+            this.lblEndDateRef.Size = new System.Drawing.Size(29, 17);
+            this.lblEndDateRef.TabIndex = 4;
+            this.lblEndDateRef.Text = "To:";
             // 
             // dateTimePickerStart
             // 
@@ -176,56 +161,54 @@
             this.dateTimePickerEnd.TabIndex = 2;
             this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePickerEnd_ValueChanged);
             // 
-            // comboBoxCategoryOutlays
+            // cboPeriod
             // 
-            this.comboBoxCategoryOutlays.FormattingEnabled = true;
-            this.comboBoxCategoryOutlays.Items.AddRange(new object[] {
-            "Yesterday",
-            "Last 3 days",
+            this.cboPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPeriod.FormattingEnabled = true;
+            this.cboPeriod.Items.AddRange(new object[] {
             "Last week",
             "Last month",
             "Last year",
             "Custom"});
-            this.comboBoxCategoryOutlays.Location = new System.Drawing.Point(14, 19);
-            this.comboBoxCategoryOutlays.Name = "comboBoxCategoryOutlays";
-            this.comboBoxCategoryOutlays.Size = new System.Drawing.Size(177, 24);
-            this.comboBoxCategoryOutlays.TabIndex = 0;
-            this.comboBoxCategoryOutlays.Text = "Yesterday";
-            this.comboBoxCategoryOutlays.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoryOutlays_SelectedIndexChanged);
+            this.cboPeriod.Location = new System.Drawing.Point(14, 19);
+            this.cboPeriod.Name = "cboPeriod";
+            this.cboPeriod.Size = new System.Drawing.Size(177, 24);
+            this.cboPeriod.TabIndex = 0;
+            this.cboPeriod.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriod_SelectedIndexChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.comboBoxViewAs);
-            this.panel2.Controls.Add(this.labelViewAsRef);
+            this.panel2.Controls.Add(this.cboViewAs);
+            this.panel2.Controls.Add(this.lblViewAsRef);
             this.panel2.Location = new System.Drawing.Point(244, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(661, 45);
             this.panel2.TabIndex = 8;
             // 
-            // comboBoxViewAs
+            // cboViewAs
             // 
-            this.comboBoxViewAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxViewAs.FormattingEnabled = true;
-            this.comboBoxViewAs.Items.AddRange(new object[] {
+            this.cboViewAs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboViewAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cboViewAs.FormattingEnabled = true;
+            this.cboViewAs.Items.AddRange(new object[] {
             "Chart",
             "Table"});
-            this.comboBoxViewAs.Location = new System.Drawing.Point(110, 15);
-            this.comboBoxViewAs.Name = "comboBoxViewAs";
-            this.comboBoxViewAs.Size = new System.Drawing.Size(129, 24);
-            this.comboBoxViewAs.TabIndex = 4;
-            this.comboBoxViewAs.Text = "Chart";
-            this.comboBoxViewAs.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewAs_SelectedIndexChanged);
+            this.cboViewAs.Location = new System.Drawing.Point(110, 15);
+            this.cboViewAs.Name = "cboViewAs";
+            this.cboViewAs.Size = new System.Drawing.Size(129, 24);
+            this.cboViewAs.TabIndex = 4;
+            this.cboViewAs.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewAs_SelectedIndexChanged);
             // 
-            // labelViewAsRef
+            // lblViewAsRef
             // 
-            this.labelViewAsRef.AutoSize = true;
-            this.labelViewAsRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelViewAsRef.Location = new System.Drawing.Point(14, 18);
-            this.labelViewAsRef.Name = "labelViewAsRef";
-            this.labelViewAsRef.Size = new System.Drawing.Size(57, 17);
-            this.labelViewAsRef.TabIndex = 5;
-            this.labelViewAsRef.Text = "View As";
+            this.lblViewAsRef.AutoSize = true;
+            this.lblViewAsRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblViewAsRef.Location = new System.Drawing.Point(14, 18);
+            this.lblViewAsRef.Name = "lblViewAsRef";
+            this.lblViewAsRef.Size = new System.Drawing.Size(57, 17);
+            this.lblViewAsRef.TabIndex = 5;
+            this.lblViewAsRef.Text = "View As";
             // 
             // chart_outlays
             // 
@@ -246,21 +229,20 @@
             this.chart_outlays.Size = new System.Drawing.Size(641, 367);
             this.chart_outlays.TabIndex = 0;
             this.chart_outlays.Text = "chart1";
-            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
             // 
-            // panel_table
+            // panelTable
             // 
-            this.panel_table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_table.BackColor = System.Drawing.Color.Transparent;
-            this.panel_table.Controls.Add(this.dataGridViewOutlays);
-            this.panel_table.Location = new System.Drawing.Point(244, 45);
-            this.panel_table.Name = "panel_table";
-            this.panel_table.Padding = new System.Windows.Forms.Padding(10);
-            this.panel_table.Size = new System.Drawing.Size(661, 397);
-            this.panel_table.TabIndex = 9;
-            this.panel_table.Visible = false;
+            this.panelTable.BackColor = System.Drawing.Color.Transparent;
+            this.panelTable.Controls.Add(this.dataGridViewOutlays);
+            this.panelTable.Location = new System.Drawing.Point(244, 45);
+            this.panelTable.Name = "panelTable";
+            this.panelTable.Padding = new System.Windows.Forms.Padding(10);
+            this.panelTable.Size = new System.Drawing.Size(661, 397);
+            this.panelTable.TabIndex = 9;
+            this.panelTable.Visible = false;
             // 
             // dataGridViewOutlays
             // 
@@ -276,19 +258,19 @@
             this.dataGridViewOutlays.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOutlays_CellContentClick);
             this.dataGridViewOutlays.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewOutlays_ColumnAdded);
             // 
-            // panel_chart
+            // panelChart
             // 
-            this.panel_chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_chart.BackColor = System.Drawing.Color.Transparent;
-            this.panel_chart.Controls.Add(this.chart_outlays);
-            this.panel_chart.Location = new System.Drawing.Point(244, 42);
-            this.panel_chart.Name = "panel_chart";
-            this.panel_chart.Padding = new System.Windows.Forms.Padding(10);
-            this.panel_chart.Size = new System.Drawing.Size(661, 387);
-            this.panel_chart.TabIndex = 10;
-            this.panel_chart.Visible = false;
+            this.panelChart.BackColor = System.Drawing.Color.Transparent;
+            this.panelChart.Controls.Add(this.chart_outlays);
+            this.panelChart.Location = new System.Drawing.Point(244, 42);
+            this.panelChart.Name = "panelChart";
+            this.panelChart.Padding = new System.Windows.Forms.Padding(10);
+            this.panelChart.Size = new System.Drawing.Size(661, 387);
+            this.panelChart.TabIndex = 10;
+            this.panelChart.Visible = false;
             // 
             // My_outlays
             // 
@@ -298,50 +280,47 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 442);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel_chart);
+            this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel_table);
+            this.Controls.Add(this.panelTable);
             this.Name = "My_outlays";
             this.Text = "My Outlays";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox_period.ResumeLayout(false);
-            this.panel_custom_date.ResumeLayout(false);
-            this.panel_custom_date.PerformLayout();
+            this.groupBoxCategory.ResumeLayout(false);
+            this.groupBoxPeriod.ResumeLayout(false);
+            this.panelCustomDate.ResumeLayout(false);
+            this.panelCustomDate.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).EndInit();
-            this.panel_table.ResumeLayout(false);
+            this.panelTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).EndInit();
-            this.panel_chart.ResumeLayout(false);
+            this.panelChart.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button_new_category;
-        private System.Windows.Forms.GroupBox groupBox_period;
-        private System.Windows.Forms.Panel panel_custom_date;
-        private System.Windows.Forms.Label labelStartDateRef;
-        private System.Windows.Forms.Label labelEndDateRef;
+        private System.Windows.Forms.Button btnNewCost;
+        private System.Windows.Forms.GroupBox groupBoxPeriod;
+        private System.Windows.Forms.Panel panelCustomDate;
+        private System.Windows.Forms.Label lblStartDateRef;
+        private System.Windows.Forms.Label lblEndDateRef;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
-        private System.Windows.Forms.ComboBox comboBoxCategoryOutlays;
+        private System.Windows.Forms.ComboBox cboPeriod;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBoxViewAs;
-        private System.Windows.Forms.Label labelViewAsRef;
+        private System.Windows.Forms.ComboBox cboViewAs;
+        private System.Windows.Forms.Label lblViewAsRef;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
-        private System.Windows.Forms.Panel panel_table;
+        private System.Windows.Forms.Panel panelTable;
         private System.Windows.Forms.DataGridView dataGridViewOutlays;
-        private System.Windows.Forms.Panel panel_chart;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.Panel panelChart;
+        private System.Windows.Forms.GroupBox groupBoxCategory;
+        private System.Windows.Forms.ComboBox cboCategory;
 
     }
 }

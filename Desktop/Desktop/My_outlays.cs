@@ -15,10 +15,8 @@ namespace Desktop
         public My_outlays()
         {
             InitializeComponent();
-            comboBoxViewAs.Text = "Chart";
-            comboBoxCategoryOutlays.Text = "Yesterday";
-            comboBoxCategory_Set();
-            panel_chart.Visible = true;
+
+            initControls();
              double x = 0;
                 for (int i = 0; i < 4; i++)
                 {
@@ -27,6 +25,7 @@ namespace Desktop
                 }
             
         }
+
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
@@ -35,98 +34,114 @@ namespace Desktop
         DBHandler controller = new DBHandler(host, database, user, password);
         BindingSource outlays_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
-      
 
-
-        private void button_new_cost_Click(object sender, EventArgs e)
+        private enum PeriodMode
         {
-            New_cost_form CostForm = new New_cost_form();
-            CostForm.Show();
+            LastWeek = 0,
+            LastMonth = 1,
+            LastYear = 2,
+            Custom = 3
+        };
+        private enum ViewMode
+        {
+            Chart = 0,
+            Table = 1
+        };
+
+        private void initCategoriesComboData()
+        {
+            List<CostType> categoryName = new List<CostType>();
+            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
+            CostType tempObject = new CostType();
+            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+
+            outlays_binding.DataSource = categoryName;
+            cboCategory.DataSource = outlays_binding.DataSource;
+            cboCategory.DisplayMember = "Name";
+            cboCategory.ValueMember = "Name";
         }
 
-     
+        private void initControls()
+        {
+            cboPeriod.SelectedIndex = (int)PeriodMode.LastWeek;
 
-   
+            dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
+            dateTimePickerStart.MaxDate = DateTime.Today;
+            dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
+            dateTimePickerEnd.MaxDate = DateTime.Today;
+
+            initCategoriesComboData();
+            cboCategory.SelectedIndex = 0;
+
+            cboViewAs.SelectedIndex = 0;
+
+            panelChart.Visible = true;
+        }
+
+        private void fillDateBoundsByPeriod()
+        {
+            switch ((PeriodMode)cboPeriod.SelectedIndex)
+            {
+                case PeriodMode.LastWeek:
+                    dateTimePickerStart.Value = dateTimePickerEnd.Value.AddDays(-7);
+                    break;
+                case PeriodMode.LastMonth:
+                    dateTimePickerStart.Value = dateTimePickerEnd.Value.AddMonths(-1);
+                    break;
+                case PeriodMode.LastYear:
+                    dateTimePickerStart.Value = dateTimePickerEnd.Value.AddYears(-1);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void comboBoxPeriod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPeriod.SelectedIndex == (int)PeriodMode.Custom)
+            {
+                panelCustomDate.Enabled = true;
+            }
+            else
+            {
+                panelCustomDate.Enabled = false;
+            }
+
+            fillDateBoundsByPeriod();
+        }
    
         private void comboBoxViewAs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxViewAs.Text == "Table") 
+            switch ((ViewMode)cboViewAs.SelectedIndex) 
             {
-                panel_table.Visible = true; 
-                panel_chart.Visible = false; 
-            }
-            if (comboBoxViewAs.Text == "Chart")
-            {
-                panel_table.Visible = false; panel_chart.Visible = true;
+                case ViewMode.Chart:
+                    panelTable.Visible = false; 
+                    panelChart.Visible = true;
+                    break;
+                case ViewMode.Table:
+                    panelChart.Visible = false; 
+                    panelTable.Visible = true;
+                    break;
+                default:
+                    panelChart.Visible = false;
+                    panelTable.Visible = true;
+                    break;
             } 
         }
-
-      
-
-
-        private void comboBoxCategoryOutlays_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //switch (comboBoxCategory.Text)
-            //{
-            //    case "Custom":
-            //        panel_custom_date.Visible = true;
-            //        break;
-            //    case "Yesterday":
-            //        panel_custom_date.Visible = false;
-            //        //change chart;
-            //        break;
-            //    // default: comboBoxPeriod.Text = "Yesterday"; break;
-
-            //}
-             if (comboBoxCategoryOutlays.Text == "Custom") panel_custom_date.Visible = true;
-             else panel_custom_date.Visible = false; 
-        }
-
-        private void panel_custom_date_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button_new_category_Click(object sender, EventArgs e)
-        {
-            New_Category_Form categoryForm = new New_Category_Form();
-            categoryForm.ShowDialog();
-        }
-
-        private void chart_outlays_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
-            if (dateTimePickerStart.Value > dateTimePickerEnd.Value)
-            { dateTimePickerEnd.Value = DateTime.Now;
-                dateTimePickerStart.Value = DateTime.Now;
-                MessageBox.Show("Error in date!");
-               
-            }
+            dateTimePickerStart.MaxDate = dateTimePickerEnd.Value;
         }
 
         private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
         {
+            dateTimePickerEnd.MinDate = dateTimePickerStart.Value;     
+        }
 
-        }
-        private void comboBoxCategory_Set()
-        {
-            List<CostType> categoryName = new List<CostType>();
-            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
-             CostType tempObject = new CostType();
-             categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-          
-            outlays_binding.DataSource = categoryName;        
-            comboBoxCategory.DataSource = outlays_binding.DataSource;
-            comboBoxCategory.DisplayMember = "Name";
-            comboBoxCategory.ValueMember = "Name";
-        }
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string categoryName = comboBoxCategory.Text;    //     dataGridViewOutlays begin
+            string categoryName = cboCategory.Text;    //     dataGridViewOutlays begin
            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
                    // MessageBox.Show(connectionString);
             DataSet ds = new DataSet();
@@ -136,6 +151,13 @@ namespace Desktop
             draw_chart_outlays(cost_type_id);
 
         }
+
+        private void btnNewCost_Click(object sender, EventArgs e)
+        {
+            New_cost_form newCostForm = new New_cost_form();
+            newCostForm.Show();
+        }
+
         public void draw_chart_outlays(string cost_type_id)
         {
            
@@ -180,7 +202,6 @@ namespace Desktop
                 catch { }
             }
         }
-
-      
+              
     }
 }

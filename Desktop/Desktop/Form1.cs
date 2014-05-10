@@ -130,7 +130,6 @@ namespace Desktop
             Application.Exit();
             loginForm.Close();
         }
-
-    
+            
     }
 }
