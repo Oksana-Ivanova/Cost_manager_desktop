@@ -16,23 +16,29 @@ namespace Desktop
         public New_Category_Form()
         {
             InitializeComponent();
-            comboBox_Limit_Cheking.Text = "No Limit";
-            
+            cboLimitChecking.SelectedIndex = 0;
         }
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
         const string password = "123";
-
-
+        
         SqlFunction connect = new SqlFunction(host, database, user, password);
-        private void button_ok_Click(object sender, EventArgs e)
+
+        private void btnOk_Click(object sender, EventArgs e)
         {
+            if (tbCategoryTitle.Text == String.Empty)
+            {
+                MessageBox.Show( "Set Category name, please!", "Empty Category name.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk );
+                return;
+            }
+
             string table_name = "cost_types";
             string column_name = "id";
             string id = connect.generator_id(table_name, column_name);
 
             int ID_user = LoginForm.user_ID;
+<<<<<<< HEAD
             double limit = double.Parse(numericUpDownLimit.Value.ToString());
             string type_name = tbTitle.Text;
             string Date = secondary_methods.date();
@@ -41,17 +47,38 @@ namespace Desktop
            
             this.Close();
         }
+=======
+            double limit = 1000;
+            string type_name = tbCategoryTitle.Text;
+            string Date = secondary_methods.date();
 
-        private void button_cancel_Click(object sender, EventArgs e)
+            connect.Insert_into_cost_type(id, ID_user, limit, type_name, Date);
+            tbCategoryTitle.Clear();
+>>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
+
+            this.Close();
+        }
+        
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // if (comboBox3.Text == "No Limit") { numericUpDown1.Enabled = false; }
-        }
-
+<<<<<<< HEAD
     
+=======
+        private void cboLimitChecking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLimitChecking.SelectedIndex == 0)
+            {
+                numLimitValue.Enabled = false;
+            }
+            else
+            {
+                numLimitValue.Enabled = true;
+            }
+        }
+        
+>>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
     }
 }

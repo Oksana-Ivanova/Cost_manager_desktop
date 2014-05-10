@@ -28,106 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tbTitleNewIncome = new System.Windows.Forms.TextBox();
-            this.richTextBoxDescriptionNewIncome = new System.Windows.Forms.RichTextBox();
-            this.labelDescription = new System.Windows.Forms.Label();
-            this.tbValueNewIncome = new System.Windows.Forms.TextBox();
-            this.labelValue = new System.Windows.Forms.Label();
-            this.button_cancel = new System.Windows.Forms.Button();
-            this.button_ok = new System.Windows.Forms.Button();
-            this.labelDate = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblValue = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.lblDate = new System.Windows.Forms.Label();
             this.dateTimePickerNewIncome = new System.Windows.Forms.DateTimePicker();
+            this.numValue = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numValue)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTitle
+            // lblTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitle.Location = new System.Drawing.Point(41, 12);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(27, 13);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Title";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Location = new System.Drawing.Point(10, 20);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(27, 13);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Title";
             // 
             // tbTitleNewIncome
             // 
             this.tbTitleNewIncome.Location = new System.Drawing.Point(87, 9);
             this.tbTitleNewIncome.Name = "tbTitleNewIncome";
             this.tbTitleNewIncome.Size = new System.Drawing.Size(170, 20);
-            this.tbTitleNewIncome.TabIndex = 1;
+            this.tbTitleNewIncome.TabIndex = 0;
             // 
-            // richTextBoxDescriptionNewIncome
+            // txtDescription
             // 
-            this.richTextBoxDescriptionNewIncome.Location = new System.Drawing.Point(87, 35);
-            this.richTextBoxDescriptionNewIncome.Name = "richTextBoxDescriptionNewIncome";
-            this.richTextBoxDescriptionNewIncome.Size = new System.Drawing.Size(170, 69);
-            this.richTextBoxDescriptionNewIncome.TabIndex = 2;
-            this.richTextBoxDescriptionNewIncome.Text = "";
+            this.txtDescription.Location = new System.Drawing.Point(87, 38);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(170, 69);
+            this.txtDescription.TabIndex = 1;
+            this.txtDescription.Text = "";
             // 
-            // labelDescription
+            // lblDescription
             // 
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
-            this.labelDescription.Location = new System.Drawing.Point(12, 35);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(60, 13);
-            this.labelDescription.TabIndex = 3;
-            this.labelDescription.Text = "Description";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Location = new System.Drawing.Point(10, 41);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.TabIndex = 3;
+            this.lblDescription.Text = "Description";
             // 
-            // tbValueNewIncome
+            // lblValue
             // 
-            this.tbValueNewIncome.Location = new System.Drawing.Point(87, 111);
-            this.tbValueNewIncome.Name = "tbValueNewIncome";
-            this.tbValueNewIncome.Size = new System.Drawing.Size(170, 20);
-            this.tbValueNewIncome.TabIndex = 4;
+            this.lblValue.AutoSize = true;
+            this.lblValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblValue.Location = new System.Drawing.Point(10, 117);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(34, 13);
+            this.lblValue.TabIndex = 5;
+            this.lblValue.Text = "Value";
             // 
-            // labelValue
+            // btnCancel
             // 
-            this.labelValue.AutoSize = true;
-            this.labelValue.BackColor = System.Drawing.Color.Transparent;
-            this.labelValue.Location = new System.Drawing.Point(38, 115);
-            this.labelValue.Name = "labelValue";
-            this.labelValue.Size = new System.Drawing.Size(34, 13);
-            this.labelValue.TabIndex = 5;
-            this.labelValue.Text = "Value";
+            this.btnCancel.Location = new System.Drawing.Point(182, 178);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button_cancel
+            // btnOk
             // 
-            this.button_cancel.Location = new System.Drawing.Point(182, 175);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_cancel.TabIndex = 7;
-            this.button_cancel.Text = "Cancel";
-            this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            this.btnOk.Location = new System.Drawing.Point(87, 178);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 6;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // button_ok
+            // lblDate
             // 
-            this.button_ok.Location = new System.Drawing.Point(87, 175);
-            this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(75, 23);
-            this.button_ok.TabIndex = 6;
-            this.button_ok.Text = "Ok";
-            this.button_ok.UseVisualStyleBackColor = true;
-            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
-            // 
-            // labelDate
-            // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.BackColor = System.Drawing.Color.Transparent;
-            this.labelDate.Location = new System.Drawing.Point(38, 141);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(30, 13);
-            this.labelDate.TabIndex = 9;
-            this.labelDate.Text = "Date";
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Location = new System.Drawing.Point(10, 146);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.TabIndex = 9;
+            this.lblDate.Text = "Date";
             // 
             // dateTimePickerNewIncome
             // 
-            this.dateTimePickerNewIncome.Location = new System.Drawing.Point(87, 137);
+            this.dateTimePickerNewIncome.Location = new System.Drawing.Point(87, 140);
             this.dateTimePickerNewIncome.Name = "dateTimePickerNewIncome";
             this.dateTimePickerNewIncome.Size = new System.Drawing.Size(170, 20);
             this.dateTimePickerNewIncome.TabIndex = 10;
+            // 
+            // numValue
+            // 
+            this.numValue.DecimalPlaces = 2;
+            this.numValue.Location = new System.Drawing.Point(87, 115);
+            this.numValue.Name = "numValue";
+            this.numValue.Size = new System.Drawing.Size(170, 20);
+            this.numValue.TabIndex = 11;
             // 
             // New_Incomes
             // 
@@ -136,23 +138,24 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 206);
+            this.ClientSize = new System.Drawing.Size(294, 222);
+            this.Controls.Add(this.numValue);
             this.Controls.Add(this.dateTimePickerNewIncome);
-            this.Controls.Add(this.labelDate);
-            this.Controls.Add(this.button_cancel);
-            this.Controls.Add(this.button_ok);
-            this.Controls.Add(this.labelValue);
-            this.Controls.Add(this.tbValueNewIncome);
-            this.Controls.Add(this.labelDescription);
-            this.Controls.Add(this.richTextBoxDescriptionNewIncome);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.lblValue);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.tbTitleNewIncome);
-            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "New_Incomes";
             this.Text = "New Income";
+            ((System.ComponentModel.ISupportInitialize)(this.numValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,15 +163,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox tbTitleNewIncome;
-        private System.Windows.Forms.RichTextBox richTextBoxDescriptionNewIncome;
-        private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.TextBox tbValueNewIncome;
-        private System.Windows.Forms.Label labelValue;
-        private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.Button button_ok;
-        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblValue;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerNewIncome;
+        private System.Windows.Forms.NumericUpDown numValue;
     }
 }

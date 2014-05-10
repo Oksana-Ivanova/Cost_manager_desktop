@@ -31,7 +31,7 @@ namespace Desktop
         public static string user_name;
         public static string user_pasword;
         
-        private void button_Ok_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
             user_name = tbLogin.Text;
@@ -52,13 +52,14 @@ namespace Desktop
             }
            if (controller.getUserByName(user_name).Pasword.Equals(user_pasword))
            {
-             
-                   user_ID = int.Parse(controller.getUserByName(user_name).Id);
+               user_ID = int.Parse(controller.getUserByName(user_name).Id);
                
-              //  this.Hide();
-                Main mainform = new Main();
-                mainform.Show();
-                MessageBox.Show(user_ID.ToString());
+               Main mainform = new Main();
+               
+               this.Hide();
+               mainform.Show();
+               MessageBox.Show(user_ID.ToString());
+
             }
             else
             {                
@@ -66,9 +67,10 @@ namespace Desktop
                 MessageBox.Show("Неправильно заповнені поля Login або Pasword");
             }
            // if (!mainform.Enabled) { Application.Exit(); }
+
         }
 
-        private void button_Cancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -83,6 +85,5 @@ namespace Desktop
             tbPassword.UseSystemPasswordChar = true;
         }
 
-        
     }
 }

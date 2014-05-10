@@ -126,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelSrartPage.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
+            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
             this.labelSrartPage.Location = new System.Drawing.Point(50, 30);
             this.labelSrartPage.Name = "labelSrartPage";
             this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -560,21 +560,21 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -589,7 +589,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.05";
+            this.Text = "Cost Manager v0.07";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);

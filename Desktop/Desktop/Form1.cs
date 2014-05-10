@@ -58,8 +58,7 @@ namespace Desktop
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // this.Close();
-            Application.Exit();
+            closeApplication();
         }
 
         private void chart_recent_cost_Click(object sender, EventArgs e)
@@ -111,8 +110,7 @@ namespace Desktop
 
         private void linkLabelLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            Application.Exit();
+            closeApplication();
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,8 +125,11 @@ namespace Desktop
             helpForm.ShowDialog();
         }
 
-       
-
-    
+        private void closeApplication()
+        {
+            Application.Exit();
+            loginForm.Close();
+        }
+            
     }
 }

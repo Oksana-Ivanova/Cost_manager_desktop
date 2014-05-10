@@ -28,91 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitleCategory = new System.Windows.Forms.Label();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.gbLimitCategory = new System.Windows.Forms.GroupBox();
-            this.numericUpDownLimit = new System.Windows.Forms.NumericUpDown();
-            this.comboBox_Limit_Cheking = new System.Windows.Forms.ComboBox();
-            this.button_cancel = new System.Windows.Forms.Button();
-            this.button_ok = new System.Windows.Forms.Button();
-            this.gbLimitCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).BeginInit();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.tbCategoryTitle = new System.Windows.Forms.TextBox();
+            this.gbCategoryLimit = new System.Windows.Forms.GroupBox();
+            this.numLimitValue = new System.Windows.Forms.NumericUpDown();
+            this.cboLimitChecking = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.gbCategoryLimit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLimitValue)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTitleCategory
+            // lblTitle
             // 
-            this.labelTitleCategory.AutoSize = true;
-            this.labelTitleCategory.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleCategory.Location = new System.Drawing.Point(12, 18);
-            this.labelTitleCategory.Name = "labelTitleCategory";
-            this.labelTitleCategory.Size = new System.Drawing.Size(27, 13);
-            this.labelTitleCategory.TabIndex = 0;
-            this.labelTitleCategory.Text = "Title";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Location = new System.Drawing.Point(12, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(27, 13);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Title";
             // 
-            // tbTitle
+            // tbCategoryTitle
             // 
-            this.tbTitle.Location = new System.Drawing.Point(44, 15);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(151, 20);
-            this.tbTitle.TabIndex = 1;
+            this.tbCategoryTitle.Location = new System.Drawing.Point(44, 15);
+            this.tbCategoryTitle.Name = "tbCategoryTitle";
+            this.tbCategoryTitle.Size = new System.Drawing.Size(151, 20);
+            this.tbCategoryTitle.TabIndex = 0;
             // 
-            // gbLimitCategory
+            // gbCategoryLimit
             // 
-            this.gbLimitCategory.BackColor = System.Drawing.Color.Transparent;
-            this.gbLimitCategory.Controls.Add(this.numericUpDownLimit);
-            this.gbLimitCategory.Controls.Add(this.comboBox_Limit_Cheking);
-            this.gbLimitCategory.Location = new System.Drawing.Point(8, 41);
-            this.gbLimitCategory.Name = "gbLimitCategory";
-            this.gbLimitCategory.Size = new System.Drawing.Size(187, 111);
-            this.gbLimitCategory.TabIndex = 2;
-            this.gbLimitCategory.TabStop = false;
-            this.gbLimitCategory.Text = "Limit";
+            this.gbCategoryLimit.BackColor = System.Drawing.Color.Transparent;
+            this.gbCategoryLimit.Controls.Add(this.numLimitValue);
+            this.gbCategoryLimit.Controls.Add(this.cboLimitChecking);
+            this.gbCategoryLimit.Location = new System.Drawing.Point(8, 41);
+            this.gbCategoryLimit.Name = "gbCategoryLimit";
+            this.gbCategoryLimit.Size = new System.Drawing.Size(187, 111);
+            this.gbCategoryLimit.TabIndex = 2;
+            this.gbCategoryLimit.TabStop = false;
+            this.gbCategoryLimit.Text = "Limit";
             // 
-            // numericUpDownLimit
+            // numLimitValue
             // 
-            this.numericUpDownLimit.DecimalPlaces = 2;
-            this.numericUpDownLimit.Location = new System.Drawing.Point(16, 71);
-            this.numericUpDownLimit.Maximum = new decimal(new int[] {
+            this.numLimitValue.DecimalPlaces = 2;
+            this.numLimitValue.Location = new System.Drawing.Point(16, 71);
+            this.numLimitValue.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
+<<<<<<< HEAD
             this.numericUpDownLimit.Name = "numericUpDownLimit";
             this.numericUpDownLimit.Size = new System.Drawing.Size(151, 20);
             this.numericUpDownLimit.TabIndex = 1;            
+=======
+            this.numLimitValue.Name = "numLimitValue";
+            this.numLimitValue.Size = new System.Drawing.Size(151, 20);
+            this.numLimitValue.TabIndex = 2;
+>>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
             // 
-            // comboBox_Limit_Cheking
+            // cboLimitChecking
             // 
-            this.comboBox_Limit_Cheking.FormattingEnabled = true;
-            this.comboBox_Limit_Cheking.Items.AddRange(new object[] {
+            this.cboLimitChecking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLimitChecking.FormattingEnabled = true;
+            this.cboLimitChecking.Items.AddRange(new object[] {
             "No Limit",
-            "Per week",
-            "Per month"});
-            this.comboBox_Limit_Cheking.Location = new System.Drawing.Point(17, 29);
-            this.comboBox_Limit_Cheking.Name = "comboBox_Limit_Cheking";
-            this.comboBox_Limit_Cheking.Size = new System.Drawing.Size(150, 21);
-            this.comboBox_Limit_Cheking.TabIndex = 0;
-            this.comboBox_Limit_Cheking.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            "Limit per month"});
+            this.cboLimitChecking.Location = new System.Drawing.Point(17, 29);
+            this.cboLimitChecking.Name = "cboLimitChecking";
+            this.cboLimitChecking.Size = new System.Drawing.Size(150, 21);
+            this.cboLimitChecking.TabIndex = 1;
+            this.cboLimitChecking.SelectedIndexChanged += new System.EventHandler(this.cboLimitChecking_SelectedIndexChanged);
             // 
-            // button_cancel
+            // btnCancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(120, 171);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_cancel.TabIndex = 20;
-            this.button_cancel.Text = "Cancel";
-            this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            this.btnCancel.Location = new System.Drawing.Point(120, 171);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button_ok
+            // btnOk
             // 
-            this.button_ok.Location = new System.Drawing.Point(39, 171);
-            this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(75, 23);
-            this.button_ok.TabIndex = 19;
-            this.button_ok.Text = "Ok";
-            this.button_ok.UseVisualStyleBackColor = true;
-            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
+            this.btnOk.Location = new System.Drawing.Point(8, 171);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 3;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // New_Category_Form
             // 
@@ -123,11 +129,11 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(206, 206);
-            this.Controls.Add(this.button_cancel);
-            this.Controls.Add(this.button_ok);
-            this.Controls.Add(this.gbLimitCategory);
-            this.Controls.Add(this.tbTitle);
-            this.Controls.Add(this.labelTitleCategory);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.gbCategoryLimit);
+            this.Controls.Add(this.tbCategoryTitle);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -135,8 +141,8 @@
             this.Name = "New_Category_Form";
             this.ShowInTaskbar = false;
             this.Text = "New category";
-            this.gbLimitCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).EndInit();
+            this.gbCategoryLimit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numLimitValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,12 +150,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitleCategory;
-        private System.Windows.Forms.TextBox tbTitle;
-        private System.Windows.Forms.GroupBox gbLimitCategory;
-        private System.Windows.Forms.NumericUpDown numericUpDownLimit;
-        private System.Windows.Forms.ComboBox comboBox_Limit_Cheking;
-        private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.Button button_ok;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox tbCategoryTitle;
+        private System.Windows.Forms.GroupBox gbCategoryLimit;
+        private System.Windows.Forms.NumericUpDown numLimitValue;
+        private System.Windows.Forms.ComboBox cboLimitChecking;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOk;
     }
 }
