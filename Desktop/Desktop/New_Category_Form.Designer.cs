@@ -77,15 +77,9 @@
             0,
             0,
             0});
-<<<<<<< HEAD
-            this.numericUpDownLimit.Name = "numericUpDownLimit";
-            this.numericUpDownLimit.Size = new System.Drawing.Size(151, 20);
-            this.numericUpDownLimit.TabIndex = 1;            
-=======
             this.numLimitValue.Name = "numLimitValue";
             this.numLimitValue.Size = new System.Drawing.Size(151, 20);
             this.numLimitValue.TabIndex = 2;
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
             // 
             // cboLimitChecking
             // 

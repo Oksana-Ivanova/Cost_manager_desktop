@@ -15,15 +15,9 @@ namespace Desktop
         public My_outlays()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            comboBoxViewAs.Text = "Chart";
-            comboBoxCategoryOutlays.Text = "Last week";
-            comboBoxCategory_Set();
-            panel_chart.Visible = true;
-=======
 
             initControls();
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
+
              double x = 0;
                 for (int i = 0; i < 4; i++)
                 {
@@ -44,14 +38,10 @@ namespace Desktop
         BindingSource outlays_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
 
-<<<<<<< HEAD
         DateTime period_begin_date;
         DateTime period_end_date;
           
-        private void button_new_cost_Click(object sender, EventArgs e)
-=======
         private enum PeriodMode
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
         {
             LastWeek = 0,
             LastMonth = 1,
@@ -86,53 +76,8 @@ namespace Desktop
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerEnd.MaxDate = DateTime.Today;
 
-<<<<<<< HEAD
-        private void comboBoxCategoryOutlays_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            if (comboBoxCategoryOutlays.Text == "Custom") panel_custom_date.Visible = true;
-            else panel_custom_date.Visible = false;
-           
-            switch (comboBoxCategoryOutlays.Text)
-            { case "Last week":
-                    period_begin_date = DateTime.Today.AddDays(-6);
-                    period_end_date = DateTime.Today;
-                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
-                    break;
-            case "Last month":
-                    period_begin_date = DateTime.Today.AddMonths(-1);
-                    period_end_date = DateTime.Today;
-                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
-                    break;
-            case "Last year":
-                   period_begin_date = DateTime.Today.AddYears(-1);
-                    period_end_date = DateTime.Today;
-                    MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
-                    break;
-            case "Custom":
-                    period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
-                  period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
-                  MessageBox.Show(period_begin_date.ToString() + " " + period_end_date.ToString());
-                    break;
-            
-            }
-            //switch (comboBoxCategory.Text)
-            //{
-            //    case "Custom":
-            //        panel_custom_date.Visible = true;
-            //        break;
-            //    case "Yesterday":
-            //        panel_custom_date.Visible = false;
-            //        //change chart;
-            //        break;
-            //    // default: comboBoxPeriod.Text = "Yesterday"; break;
-
-            //}
-            
-        }
-=======
             initCategoriesComboData();
             cboCategory.SelectedIndex = 0;
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
 
             cboViewAs.SelectedIndex = 0;
 
@@ -197,23 +142,7 @@ namespace Desktop
 
         private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-        }
-        private void comboBoxCategory_Set()
-        {
-            List<CostType> categoryName = new List<CostType>();
-            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
-            CostType tempObject = new CostType();
-            // categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-             categoryName.Insert(0, new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-            outlays_binding.DataSource = categoryName;        
-            comboBoxCategory.DataSource = outlays_binding.DataSource;
-            comboBoxCategory.DisplayMember = "Name";
-            comboBoxCategory.ValueMember = "Name";
-=======
             dateTimePickerEnd.MinDate = dateTimePickerStart.Value;     
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,24 +38,13 @@ namespace Desktop
             string id = connect.generator_id(table_name, column_name);
 
             int ID_user = LoginForm.user_ID;
-<<<<<<< HEAD
-            double limit = double.Parse(numericUpDownLimit.Value.ToString());
-            string type_name = tbTitle.Text;
+
+            double limit = double.Parse(numLimitValue.Value.ToString());
+            string type_name = tbCategoryTitle.Text;
             string Date = secondary_methods.date();
 
            connect.Insert_into_cost_type(id, ID_user, limit, type_name, Date);
            
-            this.Close();
-        }
-=======
-            double limit = 1000;
-            string type_name = tbCategoryTitle.Text;
-            string Date = secondary_methods.date();
-
-            connect.Insert_into_cost_type(id, ID_user, limit, type_name, Date);
-            tbCategoryTitle.Clear();
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
-
             this.Close();
         }
         
@@ -64,9 +53,6 @@ namespace Desktop
             this.Close();
         }
 
-<<<<<<< HEAD
-    
-=======
         private void cboLimitChecking_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboLimitChecking.SelectedIndex == 0)
@@ -79,6 +65,5 @@ namespace Desktop
             }
         }
         
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
     }
 }

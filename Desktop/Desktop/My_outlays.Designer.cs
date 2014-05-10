@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.label1 = new System.Windows.Forms.Label();
-=======
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
+
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -169,14 +164,9 @@
             // 
             // cboPeriod
             // 
-<<<<<<< HEAD
-            this.comboBoxCategoryOutlays.FormattingEnabled = true;
-            this.comboBoxCategoryOutlays.Items.AddRange(new object[] {
-=======
             this.cboPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPeriod.FormattingEnabled = true;
             this.cboPeriod.Items.AddRange(new object[] {
->>>>>>> 7e5fd6708efa64934b21772de0e6afaaff9cb14a
             "Last week",
             "Last month",
             "Last year",
