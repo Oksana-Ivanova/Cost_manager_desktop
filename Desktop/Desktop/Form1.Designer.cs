@@ -59,11 +59,6 @@
             this.labelTotalIncomePerWeek = new System.Windows.Forms.Label();
             this.labelTotallIncomePerLastWeek = new System.Windows.Forms.Label();
             this.dataGridViewRecentIncomes = new System.Windows.Forms.DataGridView();
-            this.col_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -406,42 +401,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewRecentIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRecentIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_num,
-            this.Column_title,
-            this.Column_Decription,
-            this.Column_Value,
-            this.Column_date});
             this.dataGridViewRecentIncomes.Location = new System.Drawing.Point(8, 42);
             this.dataGridViewRecentIncomes.Name = "dataGridViewRecentIncomes";
             this.dataGridViewRecentIncomes.Size = new System.Drawing.Size(872, 250);
             this.dataGridViewRecentIncomes.TabIndex = 0;
             this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // col_num
-            // 
-            this.col_num.HeaderText = "№";
-            this.col_num.Name = "col_num";
-            // 
-            // Column_title
-            // 
-            this.Column_title.HeaderText = "Title";
-            this.Column_title.Name = "Column_title";
-            // 
-            // Column_Decription
-            // 
-            this.Column_Decription.HeaderText = "Decription";
-            this.Column_Decription.Name = "Column_Decription";
-            // 
-            // Column_Value
-            // 
-            this.Column_Value.HeaderText = "Value";
-            this.Column_Value.Name = "Column_Value";
-            // 
-            // Column_date
-            // 
-            this.Column_date.HeaderText = "Date";
-            this.Column_date.Name = "Column_date";
+            this.dataGridViewRecentIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewRecentIncomes_ColumnAdded);
             // 
             // linkLabelLogOut
             // 
@@ -560,21 +525,21 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -635,11 +600,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewRecentIncomes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Decription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
         private System.Windows.Forms.Label labelSrartPage;
         private System.Windows.Forms.ToolStripMenuItem viewLimitsToolStripMenuItem;
         private System.Windows.Forms.LinkLabel linkLabelLogOut;

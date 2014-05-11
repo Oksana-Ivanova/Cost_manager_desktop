@@ -23,14 +23,34 @@ namespace Desktop
             {
                 chart_recent_cost.Series[0].Points.AddXY(x, Math.Sin(x));
                 x += i;
-            }
-
+            } draw_chart_recent_cost();
+            get_all_incomes_by_week();
            // if (!loginForm.Visible) { loginForm.Close(); }
         }
         LoginForm loginForm = new LoginForm();
+        const string host = "127.0.0.1";
+        const string database = "heroku_9e3361f1a2a704a";
+        const string user = "root";
+        const string password = "123";
+
+        DBHandler controller = new DBHandler(host, database, user, password);
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void draw_chart_recent_cost() 
+        {
+            DateTime period_begin_date = DateTime.Today.AddDays(-6);
+            DateTime period_end_date = DateTime.Today;
+            int number_of_periods = 6;
+            chart_recent_cost.Series[0].Points.Clear();            
+            for (int i = 0; i <= number_of_periods; i++)
+            {
+                double costs_sum_from_period = 0;
+                costs_sum_from_period = controller.get_sum_from_all_cost_by_week( period_begin_date, period_begin_date.AddDays(1));
+                chart_recent_cost.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                period_begin_date = period_begin_date.AddDays(1);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -130,6 +150,36 @@ namespace Desktop
             Application.Exit();
             loginForm.Close();
         }
-            
+        private void get_all_incomes_by_week()
+        {
+            DateTime period_begin_date = DateTime.Today.AddDays(-6);
+            DateTime period_end_date = DateTime.Today;
+
+            DataSet ds = new DataSet();
+            ds = controller.getAllIncomesBySelectedPeriod(period_begin_date, period_end_date);
+
+            dataGridViewRecentIncomes.DataSource = ds.Tables["incomes"];
+
+
+        }
+        private void dataGridViewRecentIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
+        {
+            if (dataGridViewRecentIncomes.Columns.Contains("updated_at"))
+            {
+                try
+                {
+                    this.dataGridViewRecentIncomes.Columns["id"].Visible = false;
+                    this.dataGridViewRecentIncomes.Columns["user_id"].Visible = false;
+                    //   this.dataGridViewRecentIncomes.Columns["created_at"].Visible = false;
+                    this.dataGridViewRecentIncomes.Columns["updated_at"].Visible = false;
+                    this.dataGridViewRecentIncomes.Columns["name"].HeaderText = "Назва доходу";
+                    this.dataGridViewRecentIncomes.Columns["description"].HeaderText = "Нотатки";
+                    this.dataGridViewRecentIncomes.Columns["price"].HeaderText = " сумма доходу";
+                    this.dataGridViewRecentIncomes.Columns["created_at"].HeaderText = "Дата";
+                }
+
+                catch { }
+            }
+        }            
     }
 }
