@@ -19,8 +19,8 @@ namespace Desktop
             initControls();
 
            
-               period_begin_date = DateTime.Today.AddDays(-6);
-               period_end_date = DateTime.Today;
+             //  period_begin_date = DateTime.Today.AddDays(-6);
+            //   period_end_date = DateTime.Today;
             
         }
 
@@ -33,9 +33,9 @@ namespace Desktop
         BindingSource outlays_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
 
-        DateTime period_begin_date;
-        DateTime period_end_date;
-        int number_of_periods;
+       // DateTime period_begin_date;
+       // DateTime period_end_date;
+       // int number_of_periods;
         private enum PeriodMode
         {
             LastWeek = 0,
@@ -85,17 +85,17 @@ namespace Desktop
             {
                 case PeriodMode.LastWeek:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddDays(-6);
-                    number_of_periods = 6;
+                    draw_chart_outlays_by_week();
                  
                     break;
                 case PeriodMode.LastMonth:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddMonths(-1);
-                    number_of_periods = 6;
+                    draw_chart_outlays_by_month();
                     
                     break;
                 case PeriodMode.LastYear:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddYears(-1);
-                    number_of_periods = 12;
+                    draw_chart_outlays_by_year();
                    
                     break;
                 default:
@@ -148,9 +148,9 @@ namespace Desktop
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
-            period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
-            string categoryName = cboCategory.Text;    //     dataGridViewOutlays begin
+           DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+           DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+            string categoryName = cboCategory.Text;   
            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
                    // MessageBox.Show(connectionString);
             DataSet ds = new DataSet();
@@ -166,8 +166,61 @@ namespace Desktop
             New_cost_form newCostForm = new New_cost_form();
             newCostForm.Show();
         }
-
-        public void draw_chart_outlays(string cost_type_id)
+       private void draw_chart_outlays_by_week()
+        {
+            DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+            int number_of_periods=6;
+            chart_outlays.Series[0].Points.Clear();
+            string categoryName = cboCategory.Text;
+            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;         
+            for (int i = 0; i <= number_of_periods; i++) 
+            {
+                double costs_sum_from_period = 0;
+                costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
+                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                period_begin_date=period_begin_date.AddDays(1);
+            }
+        }
+       private void draw_chart_outlays_by_month()
+       {
+           DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+           DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+          // int number_of_periods = 30;
+           int i = 0;
+           chart_outlays.Series[0].Points.Clear();
+           string categoryName = cboCategory.Text;
+           string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
+        //   for (int i = 0; i <= number_of_periods; i++)
+           while (!(period_begin_date==period_end_date))
+           {
+               i++;
+               double costs_sum_from_period = 0;
+               costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
+               chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+               period_begin_date = period_begin_date.AddDays(1);
+           }
+       }
+       private void draw_chart_outlays_by_year()
+       {
+           DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+           DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+           // int number_of_periods = 30;
+           int i = 0;
+           chart_outlays.Series[0].Points.Clear();
+           string categoryName = cboCategory.Text;
+           string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
+           //   for (int i = 0; i <= number_of_periods; i++)
+           while (!(period_begin_date == period_end_date))
+           {
+               i++;
+               double costs_sum_from_period = 0;
+               costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddMonths(1));
+               chart_outlays.Series[0].Points.AddXY(period_begin_date.AddMonths(1), i);
+               period_begin_date = period_begin_date.AddMonths(1);
+           }
+       }
+        private void draw_chart_outlays(string cost_type_id)
         {
            
             chart_outlays.Series[0].Points.Clear();
