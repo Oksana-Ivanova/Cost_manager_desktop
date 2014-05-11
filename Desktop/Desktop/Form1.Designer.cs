@@ -69,7 +69,6 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewOutlaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewIncomesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewLimitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -483,8 +482,7 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewOutlaysToolStripMenuItem,
-            this.viewIncomesToolStripMenuItem,
-            this.viewLimitsToolStripMenuItem});
+            this.viewIncomesToolStripMenuItem});
             this.viewToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
@@ -503,13 +501,6 @@
             this.viewIncomesToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.viewIncomesToolStripMenuItem.Text = "View Incomes";
             this.viewIncomesToolStripMenuItem.Click += new System.EventHandler(this.viewIncomesToolStripMenuItem_Click);
-            // 
-            // viewLimitsToolStripMenuItem
-            // 
-            this.viewLimitsToolStripMenuItem.Name = "viewLimitsToolStripMenuItem";
-            this.viewLimitsToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
-            this.viewLimitsToolStripMenuItem.Text = "View Limits";
-            this.viewLimitsToolStripMenuItem.Click += new System.EventHandler(this.viewLimitsToolStripMenuItem_Click);
             // 
             // moreToolStripMenuItem
             // 
@@ -554,7 +545,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.07";
+            this.Text = "Cost Manager v0.09";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);
@@ -601,7 +592,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewRecentIncomes;
         private System.Windows.Forms.Label labelSrartPage;
-        private System.Windows.Forms.ToolStripMenuItem viewLimitsToolStripMenuItem;
         private System.Windows.Forms.LinkLabel linkLabelLogOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBoxMostOften;

@@ -74,7 +74,6 @@ C:\Users\ad\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desk
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.exe.config
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.exe
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.pdb
-D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.AboutBox.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Main.resources
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.HelpForm.resources

@@ -111,5 +111,16 @@ namespace Desktop
         {
             this.Close();
         }
+
+        private void AboutBox_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_ok_aboutbox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -28,114 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonUpdateProfile = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.tbConfirmPasswordPrifile = new System.Windows.Forms.TextBox();
-            this.labelPasswordConfirm = new System.Windows.Forms.Label();
+            this.lblPasswordConfirm = new System.Windows.Forms.Label();
             this.tbPasswordProfile = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNewPassword = new System.Windows.Forms.Label();
             this.tbCurrentPassword = new System.Windows.Forms.TextBox();
-            this.labelCurrentPassword = new System.Windows.Forms.Label();
+            this.lblCurrentPassword = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cbxViewPassword = new System.Windows.Forms.CheckBox();
+            this.panelPasswords = new System.Windows.Forms.Panel();
+            this.panelPasswords.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonUpdateProfile
+            // btnOK
             // 
-            this.buttonUpdateProfile.Location = new System.Drawing.Point(237, 160);
-            this.buttonUpdateProfile.Name = "buttonUpdateProfile";
-            this.buttonUpdateProfile.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdateProfile.TabIndex = 0;
-            this.buttonUpdateProfile.Text = "Update";
-            this.buttonUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(159, 197);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 6;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(23, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Location = new System.Drawing.Point(23, 30);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(159, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbName.Location = new System.Drawing.Point(159, 27);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(153, 20);
+            this.tbName.TabIndex = 0;
             // 
-            // textBox3
+            // tbEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(159, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 6;
+            this.tbEmail.Location = new System.Drawing.Point(159, 53);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(153, 20);
+            this.tbEmail.TabIndex = 1;
             // 
-            // label3
+            // lblEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(23, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "E-mail";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Location = new System.Drawing.Point(23, 57);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "E-mail";
             // 
             // tbConfirmPasswordPrifile
             // 
-            this.tbConfirmPasswordPrifile.Location = new System.Drawing.Point(159, 105);
+            this.tbConfirmPasswordPrifile.Location = new System.Drawing.Point(157, 58);
             this.tbConfirmPasswordPrifile.Name = "tbConfirmPasswordPrifile";
             this.tbConfirmPasswordPrifile.Size = new System.Drawing.Size(153, 20);
-            this.tbConfirmPasswordPrifile.TabIndex = 10;
+            this.tbConfirmPasswordPrifile.TabIndex = 4;
+            this.tbConfirmPasswordPrifile.UseSystemPasswordChar = true;
             // 
-            // labelPasswordConfirm
+            // lblPasswordConfirm
             // 
-            this.labelPasswordConfirm.AutoSize = true;
-            this.labelPasswordConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.labelPasswordConfirm.Location = new System.Drawing.Point(23, 109);
-            this.labelPasswordConfirm.Name = "labelPasswordConfirm";
-            this.labelPasswordConfirm.Size = new System.Drawing.Size(113, 13);
-            this.labelPasswordConfirm.TabIndex = 9;
-            this.labelPasswordConfirm.Text = "Password confirmation";
+            this.lblPasswordConfirm.AutoSize = true;
+            this.lblPasswordConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.lblPasswordConfirm.Location = new System.Drawing.Point(21, 62);
+            this.lblPasswordConfirm.Name = "lblPasswordConfirm";
+            this.lblPasswordConfirm.Size = new System.Drawing.Size(113, 13);
+            this.lblPasswordConfirm.TabIndex = 9;
+            this.lblPasswordConfirm.Text = "Password confirmation";
             // 
             // tbPasswordProfile
             // 
-            this.tbPasswordProfile.Location = new System.Drawing.Point(159, 79);
+            this.tbPasswordProfile.Location = new System.Drawing.Point(157, 32);
             this.tbPasswordProfile.Name = "tbPasswordProfile";
             this.tbPasswordProfile.Size = new System.Drawing.Size(153, 20);
-            this.tbPasswordProfile.TabIndex = 12;
+            this.tbPasswordProfile.TabIndex = 3;
+            this.tbPasswordProfile.UseSystemPasswordChar = true;
             // 
-            // label4
+            // lblNewPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(23, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Password";
+            this.lblNewPassword.AutoSize = true;
+            this.lblNewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewPassword.Location = new System.Drawing.Point(21, 35);
+            this.lblNewPassword.Name = "lblNewPassword";
+            this.lblNewPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblNewPassword.TabIndex = 11;
+            this.lblNewPassword.Text = "Password";
             // 
             // tbCurrentPassword
             // 
-            this.tbCurrentPassword.Location = new System.Drawing.Point(159, 134);
+            this.tbCurrentPassword.Location = new System.Drawing.Point(157, 6);
             this.tbCurrentPassword.Name = "tbCurrentPassword";
             this.tbCurrentPassword.Size = new System.Drawing.Size(153, 20);
-            this.tbCurrentPassword.TabIndex = 14;
+            this.tbCurrentPassword.TabIndex = 2;
+            this.tbCurrentPassword.UseSystemPasswordChar = true;
             // 
-            // labelCurrentPassword
+            // lblCurrentPassword
             // 
-            this.labelCurrentPassword.AutoSize = true;
-            this.labelCurrentPassword.BackColor = System.Drawing.Color.Transparent;
-            this.labelCurrentPassword.Location = new System.Drawing.Point(23, 137);
-            this.labelCurrentPassword.Name = "labelCurrentPassword";
-            this.labelCurrentPassword.Size = new System.Drawing.Size(89, 13);
-            this.labelCurrentPassword.TabIndex = 13;
-            this.labelCurrentPassword.Text = "Current password";
+            this.lblCurrentPassword.AutoSize = true;
+            this.lblCurrentPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblCurrentPassword.Location = new System.Drawing.Point(21, 9);
+            this.lblCurrentPassword.Name = "lblCurrentPassword";
+            this.lblCurrentPassword.Size = new System.Drawing.Size(89, 13);
+            this.lblCurrentPassword.TabIndex = 13;
+            this.lblCurrentPassword.Text = "Current password";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(237, 197);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cbxViewPassword
+            // 
+            this.cbxViewPassword.AutoSize = true;
+            this.cbxViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbxViewPassword.Location = new System.Drawing.Point(157, 84);
+            this.cbxViewPassword.Name = "cbxViewPassword";
+            this.cbxViewPassword.Size = new System.Drawing.Size(107, 18);
+            this.cbxViewPassword.TabIndex = 5;
+            this.cbxViewPassword.Text = "Show password";
+            this.cbxViewPassword.UseVisualStyleBackColor = true;
+            this.cbxViewPassword.CheckedChanged += new System.EventHandler(this.cbxViewPassword_CheckedChanged);
+            // 
+            // panelPasswords
+            // 
+            this.panelPasswords.BackColor = System.Drawing.Color.Transparent;
+            this.panelPasswords.Controls.Add(this.lblCurrentPassword);
+            this.panelPasswords.Controls.Add(this.cbxViewPassword);
+            this.panelPasswords.Controls.Add(this.lblPasswordConfirm);
+            this.panelPasswords.Controls.Add(this.tbConfirmPasswordPrifile);
+            this.panelPasswords.Controls.Add(this.tbCurrentPassword);
+            this.panelPasswords.Controls.Add(this.lblNewPassword);
+            this.panelPasswords.Controls.Add(this.tbPasswordProfile);
+            this.panelPasswords.Location = new System.Drawing.Point(2, 79);
+            this.panelPasswords.Name = "panelPasswords";
+            this.panelPasswords.Size = new System.Drawing.Size(338, 117);
+            this.panelPasswords.TabIndex = 21;
             // 
             // ProfileForm
             // 
@@ -143,18 +186,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(337, 196);
-            this.Controls.Add(this.tbCurrentPassword);
-            this.Controls.Add(this.labelCurrentPassword);
-            this.Controls.Add(this.tbPasswordProfile);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbConfirmPasswordPrifile);
-            this.Controls.Add(this.labelPasswordConfirm);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonUpdateProfile);
+            this.ClientSize = new System.Drawing.Size(341, 230);
+            this.Controls.Add(this.panelPasswords);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -162,6 +201,8 @@
             this.Name = "ProfileForm";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.ProfileForm_Load);
+            this.panelPasswords.ResumeLayout(false);
+            this.panelPasswords.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,16 +210,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonUpdateProfile;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox tbConfirmPasswordPrifile;
-        private System.Windows.Forms.Label labelPasswordConfirm;
+        private System.Windows.Forms.Label lblPasswordConfirm;
         private System.Windows.Forms.TextBox tbPasswordProfile;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNewPassword;
         private System.Windows.Forms.TextBox tbCurrentPassword;
-        private System.Windows.Forms.Label labelCurrentPassword;
+        private System.Windows.Forms.Label lblCurrentPassword;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox cbxViewPassword;
+        private System.Windows.Forms.Panel panelPasswords;
     }
 }

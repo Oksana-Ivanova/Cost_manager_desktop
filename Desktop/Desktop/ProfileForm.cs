@@ -12,9 +12,28 @@ namespace Desktop
 {
     public partial class ProfileForm : Form
     {
+        bool editable; 
+
         public ProfileForm()
         {
+            editable = false;
+            
             InitializeComponent();
+
+            initControls();
+        }
+
+        private void initControls()
+        {
+            panelPasswords.Visible = false;
+
+            tbName.Enabled = false;
+            tbEmail.Enabled = false;
+
+            cbxViewPassword.Checked = false;
+
+            btnOK.Text = "Update profile";
+            btnCancel.Text = "Close";
         }
 
         private void ProfileForm_Load(object sender, EventArgs e)
@@ -22,19 +41,92 @@ namespace Desktop
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private bool isFieldsValid()
+        {
+            if (tbPasswordProfile.Text == string.Empty)
+            {
+                if (tbConfirmPasswordPrifile.Text == string.Empty)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void tryUpdate()
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void makeEditable()
         {
+            if (editable)
+            {
+                panelPasswords.Visible = false;
+                
+                tbName.Enabled = false;
+                tbEmail.Enabled = false;
+                
+                btnOK.Text = "Update profile";
+                btnCancel.Text = "Close";
 
+                editable = false;
+            }
+            else
+            {
+                panelPasswords.Visible = true;
+
+                tbName.Enabled = true;
+                tbEmail.Enabled = true;
+
+                cbxViewPassword.Checked = false;
+
+                btnOK.Text = "Accept";
+                btnCancel.Text = "Reject";
+
+                editable = true;
+            }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
+            if (editable)
+            {
+                if (isFieldsValid())
+                {
+                    tryUpdate();
+                }
+                makeEditable();
+            }
+            else
+            {
+                makeEditable();
+            }
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (editable)
+                makeEditable();
+            else
+                this.Close();
+        }
+
+        private void setAllPasswordsHidden(bool isHidden)
+        {
+            tbPasswordProfile.UseSystemPasswordChar = isHidden;
+            tbConfirmPasswordPrifile.UseSystemPasswordChar = isHidden;
+            tbCurrentPassword.UseSystemPasswordChar = isHidden;
+        }
+
+        private void cbxViewPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            setAllPasswordsHidden(!cbxViewPassword.Checked);
         }
     }
 }
