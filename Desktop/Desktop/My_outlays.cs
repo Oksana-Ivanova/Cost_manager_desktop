@@ -255,11 +255,12 @@ namespace Desktop
                     this.dataGridViewOutlays.Columns["id"].Visible = false;
                     this.dataGridViewOutlays.Columns["user_id"].Visible = false;
                     this.dataGridViewOutlays.Columns["cost_type_id"].Visible = false;
-                    this.dataGridViewOutlays.Columns["created_at"].Visible = false;
+                 //   this.dataGridViewOutlays.Columns["created_at"].Visible = false;
                     this.dataGridViewOutlays.Columns["updated_at"].Visible = false;
                     this.dataGridViewOutlays.Columns["name"].HeaderText = "Назва витрати";
                     this.dataGridViewOutlays.Columns["description"].HeaderText = "Нотатки";
                     this.dataGridViewOutlays.Columns["price"].HeaderText = "затрачена сумма";
+                    this.dataGridViewOutlays.Columns["created_at"].HeaderText = "Дата";
                 }
 
                 catch { }

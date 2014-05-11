@@ -16,7 +16,16 @@ namespace Desktop
         {
             InitializeComponent();
         }
+     
+        const string host = "127.0.0.1";
+        const string database = "heroku_9e3361f1a2a704a";
+        const string user = "root";
+        const string password = "123";
+    
 
+        DBHandler controller = new DBHandler(host, database, user, password);      
+        BindingSource new_cost_binding = new BindingSource();
+        SqlFunction connect = new SqlFunction(host, database, user, password);
         /// <summary>
         /// Validate fields on the form
         /// </summary>
@@ -44,6 +53,24 @@ namespace Desktop
             if (validateFields() == false)
                 return;
 
+            try
+            {
+                
+                //string id = connect.generator_id(table_name, column_name);
+                string id = SequenceGenerator.GenerateUniqueString();
+                int ID_user = LoginForm.user_ID;               
+                string name = tbTitleNewIncome.Text;
+                string description = txtDescription.Text;
+                double money = Convert.ToDouble(numValue.Value);
+                string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewIncome.Value);
+                connect.Insert_into_income(id, ID_user,  name, description, money, Date);
+
+                // DataGridView2__Drow(ID_cost); 
+
+                this.Close();
+            }
+            catch { } 
+           
             this.Close();
         }
 

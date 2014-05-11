@@ -110,6 +110,20 @@ namespace Desktop
             finally {  _Connection.Close(); }
 
         }
+        public void Insert_into_income(string id, int ID_user,  string name, string description, double money, string Date)//costs
+        {
+
+            try
+            {
+                string qry = "insert into heroku_9e3361f1a2a704a.incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
+                _Connection.Open();
+                MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
+                comandInsert.ExecuteNonQuery();
+            }
+            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            finally { _Connection.Close(); }
+
+        }
          public void refesh()
         {
             ds = new System.Data.DataSet();

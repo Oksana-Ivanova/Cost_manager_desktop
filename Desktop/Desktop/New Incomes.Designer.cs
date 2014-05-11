@@ -127,6 +127,11 @@
             // 
             this.numValue.DecimalPlaces = 2;
             this.numValue.Location = new System.Drawing.Point(87, 115);
+            this.numValue.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numValue.Name = "numValue";
             this.numValue.Size = new System.Drawing.Size(170, 20);
             this.numValue.TabIndex = 11;

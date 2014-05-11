@@ -124,19 +124,19 @@ namespace Desktop
             finally { _Connection.Close(); }
             return ds;
         }
-        public DataSet getAllCostsBySelectedPeriod(string ID_cost,DateTime period_begin_date,DateTime period_end_date)
+        public DataSet getAllCostsBySelectedPeriod(string ID_cost_type,DateTime period_begin_date,DateTime period_end_date)
         {
             DataSet ds = new DataSet();
             _Connection.Open();
             string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
-            string period_end = secondary_methods.datetime_to_sql_format(period_end_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date.AddDays(1));
             try
             {
                 //MySqlDataAdapter adap = new MySqlDataAdapter("select * from heroku_9e3361f1a2a704a.costs where cost_type_id='" + ID_cost + "'and created_at>'" + period_begin_date + "'and created_at<'" + period_end_date + "';", _Connection);
-                MySqlDataAdapter adap = new MySqlDataAdapter("select * from  costs where cost_type_id='"+ID_cost+"'and created_at>'"+period_begin+"' and created_at<'"+period_end+"';",_Connection);
+                MySqlDataAdapter adap = new MySqlDataAdapter("select * from  costs where cost_type_id='"+ID_cost_type+"'and created_at>'"+period_begin+"' and created_at<'"+period_end+"';",_Connection);
              // "select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='7b9c73541a'and created_at>'2014-04-13 0:00:00' and created_at<'2014-05-10 0:00:00';"
                 //  select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='7b9c73541a'and created_at>'2014-04-13 00:00:00' and created_at<'2014-05-10 00:00:00'
-                MessageBox.Show("select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='" + ID_cost + "'and created_at>'" + period_begin+ "' and created_at<'" + period_end + "';");
+                //MessageBox.Show("select * from  heroku_9e3361f1a2a704a.costs where cost_type_id='" + ID_cost + "'and created_at>'" + period_begin+ "' and created_at<'" + period_end + "';");
                 ds = new System.Data.DataSet();
                 adap.Fill(ds, "costs");
 
@@ -346,7 +346,7 @@ namespace Desktop
         public double get_sum_from_cost_by_date_and_cost_type_id(string cost_type_id, DateTime period_begin_date, DateTime period_end_date) 
         {
             string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
-            string period_end = secondary_methods.datetime_to_sql_format(period_end_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date.AddDays(1));
             _Connection.Open();
             MySqlCommand mysqlQuery = _Connection.CreateCommand();
             mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and cost_type_id='" + cost_type_id + "' and created_at>'" + period_begin + "' and created_at<'" + period_end + "';";
@@ -360,10 +360,29 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
-            }           
-            _Connection.Close();
+            }
+            _Connection.Close(); 
             return sum;         
            
+        }
+        public DataSet getAllIncomesBySelectedPeriod(DateTime period_begin_date, DateTime period_end_date)
+        {
+            DataSet ds = new DataSet();
+            _Connection.Open();
+            string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date.AddDays(2));
+            try
+            {
+
+                MySqlDataAdapter adap = new MySqlDataAdapter("select * from  heroku_9e3361f1a2a704a.incomes where user_id='" + LoginForm.user_ID + "' and created_at>'" + period_begin + "' and created_at<'" + period_end + "';", _Connection);
+                MessageBox.Show("select * from  heroku_9e3361f1a2a704a.incomes where user_id='" + LoginForm.user_ID + "'and created_at>'" + period_begin + "' and created_at<'" + period_end + "';");
+                ds = new System.Data.DataSet();
+                adap.Fill(ds, "incomes");
+
+            }
+            catch { }
+            finally { _Connection.Close(); }
+            return ds;
         }
     }
 }

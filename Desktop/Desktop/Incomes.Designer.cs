@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewIncomes = new System.Windows.Forms.DataGridView();
-            this.col_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Decription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.groupBoxPeriod = new System.Windows.Forms.GroupBox();
             this.cboPeriod = new System.Windows.Forms.ComboBox();
@@ -57,42 +52,12 @@
             this.dataGridViewIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIncomes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_num,
-            this.Column_title,
-            this.Column_Decription,
-            this.Column_Value,
-            this.Column_date});
             this.dataGridViewIncomes.Location = new System.Drawing.Point(258, 32);
             this.dataGridViewIncomes.Name = "dataGridViewIncomes";
             this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 320);
             this.dataGridViewIncomes.TabIndex = 1;
             this.dataGridViewIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIncomes_CellContentClick);
-            // 
-            // col_num
-            // 
-            this.col_num.HeaderText = "№";
-            this.col_num.Name = "col_num";
-            // 
-            // Column_title
-            // 
-            this.Column_title.HeaderText = "Title";
-            this.Column_title.Name = "Column_title";
-            // 
-            // Column_Decription
-            // 
-            this.Column_Decription.HeaderText = "Decription";
-            this.Column_Decription.Name = "Column_Decription";
-            // 
-            // Column_Value
-            // 
-            this.Column_Value.HeaderText = "Value";
-            this.Column_Value.Name = "Column_Value";
-            // 
-            // Column_date
-            // 
-            this.Column_date.HeaderText = "Date";
-            this.Column_date.Name = "Column_date";
+            this.dataGridViewIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewIncomes_ColumnAdded);
             // 
             // leftPanel
             // 
@@ -217,11 +182,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewIncomes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Decription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_date;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.GroupBox groupBoxPeriod;
         private System.Windows.Forms.ComboBox cboPeriod;

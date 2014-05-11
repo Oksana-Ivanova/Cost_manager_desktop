@@ -74,8 +74,7 @@ namespace Desktop
             if (validateFields() == false)
                 return;
 
-            string table_name="costs";
-            string column_name="id";
+          
             try
             {
                 string categoryName = cboCategory.Text;
@@ -86,7 +85,7 @@ namespace Desktop
                 string name = tbNameNewCost.Text;
                 string description = richTextBoxDescriptionNewCost.Text;
                 double money = Convert.ToDouble(numValue.Value);
-                string Date = secondary_methods.date();
+                string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
                 connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
                
                 // DataGridView2__Drow(ID_cost); 
