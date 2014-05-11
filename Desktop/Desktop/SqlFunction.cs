@@ -80,15 +80,13 @@ namespace Desktop
             const string user = "root";
             const string password = "123";
 
-            SqlFunction connect = new SqlFunction(host, database, user, password);
-            string table_name = "limits";
-            string column_name = "id";
+            SqlFunction connect = new SqlFunction(host, database, user, password);          
             //string id = connect.generator_id(table_name, column_name);
             string id = SequenceGenerator.GenerateUniqueString();
             string Date = secondary_methods.date();
             try
             {
-                string qry = " insert into  heroku_9e3361f1a2a704a.limits values('" + id + "',' ','" + limit + "','" + Date + "','" + Date + "')";
+                string qry = " insert into  heroku_9e3361f1a2a704a.limits values('" + id + "','"+LoginForm.user_ID+" ','Another','" + limit + "','" + Date + "','" + Date + "')";
                 MessageBox.Show(qry);
                 _Connection.Open();
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
