@@ -117,10 +117,5 @@ namespace Desktop
 
         }
 
-        private void button_ok_aboutbox_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

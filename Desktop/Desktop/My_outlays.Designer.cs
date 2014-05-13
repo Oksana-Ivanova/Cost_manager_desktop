@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+=======
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+>>>>>>> 9f402c3bcc418c965e82e9aaae30cdf81883c825
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -44,19 +49,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboViewAs = new System.Windows.Forms.ComboBox();
             this.lblViewAsRef = new System.Windows.Forms.Label();
-            this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewOutlays = new System.Windows.Forms.DataGridView();
             this.panelChart = new System.Windows.Forms.Panel();
+            this.chart_outlays = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.groupBoxCategory.SuspendLayout();
             this.groupBoxPeriod.SuspendLayout();
             this.panelCustomDate.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).BeginInit();
             this.panelTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).BeginInit();
             this.panelChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -210,6 +215,7 @@
             this.lblViewAsRef.TabIndex = 5;
             this.lblViewAsRef.Text = "View As";
             // 
+<<<<<<< HEAD
             // chart_outlays
             // 
             this.chart_outlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -231,6 +237,8 @@
             this.chart_outlays.Text = "chart1";
             this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
             // 
+=======
+>>>>>>> 9f402c3bcc418c965e82e9aaae30cdf81883c825
             // panelTable
             // 
             this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -258,6 +266,7 @@
             this.dataGridViewOutlays.TabIndex = 0;
             this.dataGridViewOutlays.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOutlays_CellContentClick);
             this.dataGridViewOutlays.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewOutlays_ColumnAdded);
+            this.dataGridViewOutlays.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOutlays_RowHeaderMouseDoubleClick);
             // 
             // panelChart
             // 
@@ -272,6 +281,26 @@
             this.panelChart.Size = new System.Drawing.Size(661, 387);
             this.panelChart.TabIndex = 10;
             this.panelChart.Visible = false;
+            // 
+            // chart_outlays
+            // 
+            this.chart_outlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart_outlays.BackColor = System.Drawing.Color.Transparent;
+            this.chart_outlays.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Right;
+            this.chart_outlays.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            chartArea1.Name = "ChartArea1";
+            this.chart_outlays.ChartAreas.Add(chartArea1);
+            this.chart_outlays.Location = new System.Drawing.Point(10, 10);
+            this.chart_outlays.Name = "chart_outlays";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chart_outlays.Series.Add(series1);
+            this.chart_outlays.Size = new System.Drawing.Size(641, 367);
+            this.chart_outlays.TabIndex = 0;
+            this.chart_outlays.Text = "chart1";
             // 
             // My_outlays
             // 
@@ -294,10 +323,10 @@
             this.panelCustomDate.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).EndInit();
             this.panelTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).EndInit();
             this.panelChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,12 +345,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cboViewAs;
         private System.Windows.Forms.Label lblViewAsRef;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
         private System.Windows.Forms.Panel panelTable;
         private System.Windows.Forms.DataGridView dataGridViewOutlays;
-        private System.Windows.Forms.Panel panelChart;
         private System.Windows.Forms.GroupBox groupBoxCategory;
         private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.Panel panelChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_outlays;
 
     }
 }

@@ -52,7 +52,7 @@ namespace Desktop
         private void initCategoriesComboData()
         {
             List<CostType> categoryName = new List<CostType>();
-            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
+            categoryName = controller.getCategoriesByUserID(LoginForm.user_ID);
             CostType tempObject = new CostType();
             categoryName.Insert(0, new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
           
@@ -85,18 +85,15 @@ namespace Desktop
             {
                 case PeriodMode.LastWeek:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddDays(-6);
-                    draw_chart_outlays_by_week();
-                 
+                    draw_chart_outlays_by_week();                 
                     break;
                 case PeriodMode.LastMonth:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddMonths(-1);
-                    draw_chart_outlays_by_month();
-                    
+                    draw_chart_outlays_by_month();                    
                     break;
                 case PeriodMode.LastYear:
                     dateTimePickerStart.Value = dateTimePickerEnd.Value.AddYears(-1);
-                    draw_chart_outlays_by_year();
-                   
+                    draw_chart_outlays_by_year();                   
                     break;
                 default:
                     break;
@@ -274,10 +271,20 @@ namespace Desktop
             }
         }
 
+<<<<<<< HEAD
         private void chart_outlays_Click(object sender, EventArgs e)
         {
 
         }
               
+=======
+        private void dataGridViewOutlays_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+
+            New_cost_form costForm = new New_cost_form(cost);
+            costForm.Show();
+        }
+>>>>>>> 9f402c3bcc418c965e82e9aaae30cdf81883c825
     }
 }

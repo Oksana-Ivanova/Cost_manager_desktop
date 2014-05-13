@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Desktop
 {
-    class User
+    public class User
     {
         private string _Id;
         private string _Name;
@@ -74,7 +74,7 @@ namespace Desktop
 
         public User()
         {
-            _Id = "";
+            _Id = SequenceGenerator.GenerateUniqueString();
             _Name = "";
             _Email = "";
             _Pasword = "";
