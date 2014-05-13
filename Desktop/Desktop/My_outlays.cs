@@ -271,13 +271,13 @@ namespace Desktop
             }
         }
 
-<<<<<<< HEAD
+
         private void chart_outlays_Click(object sender, EventArgs e)
         {
 
         }
               
-=======
+
         private void dataGridViewOutlays_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
@@ -285,6 +285,6 @@ namespace Desktop
             New_cost_form costForm = new New_cost_form(cost);
             costForm.Show();
         }
->>>>>>> 9f402c3bcc418c965e82e9aaae30cdf81883c825
+
     }
 }

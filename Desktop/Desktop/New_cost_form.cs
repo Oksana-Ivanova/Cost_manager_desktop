@@ -188,15 +188,14 @@ namespace Desktop
             newCategoryForm.Show();
         }
 
-<<<<<<< HEAD
+
         private void richTextBoxDescriptionNewCost_TextChanged(object sender, EventArgs e)
         {
+        }
 
-=======
         private void btnDelete_Click(object sender, EventArgs e)
         {
-        
->>>>>>> 9f402c3bcc418c965e82e9aaae30cdf81883c825
+
         }
 
        
