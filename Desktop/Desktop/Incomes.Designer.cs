@@ -56,8 +56,8 @@
             this.dataGridViewIncomes.Name = "dataGridViewIncomes";
             this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 320);
             this.dataGridViewIncomes.TabIndex = 1;
-            this.dataGridViewIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIncomes_CellContentClick);
             this.dataGridViewIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewIncomes_ColumnAdded);
+            this.dataGridViewIncomes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewIncomes_RowHeaderMouseDoubleClick);
             // 
             // leftPanel
             // 

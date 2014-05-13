@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Desktop
 {
-    class Cost
+    public class Cost
     {
         private string _Id;
-        private string _UserId;
+        private int    _UserId;
         private string _CostTypeId;
 
         private string _Name;
@@ -24,7 +24,7 @@ namespace Desktop
             set { _Id = value; }
             get { return _Id; }
         }
-        public string UserId
+        public int UserId
         {
             set { _UserId = value; }
             get { return _UserId; }
@@ -63,7 +63,7 @@ namespace Desktop
         }
 
         public Cost(string id,
-                    string userId,
+                    int    userId,
                     string costTypeId,
                     string name,
                     string description,
@@ -83,8 +83,8 @@ namespace Desktop
 
         public Cost()
         {
-            _Id             = "";
-            _UserId         = "";
+            _Id             = SequenceGenerator.GenerateUniqueString();
+            _UserId         = 0;
             _CostTypeId     = "";
             _Name           = "";
             _Description    = "";

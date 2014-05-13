@@ -64,7 +64,7 @@ namespace Desktop
             _Connection.Close();
             return resultUser;
         }
-        public List<CostType> getCategorysByUserID(int user_ID)
+        public List<CostType> getCategoriesByUserID(int user_ID)
         {
             List<CostType> resultCategoryList = new List<CostType>();
 
@@ -161,7 +161,7 @@ namespace Desktop
             {
                 Cost tempObject = new Cost();
                 tempObject.Id = mysqlResult.GetString(0);
-                tempObject.UserId = mysqlResult.GetString(1);
+                tempObject.UserId = Convert.ToInt32(mysqlResult.GetString(1));
                 tempObject.CostTypeId = mysqlResult.GetString(2);
                 tempObject.Name = mysqlResult.GetString(3);
                 tempObject.Description = mysqlResult.GetString(4);
@@ -193,7 +193,7 @@ namespace Desktop
             {
                 Cost tempObject = new Cost();
                 tempObject.Id = mysqlResult.GetString(0);
-                tempObject.UserId = mysqlResult.GetString(1);
+                tempObject.UserId =  Convert.ToInt32(mysqlResult.GetString(1));
                 tempObject.CostTypeId = mysqlResult.GetString(2);
                 tempObject.Name = mysqlResult.GetString(3);
                 tempObject.Description = mysqlResult.GetString(4);
@@ -206,6 +206,36 @@ namespace Desktop
 
             _Connection.Close();
             return resultList;
+        }
+
+        public CostType getCostCategory(string costName, string userName)
+        {
+            CostType resultCategory = new CostType();
+
+            List<Cost> costs = getCostByName(costName, userName);
+            if (costs.Count < 1)
+                return null;
+
+            string userId = getUserByName(userName).Id;
+            string categoryId = costs[0].CostTypeId;
+                                   
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT id, name, created_at, updated_at FROM cost_types WHERE id = \"" + categoryId + "\" AND user_id = " + userId + "  LIMIT 1;";
+
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            if (mysqlResult.Read())
+            {
+                resultCategory.Id = mysqlResult.GetString(0);
+                resultCategory.Name = mysqlResult.GetString(1);
+                resultCategory.CreateDate = Convert.ToDateTime(mysqlResult.GetString(2));
+                resultCategory.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(3));
+            }
+
+            _Connection.Close();
+            return resultCategory;
+
         }
 
         private string sqlDateString(DateTime date)
@@ -230,7 +260,7 @@ namespace Desktop
             {
                 Cost tempObject = new Cost();
                 tempObject.Id = mysqlResult.GetString(0);
-                tempObject.UserId = mysqlResult.GetString(1);
+                tempObject.UserId =  Convert.ToInt32(mysqlResult.GetString(1));
                 tempObject.CostTypeId = mysqlResult.GetString(2);
                 tempObject.Name = mysqlResult.GetString(3);
                 tempObject.Description = mysqlResult.GetString(4);
@@ -270,7 +300,7 @@ namespace Desktop
             {
                 Cost tempObject = new Cost();
                 tempObject.Id = mysqlResult.GetString(0);
-                tempObject.UserId = mysqlResult.GetString(1);
+                tempObject.UserId =  Convert.ToInt32(mysqlResult.GetString(1));
                 tempObject.CostTypeId = mysqlResult.GetString(2);
                 tempObject.Name = mysqlResult.GetString(3);
                 tempObject.Description = mysqlResult.GetString(4);

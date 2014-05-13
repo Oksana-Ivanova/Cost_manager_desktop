@@ -43,6 +43,7 @@
             this.StatusNewCost = new System.Windows.Forms.ToolStripStatusLabel();
             this.numValue = new System.Windows.Forms.NumericUpDown();
             this.btnNewCategory = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(84, 219);
+            this.btnOk.Location = new System.Drawing.Point(98, 219);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 6;
@@ -171,7 +172,6 @@
             this.StatusNewCost.Name = "StatusNewCost";
             this.StatusNewCost.Size = new System.Drawing.Size(42, 17);
             this.StatusNewCost.Text = "Status:";
-            this.StatusNewCost.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // numValue
             // 
@@ -197,6 +197,16 @@
             this.btnNewCategory.UseVisualStyleBackColor = true;
             this.btnNewCategory.Click += new System.EventHandler(this.btnNewCategory_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(13, 219);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // New_cost_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +215,7 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(294, 262);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnNewCategory);
             this.Controls.Add(this.numValue);
             this.Controls.Add(this.cboCategory);
@@ -250,5 +261,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.NumericUpDown numValue;
         private System.Windows.Forms.Button btnNewCategory;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

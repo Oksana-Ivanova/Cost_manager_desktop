@@ -104,10 +104,6 @@ namespace Desktop
             dateTimePickerEnd.MinDate = dateTimePickerStart.Value;           
         }
 
-        private void dataGridViewIncomes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
         private void dataGridViewIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
         {
             if (dataGridViewIncomes.Columns.Contains("updated_at"))
@@ -126,6 +122,12 @@ namespace Desktop
 
                 catch { }
             }
-        }            
+        }
+
+        private void dataGridViewIncomes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+        
+        }
+     
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Desktop
 {
-    class CostType
+    public class CostType
     {
         private string _Id;
 
@@ -52,7 +52,7 @@ namespace Desktop
 
         public CostType()
         {
-            _Id = "";
+            _Id = SequenceGenerator.GenerateUniqueString();
             _Name = "";
 
             _CreateDate = DateTime.Today;

@@ -12,36 +12,92 @@ namespace Desktop
 {
     public partial class New_cost_form : Form
     {
+        public enum FormMode
+        {
+            CreateMode = 0,
+            UpdateMode = 1
+        };
+
+        private FormMode formMode;
+        private Cost currentCost;
+
         public New_cost_form()
         {
             InitializeComponent();
             comboBoxCategoryNewCost_Set();
+
+            formMode = FormMode.CreateMode;
+            currentCost = new Cost();
+            initFormByMode(formMode);
         }
+
+        public New_cost_form(Cost cost)
+        {
+            InitializeComponent();
+            comboBoxCategoryNewCost_Set();
+
+            formMode = FormMode.UpdateMode;
+            currentCost = cost;
+            initFormByMode(formMode);
+            initFieldsByCost();
+        }
+
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
         const string password = "123";
-    
+        
+        private void initFormByMode(FormMode mode)
+        {
+            switch (mode)
+            {
+                case FormMode.CreateMode:
+                    this.Text = "New Cost";
+                    btnOk.Text = "Create";
+                    btnDelete.Text = String.Empty;
+                    btnDelete.Hide();
+                    btnCancel.Text = "Cencel";
+                    break;
+
+                case FormMode.UpdateMode:
+                    this.Text = "Update Cost";
+                    btnOk.Text = "Update";
+                    btnDelete.Text = "Delete";
+                    btnDelete.Show();
+                    btnCancel.Text = "Cencel";
+                    break;
+
+                default:
+                    this.Text = "New Cost";
+                    btnOk.Text = "Create";
+                    btnDelete.Text = String.Empty;
+                    btnDelete.Hide();
+                    btnCancel.Text = "Cencel";
+                    break;
+            }
+        }
+        private void initFieldsByCost()
+        {
+            if (formMode == FormMode.UpdateMode)
+            {
+                tbNameNewCost.Text = currentCost.Name;
+                richTextBoxDescriptionNewCost.Text = currentCost.Description;
+                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_name).Name;
+                numValue.Value = (decimal)currentCost.Price;
+                dateTimePickerNewCost.Value = currentCost.CreateDate;
+            }
+        }
 
         DBHandler controller = new DBHandler(host, database, user, password);      
         BindingSource new_cost_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
-        
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+                
+        private void comboBoxCategoryNewCost_Set()
         {
+            List<CostType> categories = new List<CostType>();
+            categories = controller.getCategoriesByUserID(LoginForm.user_ID);
 
-        }
-        
-        private void   comboBoxCategoryNewCost_Set()
-        {
-            List<CostType> categoryName = new List<CostType>();
-            categoryName = controller.getCategorysByUserID(LoginForm.user_ID);
-            CostType tempObject = new CostType();
-            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Household", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Business", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-            categoryName.Add(new CostType(tempObject.Id = "", tempObject.Name = "Health", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
-          
-            new_cost_binding.DataSource= categoryName;
+            new_cost_binding.DataSource = categories;
             cboCategory.DataSource = new_cost_binding.DataSource;
             cboCategory.DisplayMember = "Name";
             cboCategory.ValueMember = "Name";
@@ -74,26 +130,46 @@ namespace Desktop
             if (validateFields() == false)
                 return;
 
-          
-            try
+            if (formMode == FormMode.CreateMode)
             {
-                string categoryName = cboCategory.Text;
-                //string id = connect.generator_id(table_name, column_name);
-                string id = SequenceGenerator.GenerateUniqueString();
-                int ID_user = LoginForm.user_ID;             
-                string ID_cost =  controller.getCategoryByNameAndUserID(categoryName).Id;             
-                string name = tbNameNewCost.Text;
-                string description = richTextBoxDescriptionNewCost.Text;
-                double money = Convert.ToDouble(numValue.Value);
-                string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
-                connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
-               
-                // DataGridView2__Drow(ID_cost); 
-                
-                this.Close();
+                try
+                {
+                    string categoryName = cboCategory.Text;
+                    //string id = connect.generator_id(table_name, column_name);
+                    string id = SequenceGenerator.GenerateUniqueString();
+                    int ID_user = LoginForm.user_ID;
+                    string ID_cost = controller.getCategoryByNameAndUserID(categoryName).Id;
+                    string name = tbNameNewCost.Text;
+                    string description = richTextBoxDescriptionNewCost.Text;
+                    double money = Convert.ToDouble(numValue.Value);
+                    string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
+                    connect.Insert_into_cost(id, ID_user, ID_cost, name, description, money, Date);
+
+                    // DataGridView2__Drow(ID_cost); 
+
+                    this.Close();
+                }
+                catch { }
             }
-            catch { }
-            this.Close();
+            else if (formMode == FormMode.UpdateMode)
+            {
+                try
+                {
+                    string createDate = secondary_methods.datetime_to_sql_format(currentCost.CreateDate);
+                    string updateDate = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
+
+                    connect.Update(currentCost.Id,
+                                   currentCost.UserId,
+                                   currentCost.CostTypeId,
+                                   tbNameNewCost.Text,
+                                   richTextBoxDescriptionNewCost.Text,
+                                   (double)numValue.Value,
+                                   createDate,
+                                   updateDate);
+                    this.Close();
+                }
+                catch { }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -110,6 +186,11 @@ namespace Desktop
         {
             New_Category_Form newCategoryForm = new New_Category_Form();
             newCategoryForm.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+        
         }
 
        

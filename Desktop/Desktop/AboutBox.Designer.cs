@@ -32,7 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button_ok_aboutbox = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -97,15 +97,15 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Cost Manager v1.00";
             // 
-            // button_ok_aboutbox
+            // btnOk
             // 
-            this.button_ok_aboutbox.Location = new System.Drawing.Point(140, 248);
-            this.button_ok_aboutbox.Name = "button_ok_aboutbox";
-            this.button_ok_aboutbox.Size = new System.Drawing.Size(75, 23);
-            this.button_ok_aboutbox.TabIndex = 5;
-            this.button_ok_aboutbox.Text = "Ok";
-            this.button_ok_aboutbox.UseVisualStyleBackColor = true;
-            this.button_ok_aboutbox.Click += new System.EventHandler(this.button_ok_aboutbox_Click);
+            this.btnOk.Location = new System.Drawing.Point(140, 248);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 5;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.okButton_Click);
             // 
             // statusStrip1
             // 
@@ -161,7 +161,7 @@
             this.ClientSize = new System.Drawing.Size(356, 283);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button_ok_aboutbox);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel1);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button_ok_aboutbox;
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
