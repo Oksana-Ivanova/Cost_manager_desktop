@@ -132,7 +132,7 @@ namespace Desktop
             ds.Tables["cost_type"].Columns.Add("value");
             ds.Tables["cost_type"].Columns.Add("sum");
         }
-        public  void Delete(string id, int ID_user, string type_name)//costs_types
+        public  void Delete_cost_type(string id, int ID_user, string type_name)//costs_types
         {
             try
             {
@@ -152,7 +152,7 @@ namespace Desktop
             }
 
         }
-        public  void Delete(string id, string ID_cost, int ID_user)//costs
+        public  void Delete_cost(string id, string ID_cost, int ID_user)//costs
         {
             try
             {
@@ -167,6 +167,21 @@ namespace Desktop
             finally {  _Connection.Close(); }
 
         }
+        public void Delete_income(string id,  int ID_user)//costs
+        {
+            try
+            {
+                // string qry = " delete from costs where  user_id='" + Form2.ID + "'";
+                string qry = " delete from incomes where  user_id='" + ID_user + "' and id='" + id + "'";
+                _Connection.Open();
+                MessageBox.Show(qry);
+                MySqlCommand comandDelete = new MySqlCommand(qry, _Connection);
+                comandDelete.ExecuteNonQuery();
+            }
+            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            finally { _Connection.Close(); }
+
+        }
         public  DataSet drow_dataGridViewOutlays(string ID_cost)
         {
             MySqlDataAdapter adap1 = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "and user_id='" + LoginForm.user_ID + "'",  _Connection);
@@ -175,7 +190,7 @@ namespace Desktop
             adap1.Fill(dt, "costs");
             return dt;
         }
-        public  void Update(string id, int ID_user, string ID_limit, string type_name, string Date_create, string Date_updadate)//cost_types
+        public  void Update_cost_type(string id, int ID_user, string ID_limit, string type_name, string Date_create, string Date_updadate)//cost_types
         {
 
             try
@@ -189,7 +204,7 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally {  _Connection.Close(); }
         }
-        public  void Update(string id, int ID_user, string ID_cost, string cost_name, string description, double money, string Date_create, string Date_updadate) //costs
+        public  void Update_cost(string id, int ID_user, string ID_cost, string cost_name, string description, double money, string Date_create, string Date_updadate) //costs
         {
 
             try
@@ -201,6 +216,19 @@ namespace Desktop
             }
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally {  _Connection.Close(); }
+        }
+        public void Update_income(string id, int ID_user, string income_name, string description, double money, string Date_create, string Date_updadate) //costs
+        {
+
+            try
+            {//               update heroku_9e3361f1a2a704a.costs set name='aa', description='aa', updated_at='2014-05-04 18:09:45' where  user_id='2' and id='bf9cb1879f' and created_at='2014-05-04 10:23:48' and cost_type_id='4e7c064431';
+                string qry = "update incomes set name='" + income_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
+                _Connection.Open(); MessageBox.Show(qry);
+                MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
+                comandUpdate.ExecuteNonQuery();
+            }
+            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            finally { _Connection.Close(); }
         }
       // public bool get_id_from_table() { }
         public string generator_id(string table_name, string column_name)

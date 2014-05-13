@@ -155,7 +155,22 @@ namespace Desktop
           
             dataGridViewOutlays.DataSource = ds.Tables["costs"]; // ataGridViewOutlays end     
            // draw_chart_outlays(cost_type_id);
+            add_column_edit();
 
+        }
+        private void add_column_edit()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnEdit;
+            ColumnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+
+            ColumnEdit.HeaderText = "";
+            ColumnEdit.Name = "ColumnEdit";
+            ColumnEdit.ReadOnly = true;
+            ColumnEdit.Text = "Edit";
+            ColumnEdit.ToolTipText = "Edit";
+            ColumnEdit.UseColumnTextForButtonValue = true;
+            this.dataGridViewOutlays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnEdit});
         }
 
         private void btnNewCost_Click(object sender, EventArgs e)
@@ -280,7 +295,7 @@ namespace Desktop
 
         private void dataGridViewOutlays_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+            Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_Email)[0];
 
             New_cost_form costForm = new New_cost_form(cost);
             costForm.Show();

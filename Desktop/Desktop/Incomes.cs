@@ -63,9 +63,23 @@ namespace Desktop
          
             DataSet ds = new DataSet();
             ds = controller.getAllIncomesBySelectedPeriod( period_begin_date, period_end_date);
-            dataGridViewIncomes.DataSource = ds.Tables["incomes"];     
-          
+            dataGridViewIncomes.DataSource = ds.Tables["incomes"];
+            add_column_edit();
 
+        }
+        private void add_column_edit()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnEdit;
+            ColumnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+
+            ColumnEdit.HeaderText = "";
+            ColumnEdit.Name = "ColumnEdit";
+            ColumnEdit.ReadOnly = true;
+            ColumnEdit.Text = "Edit";
+            ColumnEdit.ToolTipText = "Edit";
+            ColumnEdit.UseColumnTextForButtonValue = true;
+            this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnEdit});
         }
         public Incomes()
         {

@@ -64,6 +64,34 @@ namespace Desktop
             _Connection.Close();
             return resultUser;
         }
+        public User getUserByEmail(string userEmail)
+        {
+            User resultUser = new User();
+
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT * FROM users WHERE email =\"" + userEmail + "\" LIMIT 1 ;";
+
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+            try
+            {
+                if (mysqlResult.Read())
+                {
+                    resultUser.Id = mysqlResult.GetString(0);
+                    resultUser.Name = mysqlResult.GetString(1);
+                    resultUser.Email = mysqlResult.GetString(2);
+                    resultUser.Pasword = mysqlResult.GetString(3);
+                    resultUser.SignInCount = Convert.ToUInt16(mysqlResult.GetString(7));
+                    resultUser.CreateDate = Convert.ToDateTime(mysqlResult.GetString(12));
+                    resultUser.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(13));
+                }
+            }
+            catch { }
+
+
+            _Connection.Close();
+            return resultUser;
+        }
         public List<CostType> getCategoriesByUserID(int user_ID)
         {
             List<CostType> resultCategoryList = new List<CostType>();
@@ -145,9 +173,9 @@ namespace Desktop
             finally { _Connection.Close(); }
             return ds;
         }
-        public List<Cost> getCostByName(string costName, string userName)
+        public List<Cost> getCostByName(string costName, string userEmail)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
 
             List<Cost> resultList = new List<Cost>();
 
@@ -176,9 +204,9 @@ namespace Desktop
             return resultList;
         }
 
-        public List<Cost> getCostByCategory(string categoryName, string userName)
+        public List<Cost> getCostByCategory(string categoryName, string userEmail)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string categoryId = getCategoryByName(categoryName).Id;
 
             List<Cost> resultList = new List<Cost>();
@@ -208,15 +236,15 @@ namespace Desktop
             return resultList;
         }
 
-        public CostType getCostCategory(string costName, string userName)
+        public CostType getCostCategory(string costName, string userEmail)
         {
             CostType resultCategory = new CostType();
 
-            List<Cost> costs = getCostByName(costName, userName);
+            List<Cost> costs = getCostByName(costName, userEmail);
             if (costs.Count < 1)
                 return null;
 
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string categoryId = costs[0].CostTypeId;
                                    
             _Connection.Open();
@@ -245,7 +273,7 @@ namespace Desktop
 
         public List<Cost> getCostByDate(DateTime date, string userName)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string dateString = sqlDateString(date);
 
             List<Cost> resultList = new List<Cost>();
@@ -275,7 +303,7 @@ namespace Desktop
             return resultList;
         }
 
-        public List<Cost> getCostsInPeriod(DateTime date1, DateTime date2, string userName)
+        public List<Cost> getCostsInPeriod(DateTime date1, DateTime date2, string userEmail)
         {
             List<Cost> resultList = new List<Cost>();
 
@@ -285,7 +313,7 @@ namespace Desktop
                 return resultList;
             }
 
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string dateString1 = sqlDateString(date1);
             string dateString2 = sqlDateString(date2);
 
@@ -390,8 +418,7 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
-            }
-            MessageBox.Show(Convert.ToString(sum));
+            }           
             _Connection.Close(); 
             return sum;         
            

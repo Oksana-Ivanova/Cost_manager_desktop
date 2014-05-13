@@ -68,8 +68,7 @@ namespace Desktop
         private void most_often_cost() 
         { string cost_type_id;
             double sum;
-            string category_name = secondary_methods.get_most_often_cost(out sum, out cost_type_id);
-            MessageBox.Show(sum.ToString()+ category_name+cost_type_id);
+            string category_name = secondary_methods.get_most_often_cost(out sum, out cost_type_id);         
             labelCategoryName.Text = category_name;
             labelWeekOutlay.Text = sum.ToString();
         }
@@ -77,8 +76,7 @@ namespace Desktop
         {
             string cost_type_id;
             double sum;
-            string category_name = secondary_methods.get_biggest_cost(out sum, out cost_type_id);
-            MessageBox.Show(sum.ToString() + category_name + cost_type_id);
+            string category_name = secondary_methods.get_biggest_cost(out sum, out cost_type_id);           
             labelCategoryName2.Text = category_name;
             labelWeekOutlay2.Text = sum.ToString();
         }
@@ -217,6 +215,13 @@ namespace Desktop
         private void labelSrartPage_Click(object sender, EventArgs e)
         {
 
-        }            
+        }
+        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
+            {
+                MessageBox.Show("a");
+            }
+        }
     }
 }

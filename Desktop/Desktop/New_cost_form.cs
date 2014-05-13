@@ -82,7 +82,7 @@ namespace Desktop
             {
                 tbNameNewCost.Text = currentCost.Name;
                 richTextBoxDescriptionNewCost.Text = currentCost.Description;
-                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_name).Name;
+                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_Email).Name;
                 numValue.Value = (decimal)currentCost.Price;
                 dateTimePickerNewCost.Value = currentCost.CreateDate;
             }
@@ -158,7 +158,7 @@ namespace Desktop
                     string createDate = secondary_methods.datetime_to_sql_format(currentCost.CreateDate);
                     string updateDate = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
 
-                    connect.Update(currentCost.Id,
+                    connect.Update_cost(currentCost.Id,
                                    currentCost.UserId,
                                    currentCost.CostTypeId,
                                    tbNameNewCost.Text,

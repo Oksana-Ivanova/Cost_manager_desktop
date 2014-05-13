@@ -422,6 +422,7 @@
             this.dataGridViewRecentIncomes.ReadOnly = true;
             this.dataGridViewRecentIncomes.Size = new System.Drawing.Size(872, 250);
             this.dataGridViewRecentIncomes.TabIndex = 0;
+            this.dataGridViewRecentIncomes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Clic);
             this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewRecentIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewRecentIncomes_ColumnAdded);
             // 

@@ -28,31 +28,31 @@ namespace Desktop
 
         DBHandler controller = new DBHandler(host, database, user, password);
         public static int user_ID;
-        public static string user_name;
+        public static string user_Email;
         public static string user_pasword;
         
         private void btnOk_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
-            user_name = tbEmail.Text;
+            user_Email = tbEmail.Text;
             user_pasword = tbPassword.Text;
             bool error = true;
             while (error)
             {
-                if (user_name.Equals(String.Empty) & user_pasword.Equals(String.Empty))
+                if (user_Email.Equals(String.Empty) & user_pasword.Equals(String.Empty))
                 { MessageBox.Show("Заповніть поля Login та Pasword"); return; }
                 else
                 {
-                    if (user_name.Equals(String.Empty)) {MessageBox.Show("Заповніть поле Login");return;}
+                    if (user_Email.Equals(String.Empty)) {MessageBox.Show("Заповніть поле Login");return;}
                     else
                     {
                         if (user_pasword.Equals(String.Empty)) { MessageBox.Show("Заповніть поле Pasword"); return; } else { error = false; }
                     }
                 }
             }
-           if (controller.getUserByName(user_name).Pasword.Equals(user_pasword))
+           if (controller.getUserByEmail(user_Email).Pasword.Equals(user_pasword))
            {
-               user_ID = int.Parse(controller.getUserByName(user_name).Id);
+               user_ID = int.Parse(controller.getUserByEmail(user_Email).Id);
                this.Hide();
                Main mainform = new Main();
 
