@@ -27,12 +27,11 @@ namespace Desktop
             get_all_incomes_by_week();
            // if (!loginForm.Visible) { loginForm.Close(); }
         }
-        LoginForm loginForm = new LoginForm();
+       
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
         const string password = "123";
-
         DBHandler controller = new DBHandler(host, database, user, password);
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -148,7 +147,7 @@ namespace Desktop
         private void closeApplication()
         {
             Application.Exit();
-            loginForm.Close();
+           
         }
         private void get_all_incomes_by_week()
         {
@@ -159,8 +158,22 @@ namespace Desktop
             ds = controller.getAllIncomesBySelectedPeriod(period_begin_date, period_end_date);
 
             dataGridViewRecentIncomes.DataSource = ds.Tables["incomes"];
+            add_column_edit();
 
+        }
+        private void add_column_edit()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnEdit;
+            ColumnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
 
+            ColumnEdit.HeaderText = "";
+            ColumnEdit.Name = "ColumnEdit";
+            ColumnEdit.ReadOnly = true;
+            ColumnEdit.Text = "Edit";
+            ColumnEdit.ToolTipText = "Edit";
+            ColumnEdit.UseColumnTextForButtonValue = true;
+            this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnEdit});
         }
         private void dataGridViewRecentIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
         {
@@ -180,6 +193,11 @@ namespace Desktop
 
                 catch { }
             }
+        }
+
+        private void labelSrartPage_Click(object sender, EventArgs e)
+        {
+
         }            
     }
 }

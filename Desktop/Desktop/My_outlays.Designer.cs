@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -219,17 +218,18 @@
             this.chart_outlays.BackColor = System.Drawing.Color.Transparent;
             this.chart_outlays.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Right;
             this.chart_outlays.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea3.Name = "ChartArea1";
-            this.chart_outlays.ChartAreas.Add(chartArea3);
+            chartArea2.Name = "ChartArea1";
+            this.chart_outlays.ChartAreas.Add(chartArea2);
             this.chart_outlays.Location = new System.Drawing.Point(10, 10);
             this.chart_outlays.Name = "chart_outlays";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.chart_outlays.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chart_outlays.Series.Add(series2);
             this.chart_outlays.Size = new System.Drawing.Size(641, 367);
             this.chart_outlays.TabIndex = 0;
             this.chart_outlays.Text = "chart1";
+            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
             // 
             // panelTable
             // 

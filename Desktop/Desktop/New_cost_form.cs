@@ -112,6 +112,11 @@ namespace Desktop
             newCategoryForm.Show();
         }
 
+        private void richTextBoxDescriptionNewCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
        
     }
 }

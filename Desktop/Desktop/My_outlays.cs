@@ -170,31 +170,38 @@ namespace Desktop
         {
             DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
             DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
-            int number_of_periods=6;
+            int number_of_periods=7;
             chart_outlays.Series[0].Points.Clear();
-            string categoryName = cboCategory.Text;
+            chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.AddHours(-23).ToOADate();
+            chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.AddHours(-22).ToOADate();
+            chart_outlays.ChartAreas[0].AxisY.Minimum = 0;
+           string categoryName = cboCategory.Text;
             string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;         
             for (int i = 0; i <= number_of_periods; i++) 
             {
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
-                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
-                period_begin_date=period_begin_date.AddDays(1);
+                // chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(-1), i);
+               period_begin_date=period_begin_date.AddDays(1);
             }
         }
        private void draw_chart_outlays_by_month()
        {
            DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
-          // int number_of_periods = 30;
-           int i = 0;
+           int number_of_periods = 7;
+          // int i = 0;
            chart_outlays.Series[0].Points.Clear();
+           chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.AddHours(-23).ToOADate();
+           chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.AddHours(-22).ToOADate();
+           chart_outlays.ChartAreas[0].AxisY.Minimum = 0; //int number_of_periods = Convert.ToInt16((Convert.ToDouble(period_end_date.AddHours(-22)) - Convert.ToDouble(period_begin_date.AddHours(-23).ToOADate()))/2);
            string categoryName = cboCategory.Text;
            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
-        //   for (int i = 0; i <= number_of_periods; i++)
-           while (!(period_begin_date==period_end_date))
+         for (int i = 0; i <= number_of_periods; i++)
+          // while (!(period_begin_date==period_end_date))
            {
-               i++;
+               //i++;
                double costs_sum_from_period = 0;
                costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
@@ -265,6 +272,11 @@ namespace Desktop
 
                 catch { }
             }
+        }
+
+        private void chart_outlays_Click(object sender, EventArgs e)
+        {
+
         }
               
     }

@@ -49,6 +49,7 @@
             this.dataGridViewLimits.Name = "dataGridViewLimits";
             this.dataGridViewLimits.Size = new System.Drawing.Size(260, 148);
             this.dataGridViewLimits.TabIndex = 0;
+            this.dataGridViewLimits.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLimits_CellContentClick);
             // 
             // Column_category
             // 

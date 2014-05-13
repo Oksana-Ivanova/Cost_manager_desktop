@@ -22,7 +22,6 @@ namespace Desktop
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
         const string password = "123";
-        
         SqlFunction connect = new SqlFunction(host, database, user, password);
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -64,6 +63,11 @@ namespace Desktop
             {
                 numLimitValue.Enabled = true;
             }
+        }
+
+        private void tbCategoryTitle_TextChanged(object sender, EventArgs e)
+        {
+
         }
         
     }

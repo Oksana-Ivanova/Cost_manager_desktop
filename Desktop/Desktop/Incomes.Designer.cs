@@ -46,14 +46,14 @@
             // 
             // dataGridViewIncomes
             // 
-            this.dataGridViewIncomes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewIncomes.AllowUserToAddRows = false;
+            this.dataGridViewIncomes.AllowUserToDeleteRows = false;
             this.dataGridViewIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIncomes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIncomes.Location = new System.Drawing.Point(258, 32);
             this.dataGridViewIncomes.Name = "dataGridViewIncomes";
+            this.dataGridViewIncomes.ReadOnly = true;
             this.dataGridViewIncomes.Size = new System.Drawing.Size(547, 320);
             this.dataGridViewIncomes.TabIndex = 1;
             this.dataGridViewIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIncomes_CellContentClick);

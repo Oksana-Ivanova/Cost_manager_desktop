@@ -16,7 +16,7 @@ namespace Desktop
         {
             InitializeComponent();
         }
-     
+
         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "root";
@@ -77,6 +77,11 @@ namespace Desktop
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

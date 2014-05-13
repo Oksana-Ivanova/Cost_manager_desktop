@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageStart = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelSrartPage = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelTotalOutlays = new System.Windows.Forms.Panel();
@@ -75,6 +76,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabPageStart.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panelTotalOutlays.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,7 +107,7 @@
             // 
             this.tabPageStart.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.tabPageStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPageStart.Controls.Add(this.labelSrartPage);
+            this.tabPageStart.Controls.Add(this.groupBox1);
             this.tabPageStart.Location = new System.Drawing.Point(4, 25);
             this.tabPageStart.Name = "tabPageStart";
             this.tabPageStart.Padding = new System.Windows.Forms.Padding(3);
@@ -114,20 +116,33 @@
             this.tabPageStart.Text = "StartPage";
             this.tabPageStart.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.labelSrartPage);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(882, 365);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Як зберегти та примножити гроші (поради фахівців)";
+            // 
             // labelSrartPage
             // 
             this.labelSrartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(205)));
-            this.labelSrartPage.Location = new System.Drawing.Point(50, 30);
+            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelSrartPage.Location = new System.Drawing.Point(6, 22);
             this.labelSrartPage.Name = "labelSrartPage";
             this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelSrartPage.Size = new System.Drawing.Size(772, 308);
-            this.labelSrartPage.TabIndex = 0;
+            this.labelSrartPage.Size = new System.Drawing.Size(870, 338);
+            this.labelSrartPage.TabIndex = 1;
             this.labelSrartPage.Text = resources.GetString("labelSrartPage.Text");
-            this.labelSrartPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSrartPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage2
             // 
@@ -395,6 +410,8 @@
             // 
             // dataGridViewRecentIncomes
             // 
+            this.dataGridViewRecentIncomes.AllowUserToAddRows = false;
+            this.dataGridViewRecentIncomes.AllowUserToDeleteRows = false;
             this.dataGridViewRecentIncomes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -402,6 +419,7 @@
             this.dataGridViewRecentIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRecentIncomes.Location = new System.Drawing.Point(8, 42);
             this.dataGridViewRecentIncomes.Name = "dataGridViewRecentIncomes";
+            this.dataGridViewRecentIncomes.ReadOnly = true;
             this.dataGridViewRecentIncomes.Size = new System.Drawing.Size(872, 250);
             this.dataGridViewRecentIncomes.TabIndex = 0;
             this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -549,6 +567,8 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);
+            this.tabPageStart.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panelTotalOutlays.ResumeLayout(false);
@@ -591,7 +611,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewRecentIncomes;
-        private System.Windows.Forms.Label labelSrartPage;
         private System.Windows.Forms.LinkLabel linkLabelLogOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBoxMostOften;
@@ -615,6 +634,8 @@
         private System.Windows.Forms.Button buttonDetalisedIncomes;
         private System.Windows.Forms.Label labelTotalIncomePerWeek;
         private System.Windows.Forms.Label labelTotallIncomePerLastWeek;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labelSrartPage;
     }
 }
 

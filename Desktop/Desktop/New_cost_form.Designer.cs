@@ -111,6 +111,7 @@
             this.richTextBoxDescriptionNewCost.Size = new System.Drawing.Size(170, 82);
             this.richTextBoxDescriptionNewCost.TabIndex = 1;
             this.richTextBoxDescriptionNewCost.Text = "";
+            this.richTextBoxDescriptionNewCost.TextChanged += new System.EventHandler(this.richTextBoxDescriptionNewCost_TextChanged);
             // 
             // tbNameNewCost
             // 

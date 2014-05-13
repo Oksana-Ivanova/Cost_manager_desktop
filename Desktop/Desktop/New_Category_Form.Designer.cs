@@ -55,6 +55,7 @@
             this.tbCategoryTitle.Name = "tbCategoryTitle";
             this.tbCategoryTitle.Size = new System.Drawing.Size(151, 20);
             this.tbCategoryTitle.TabIndex = 0;
+            this.tbCategoryTitle.TextChanged += new System.EventHandler(this.tbCategoryTitle_TextChanged);
             // 
             // gbCategoryLimit
             // 

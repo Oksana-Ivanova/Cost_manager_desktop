@@ -30,13 +30,14 @@
         {
             this.btnOk = new System.Windows.Forms.Button();
             this.linkLabel_ForgotPass = new System.Windows.Forms.LinkLabel();
-            this.tbLogin = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LabelStatusLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(LoginForm_Closed);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,12 +65,12 @@
             this.linkLabel_ForgotPass.Text = "Forgot a password?";
             this.linkLabel_ForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ForgotPass_LinkClicked);
             // 
-            // tbLogin
+            // tbEmail
             // 
-            this.tbLogin.Location = new System.Drawing.Point(80, 22);
-            this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(136, 20);
-            this.tbLogin.TabIndex = 0;
+            this.tbEmail.Location = new System.Drawing.Point(80, 22);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(136, 20);
+            this.tbEmail.TabIndex = 0;
             // 
             // tbPassword
             // 
@@ -86,9 +87,9 @@
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Location = new System.Drawing.Point(10, 25);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.Size = new System.Drawing.Size(35, 13);
             this.lblLogin.TabIndex = 5;
-            this.lblLogin.Text = "Login";
+            this.lblLogin.Text = "E-mail";
             // 
             // lblPassword
             // 
@@ -144,7 +145,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbLogin);
+            this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.linkLabel_ForgotPass);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.statusStrip1);
@@ -166,7 +167,7 @@
 
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.LinkLabel linkLabel_ForgotPass;
-        private System.Windows.Forms.TextBox tbLogin;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblPassword;

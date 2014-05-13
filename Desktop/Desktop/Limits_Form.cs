@@ -16,5 +16,10 @@ namespace Desktop
         {
             InitializeComponent();
         }
+
+        private void dataGridViewLimits_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
