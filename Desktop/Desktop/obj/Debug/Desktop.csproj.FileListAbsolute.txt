@@ -108,4 +108,3 @@ D:\Projects\Git\Cost_Manager_desktop2\Cost_manager_desktop\Desktop\Desktop\obj\D
 D:\Projects\Git\Cost_Manager_desktop2\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
 D:\Projects\Git\Cost_Manager_desktop2\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
-C:\Users\ad\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache

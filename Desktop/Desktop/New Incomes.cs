@@ -67,7 +67,7 @@ namespace Desktop
 
                 // DataGridView2__Drow(ID_cost); 
 
-                this.Close();
+               
             }
             catch { } 
            

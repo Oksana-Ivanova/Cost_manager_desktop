@@ -25,6 +25,8 @@ namespace Desktop
                 x += i;
             } draw_chart_recent_cost();
             get_all_incomes_by_week();
+            most_often_cost();
+            biggest_cost();
            // if (!loginForm.Visible) { loginForm.Close(); }
         }
        
@@ -61,8 +63,25 @@ namespace Desktop
         {
             My_outlays outlays_form = new My_outlays();
             outlays_form.ShowDialog();
+            
         }
-
+        private void most_often_cost() 
+        { string cost_type_id;
+            double sum;
+            string category_name = secondary_methods.get_most_often_cost(out sum, out cost_type_id);
+            MessageBox.Show(sum.ToString()+ category_name+cost_type_id);
+            labelCategoryName.Text = category_name;
+            labelWeekOutlay.Text = sum.ToString();
+        }
+        private void biggest_cost()
+        {
+            string cost_type_id;
+            double sum;
+            string category_name = secondary_methods.get_biggest_cost(out sum, out cost_type_id);
+            MessageBox.Show(sum.ToString() + category_name + cost_type_id);
+            labelCategoryName2.Text = category_name;
+            labelWeekOutlay2.Text = sum.ToString();
+        }
         private void viewIncomesToolStripMenuItem_Click(object sender, EventArgs e)
         {
  Incomes inc_form = new Incomes();

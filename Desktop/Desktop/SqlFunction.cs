@@ -117,6 +117,7 @@ namespace Desktop
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
                 _Connection.Open();
+                MessageBox.Show(qry);
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
                 comandInsert.ExecuteNonQuery();
             }

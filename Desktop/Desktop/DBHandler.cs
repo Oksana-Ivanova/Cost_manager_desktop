@@ -391,6 +391,7 @@ namespace Desktop
                 }
                 catch { }
             }
+            MessageBox.Show(Convert.ToString(sum));
             _Connection.Close(); 
             return sum;         
            
@@ -435,6 +436,38 @@ namespace Desktop
             _Connection.Close();
             return sum;
 
+        }
+        public List<Cost> getAllCostsBySelectedPeriodAndCosTypeID(string ID_cost_type, DateTime period_begin_date, DateTime period_end_date)
+        {
+            List<Cost> resultList = new List<Cost>();
+           
+            _Connection.Open();
+            string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date.AddDays(1));
+           
+        
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "select * from  costs where cost_type_id='" + ID_cost_type + "'and created_at>'" + period_begin + "' and created_at<'" + period_end + "';";
+
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            while (mysqlResult.Read())
+            {
+                Cost tempObject = new Cost();
+                tempObject.Id = mysqlResult.GetString(0);
+                tempObject.UserId = Convert.ToInt32(mysqlResult.GetString(1));
+                tempObject.CostTypeId = mysqlResult.GetString(2);
+                tempObject.Name = mysqlResult.GetString(3);
+                tempObject.Description = mysqlResult.GetString(4);
+                tempObject.Price = Convert.ToDouble(mysqlResult.GetString(5));
+                tempObject.CreateDate = Convert.ToDateTime(mysqlResult.GetString(6));
+                tempObject.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(7));
+
+                resultList.Add(tempObject);
+            }
+
+            _Connection.Close();
+            return resultList;
         }
     }
 }
