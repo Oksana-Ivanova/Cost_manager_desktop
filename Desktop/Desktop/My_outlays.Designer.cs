@@ -212,8 +212,8 @@
             // 
             // chart_outlays
             // 
-            this.chart_outlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.chart_outlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_outlays.BackColor = System.Drawing.Color.Transparent;
             this.chart_outlays.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Right;
@@ -233,8 +233,8 @@
             // 
             // panelTable
             // 
-            this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTable.BackColor = System.Drawing.Color.Transparent;
             this.panelTable.Controls.Add(this.dataGridViewOutlays);
@@ -247,13 +247,16 @@
             // 
             // dataGridViewOutlays
             // 
-            this.dataGridViewOutlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridViewOutlays.AllowUserToAddRows = false;
+            this.dataGridViewOutlays.AllowUserToDeleteRows = false;
+            this.dataGridViewOutlays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOutlays.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOutlays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOutlays.Location = new System.Drawing.Point(10, 10);
             this.dataGridViewOutlays.Name = "dataGridViewOutlays";
+            this.dataGridViewOutlays.ReadOnly = true;
             this.dataGridViewOutlays.Size = new System.Drawing.Size(641, 377);
             this.dataGridViewOutlays.TabIndex = 0;
             this.dataGridViewOutlays.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Clic);
@@ -262,8 +265,8 @@
             // 
             // panelChart
             // 
-            this.panelChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChart.BackColor = System.Drawing.Color.Transparent;
             this.panelChart.Controls.Add(this.chart_outlays);
@@ -282,8 +285,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 442);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panelTable);
             this.Name = "My_outlays";
             this.Text = "My Outlays";

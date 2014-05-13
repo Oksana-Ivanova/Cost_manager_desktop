@@ -58,10 +58,10 @@ namespace Desktop
         }
         public static string get_most_often_cost(out double sum,out string cost_type_id)
         {
-            const string host = "127.0.0.1";
+            const string host = "eu-cdbr-west-01.cleardb.com";
             const string database = "heroku_9e3361f1a2a704a";
-            const string user = "root";
-            const string password = "123";
+            const string user = "b7d511d516e6e4";
+            const string password = "e2941bb5";
 
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
             DateTime period_end_date = DateTime.Today.AddDays(1);
@@ -92,10 +92,10 @@ namespace Desktop
         }
         public static string get_biggest_cost(out double sum, out string cost_type_id)
         {
-            const string host = "127.0.0.1";
+            const string host = "eu-cdbr-west-01.cleardb.com";
             const string database = "heroku_9e3361f1a2a704a";
-            const string user = "root";
-            const string password = "123";
+            const string user = "b7d511d516e6e4";
+            const string password = "e2941bb5";
 
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
             DateTime period_end_date = DateTime.Today.AddDays(1);
