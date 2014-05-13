@@ -256,6 +256,7 @@
             this.dataGridViewOutlays.Name = "dataGridViewOutlays";
             this.dataGridViewOutlays.Size = new System.Drawing.Size(641, 377);
             this.dataGridViewOutlays.TabIndex = 0;
+            this.dataGridViewOutlays.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Clic);
             this.dataGridViewOutlays.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOutlays_CellContentClick);
             this.dataGridViewOutlays.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewOutlays_ColumnAdded);
             // 

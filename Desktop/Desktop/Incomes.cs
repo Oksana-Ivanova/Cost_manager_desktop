@@ -142,6 +142,12 @@ namespace Desktop
         {
         
         }
-     
+        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
+            {
+                MessageBox.Show("a");
+            }
+        }
     }
 }

@@ -145,6 +145,16 @@ namespace Desktop
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+                this.dataGridViewOutlays.DataSource = null;
+                this.dataGridViewOutlays.Rows.Clear();
+                try
+                {
+                    this.dataGridViewOutlays.Columns.Remove("ColumnEdit");
+                }
+                catch { }
+               // this.dataGridViewOutlays.DataSource = this.GetNewValues();
+         
            DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
             string categoryName = cboCategory.Text;   
@@ -299,6 +309,16 @@ namespace Desktop
 
             New_cost_form costForm = new New_cost_form(cost);
             costForm.Show();
+        }
+        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
+            {
+                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_Email)[0];
+
+                New_cost_form costForm = new New_cost_form(cost);
+                costForm.Show();
+            }
         }
 
     }
