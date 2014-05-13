@@ -168,6 +168,13 @@ namespace Desktop
         }
         private void get_all_incomes_by_week()
         {
+            this.dataGridViewRecentIncomes.DataSource = null;
+            this.dataGridViewRecentIncomes.Rows.Clear();
+            try
+            {
+                this.dataGridViewRecentIncomes.Columns.Remove("ColumnEdit");
+            }
+            catch { }
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
             DateTime period_end_date = DateTime.Today;
 

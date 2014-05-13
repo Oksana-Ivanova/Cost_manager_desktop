@@ -58,6 +58,13 @@ namespace Desktop
         }
         private void get_incomes_by_selected_period()
         {
+            this.dataGridViewIncomes.DataSource = null;
+            this.dataGridViewIncomes.Rows.Clear();
+            try
+            {
+                this.dataGridViewIncomes.Columns.Remove("ColumnEdit");
+            }
+            catch { }
             DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
             DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);          
          
