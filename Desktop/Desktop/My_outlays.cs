@@ -359,10 +359,11 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_email)[1];
+                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
 
                 New_cost_form costForm = new New_cost_form(cost);
                 costForm.Show();
+
             }
         }
        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

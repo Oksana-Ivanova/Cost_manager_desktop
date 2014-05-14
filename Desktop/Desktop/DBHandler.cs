@@ -201,7 +201,7 @@ namespace Desktop
 
                 resultList.Add(tempObject);
             }
-            MessageBox.Show(resultList[1].ToString());
+           // MessageBox.Show(resultList[1].ToString());
             _Connection.Close();
             return resultList;
         }
