@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -75,9 +75,9 @@
             // 
             this.groupBoxCategory.Controls.Add(this.cboCategory);
             this.groupBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxCategory.Location = new System.Drawing.Point(15, 190);
+            this.groupBoxCategory.Location = new System.Drawing.Point(15, 192);
             this.groupBoxCategory.Name = "groupBoxCategory";
-            this.groupBoxCategory.Size = new System.Drawing.Size(214, 65);
+            this.groupBoxCategory.Size = new System.Drawing.Size(208, 65);
             this.groupBoxCategory.TabIndex = 4;
             this.groupBoxCategory.TabStop = false;
             this.groupBoxCategory.Text = "Category";
@@ -95,7 +95,7 @@
             // btnNewCost
             // 
             this.btnNewCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnNewCost.Location = new System.Drawing.Point(22, 261);
+            this.btnNewCost.Location = new System.Drawing.Point(21, 279);
             this.btnNewCost.Name = "btnNewCost";
             this.btnNewCost.Size = new System.Drawing.Size(117, 28);
             this.btnNewCost.TabIndex = 1;
@@ -111,11 +111,10 @@
             this.groupBoxPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxPeriod.Location = new System.Drawing.Point(15, 20);
             this.groupBoxPeriod.Name = "groupBoxPeriod";
-            this.groupBoxPeriod.Size = new System.Drawing.Size(214, 164);
+            this.groupBoxPeriod.Size = new System.Drawing.Size(208, 166);
             this.groupBoxPeriod.TabIndex = 3;
             this.groupBoxPeriod.TabStop = false;
             this.groupBoxPeriod.Text = "Period";
-            this.groupBoxPeriod.Enter += new System.EventHandler(this.groupBoxPeriod_Enter);
             // 
             // panelCustomDate
             // 
@@ -125,7 +124,7 @@
             this.panelCustomDate.Controls.Add(this.dateTimePickerEnd);
             this.panelCustomDate.Location = new System.Drawing.Point(14, 49);
             this.panelCustomDate.Name = "panelCustomDate";
-            this.panelCustomDate.Size = new System.Drawing.Size(177, 93);
+            this.panelCustomDate.Size = new System.Drawing.Size(177, 90);
             this.panelCustomDate.TabIndex = 6;
             // 
             // lblStartDateRef
@@ -219,18 +218,17 @@
             this.chart_outlays.BackColor = System.Drawing.Color.Transparent;
             this.chart_outlays.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Right;
             this.chart_outlays.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea2.Name = "ChartArea1";
-            this.chart_outlays.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart_outlays.ChartAreas.Add(chartArea1);
             this.chart_outlays.Location = new System.Drawing.Point(10, 10);
             this.chart_outlays.Name = "chart_outlays";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chart_outlays.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chart_outlays.Series.Add(series1);
             this.chart_outlays.Size = new System.Drawing.Size(641, 367);
             this.chart_outlays.TabIndex = 0;
             this.chart_outlays.Text = "chart1";
-            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
             // 
             // panelTable
             // 

@@ -196,6 +196,8 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
+            ColumnEdit.Width = 50;
+            ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
         }

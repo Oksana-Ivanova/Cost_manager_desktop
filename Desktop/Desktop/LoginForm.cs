@@ -21,53 +21,60 @@ namespace Desktop
         {
 
         }
-<<<<<<< HEAD
-        const string host = "eu-cdbr-west-01.cleardb.com";
-=======
          const string host = "eu-cdbr-west-01.cleardb.com";
->>>>>>> fcf9aa117903e03853233d22aa830b3f8a1f1013
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "b7d511d516e6e4";
         const string password = "e2941bb5";
 
         DBHandler controller = new DBHandler(host, database, user, password);
         public static int user_ID;
-        public static string user_Email;
+        public static string user_name;
+        public static string user_email;
         public static string user_pasword;
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
-            user_Email = tbEmail.Text;
+            user_email = tbEmail.Text;
             user_pasword = tbPassword.Text;
-          
-         
-                if (user_Email.Equals(String.Empty) & user_pasword.Equals(String.Empty))
-                { MessageBox.Show("Заповніть поля Login та Pasword"); return; }
+
+            if (user_email.Equals(String.Empty) && user_pasword.Equals(String.Empty))
+            { 
+                MessageBox.Show("Заповніть поля Email та Pasword"); 
+                return; 
+            }
+            else
+            {
+                if (user_email.Equals(String.Empty)) 
+                {
+                    MessageBox.Show("Заповніть поле Email");
+                    return;
+                }
                 else
                 {
-                    if (user_Email.Equals(String.Empty)) {MessageBox.Show("Заповніть поле Login");return;}
-                    else
+                    if (user_pasword.Equals(String.Empty))
                     {
-                        if (user_pasword.Equals(String.Empty)) { MessageBox.Show("Заповніть поле Pasword"); return; } else { error = false; }
-                    }
+                        MessageBox.Show("Заповніть поле Pasword");
+                        return; 
+                    } 
                 }
-           
-           if (controller.getUserByEmail(user_Email).Pasword.Equals(user_pasword))
-           {
-               user_ID = int.Parse(controller.getUserByEmail(user_Email).Id);
-               this.Hide();
-               Main mainform = new Main();
+            }
+            
+            if (controller.getUserByEmail(user_email).Pasword.Equals(user_pasword))
+            {
+                User requestedUser = controller.getUserByEmail(user_email);
+                user_ID = int.Parse(requestedUser.Id);
+                user_name = requestedUser.Name;
+                this.Hide();
+                Main mainform = new Main();
+                mainform.ShowDialog();
 
-               mainform.ShowDialog();
-
-               Application.Exit();
+                Application.Exit();
 
             }
             else
             {                
                 tbPassword.Clear();
-                MessageBox.Show("Неправильно заповнені поля Login або Pasword");
+                MessageBox.Show("Неправильно заповнені поля Email або Pasword");
             }
            // if (!mainform.Enabled) { Application.Exit(); }
 
@@ -90,37 +97,6 @@ namespace Desktop
         private void LoginForm_Closed(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnOk_KeyUp(object sender, KeyEventArgs e)
-        {
-           
-        }
-
-        private void tbEmail_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-                btnOk_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-        }
-
-        private void tbPassword_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-                btnOk_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
         }
     }
 }

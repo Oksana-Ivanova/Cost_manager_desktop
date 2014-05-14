@@ -564,7 +564,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.09";
+            this.Text = "Cost Manager v0.10";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);

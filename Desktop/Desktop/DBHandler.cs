@@ -64,6 +64,7 @@ namespace Desktop
             _Connection.Close();
             return resultUser;
         }
+
         public User getUserByEmail(string userEmail)
         {
             User resultUser = new User();
@@ -92,6 +93,7 @@ namespace Desktop
             _Connection.Close();
             return resultUser;
         }
+
         public List<CostType> getCategoriesByUserID(int user_ID)
         {
             List<CostType> resultCategoryList = new List<CostType>();
@@ -173,9 +175,9 @@ namespace Desktop
             finally { _Connection.Close(); }
             return ds;
         }
-        public List<Cost> getCostByName(string costName, string userEmail)
+        public List<Cost> getCostByName(string costName, string userName)
         {
-            string userId = LoginForm.user_ID.ToString();
+            string userId = getUserByName(userName).Id;
 
             List<Cost> resultList = new List<Cost>();
 
@@ -204,9 +206,9 @@ namespace Desktop
             return resultList;
         }
 
-        public List<Cost> getCostByCategory(string categoryName, string userEmail)
+        public List<Cost> getCostByCategory(string categoryName, string userName)
         {
-            string userId = LoginForm.user_ID.ToString();
+            string userId = getUserByName(userName).Id;
             string categoryId = getCategoryByName(categoryName).Id;
 
             List<Cost> resultList = new List<Cost>();
@@ -236,15 +238,15 @@ namespace Desktop
             return resultList;
         }
 
-        public CostType getCostCategory(string costName, string userEmail)
+        public CostType getCostCategory(string costName, string userName)
         {
             CostType resultCategory = new CostType();
 
-            List<Cost> costs = getCostByName(costName, userEmail);
+            List<Cost> costs = getCostByName(costName, userName);
             if (costs.Count < 1)
                 return null;
 
-            string userId = LoginForm.user_ID.ToString();
+            string userId = getUserByName(userName).Id;
             string categoryId = costs[0].CostTypeId;
                                    
             _Connection.Open();
@@ -273,7 +275,7 @@ namespace Desktop
 
         public List<Cost> getCostByDate(DateTime date, string userName)
         {
-            string userId = LoginForm.user_ID.ToString();
+            string userId = getUserByName(userName).Id;
             string dateString = sqlDateString(date);
 
             List<Cost> resultList = new List<Cost>();
@@ -303,7 +305,7 @@ namespace Desktop
             return resultList;
         }
 
-        public List<Cost> getCostsInPeriod(DateTime date1, DateTime date2, string userEmail)
+        public List<Cost> getCostsInPeriod(DateTime date1, DateTime date2, string userName)
         {
             List<Cost> resultList = new List<Cost>();
 
@@ -313,7 +315,7 @@ namespace Desktop
                 return resultList;
             }
 
-            string userId = LoginForm.user_ID.ToString();
+            string userId = getUserByName(userName).Id;
             string dateString1 = sqlDateString(date1);
             string dateString2 = sqlDateString(date2);
 
@@ -418,11 +420,7 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
-<<<<<<< HEAD
-            }           
-=======
             }            
->>>>>>> fcf9aa117903e03853233d22aa830b3f8a1f1013
             _Connection.Close(); 
             return sum;         
            
@@ -500,6 +498,37 @@ namespace Desktop
             _Connection.Close();
             return resultList;
         }
+
+        public List<Income> getIncomeByName(string incomeName, string userName)
+        {
+            string userId = getUserByName(userName).Id;
+
+            List<Income> resultList = new List<Income>();
+
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT * FROM incomes WHERE name =\"" + incomeName + "\" AND user_id = " + userId + ";";
+
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            while (mysqlResult.Read())
+            {
+                Income tempObject = new Income();
+                tempObject.Id = mysqlResult.GetString(0);
+                tempObject.UserId = Convert.ToInt32(mysqlResult.GetString(1));
+                tempObject.Name = mysqlResult.GetString(2);
+                tempObject.Description = mysqlResult.GetString(3);
+                tempObject.Price = Convert.ToDouble(mysqlResult.GetString(4));
+                tempObject.CreateDate = Convert.ToDateTime(mysqlResult.GetString(5));
+                tempObject.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(6));
+
+                resultList.Add(tempObject);
+            }
+
+            _Connection.Close();
+            return resultList;
+        }
+
     }
 }
        

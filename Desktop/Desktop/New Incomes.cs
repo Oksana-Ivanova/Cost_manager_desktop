@@ -12,20 +12,88 @@ namespace Desktop
 {
     public partial class New_Incomes : Form
     {
+        public enum FormMode
+        {
+            CreateMode = 0,
+            UpdateMode = 1
+        };
+
+        private FormMode formMode;
+        private Income currentIncome;
+
         public New_Incomes()
         {
             InitializeComponent();
+
+            formMode = FormMode.CreateMode;
+            currentIncome = new Income();
+            initFormByMode(formMode);
+        }
+
+        public New_Incomes(Income income)
+        {
+            InitializeComponent();
+
+            formMode = FormMode.UpdateMode;
+            currentIncome = income;
+            initFormByMode(formMode);
+            initFieldsByIncome();
         }
 
         const string host = "eu-cdbr-west-01.cleardb.com";
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "b7d511d516e6e4";
         const string password = "e2941bb5";
-    
+
+        private void initFormByMode(FormMode mode)
+        {
+            switch (mode)
+            {
+                case FormMode.CreateMode:
+                    this.Text = "New Income";
+                    btnOk.Text = "Create";
+                    btnDelete.Text = String.Empty;
+                    btnDelete.Hide();
+                    btnCancel.Text = "Cencel";
+                    break;
+
+                case FormMode.UpdateMode:
+                    this.Text = "Update Income";
+                    btnOk.Text = "Update";
+                    btnDelete.Text = "Delete";
+                    btnDelete.Show();
+                    btnCancel.Text = "Cencel";
+                    break;
+
+                default:
+                    this.Text = "New Income";
+                    btnOk.Text = "Create";
+                    btnDelete.Text = String.Empty;
+                    btnDelete.Hide();
+                    btnCancel.Text = "Cencel";
+                    break;
+            }
+
+            dateTimePickerNewIncome.MinDate = DateTime.Today.AddYears(-7);
+            dateTimePickerNewIncome.MaxDate = DateTime.Today;
+            dateTimePickerNewIncome.Value = DateTime.Today;
+        }
+
+        private void initFieldsByIncome()
+        {
+            if (formMode == FormMode.UpdateMode)
+            {
+                tbTitleNewIncome.Text = currentIncome.Name;
+                txtDescription.Text = currentIncome.Description;
+                numValue.Value = (decimal)currentIncome.Price;
+                dateTimePickerNewIncome.Value = currentIncome.CreateDate;
+            }
+        }
 
         DBHandler controller = new DBHandler(host, database, user, password);      
         BindingSource new_cost_binding = new BindingSource();
         SqlFunction connect = new SqlFunction(host, database, user, password);
+
         /// <summary>
         /// Validate fields on the form
         /// </summary>
@@ -53,25 +121,44 @@ namespace Desktop
             if (validateFields() == false)
                 return;
 
-            try
+
+            if (formMode == FormMode.CreateMode)
             {
-                
-                //string id = connect.generator_id(table_name, column_name);
-                string id = SequenceGenerator.GenerateUniqueString();
-                int ID_user = LoginForm.user_ID;               
-                string name = tbTitleNewIncome.Text;
-                string description = txtDescription.Text;
-                double money = Convert.ToDouble(numValue.Value);
-                string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewIncome.Value);
-                connect.Insert_into_income(id, ID_user,  name, description, money, Date);
+                try
+                {
+                    //string id = connect.generator_id(table_name, column_name);
+                    string id = SequenceGenerator.GenerateUniqueString();
+                    int ID_user = LoginForm.user_ID;
+                    string name = tbTitleNewIncome.Text;
+                    string description = txtDescription.Text;
+                    double money = Convert.ToDouble(numValue.Value);
+                    string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewIncome.Value);
+                    connect.Insert_into_income(id, ID_user, name, description, money, Date);
 
-                // DataGridView2__Drow(ID_cost); 
+                    // DataGridView2__Drow(ID_cost); 
 
-               
+                    this.Close();
+                }
+                catch { }
             }
-            catch { } 
-           
-            this.Close();
+            else if (formMode == FormMode.UpdateMode)
+            {
+                try
+                {
+                    string createDate = secondary_methods.datetime_to_sql_format(currentIncome.CreateDate);
+                    string updateDate = secondary_methods.datetime_to_sql_format(dateTimePickerNewIncome.Value);
+
+                    connect.Update_income(currentIncome.Id,
+                                           currentIncome.UserId,
+                                           tbTitleNewIncome.Text,
+                                           txtDescription.Text,
+                                           (double)numValue.Value,
+                                           createDate,
+                                           updateDate);
+                    this.Close();
+                }
+                catch { }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -79,27 +166,9 @@ namespace Desktop
             this.Close();
         }
 
-        private void txtDescription_TextChanged(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnOk_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void tbTitleNewIncome_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-                btnOk_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
         }
     }
 }

@@ -38,6 +38,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.dateTimePickerNewIncome = new System.Windows.Forms.DateTimePicker();
             this.numValue = new System.Windows.Forms.NumericUpDown();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Location = new System.Drawing.Point(10, 12);
+            this.lblTitle.Location = new System.Drawing.Point(10, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(27, 13);
             this.lblTitle.TabIndex = 0;
@@ -57,7 +58,6 @@
             this.tbTitleNewIncome.Name = "tbTitleNewIncome";
             this.tbTitleNewIncome.Size = new System.Drawing.Size(170, 20);
             this.tbTitleNewIncome.TabIndex = 0;
-            this.tbTitleNewIncome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbTitleNewIncome_KeyUp);
             // 
             // txtDescription
             // 
@@ -66,7 +66,6 @@
             this.txtDescription.Size = new System.Drawing.Size(170, 69);
             this.txtDescription.TabIndex = 1;
             this.txtDescription.Text = "";
-            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // lblDescription
             // 
@@ -100,14 +99,13 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(87, 178);
+            this.btnOk.Location = new System.Drawing.Point(99, 178);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnOk_KeyUp);
             // 
             // lblDate
             // 
@@ -139,6 +137,16 @@
             this.numValue.Size = new System.Drawing.Size(170, 20);
             this.numValue.TabIndex = 11;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(13, 178);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // New_Incomes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +155,7 @@
             this.BackgroundImage = global::Desktop.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(294, 222);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.numValue);
             this.Controls.Add(this.dateTimePickerNewIncome);
             this.Controls.Add(this.lblDate);
@@ -181,5 +190,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerNewIncome;
         private System.Windows.Forms.NumericUpDown numValue;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

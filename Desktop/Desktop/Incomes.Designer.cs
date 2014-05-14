@@ -48,7 +48,11 @@
             // 
             this.dataGridViewIncomes.AllowUserToAddRows = false;
             this.dataGridViewIncomes.AllowUserToDeleteRows = false;
+            this.dataGridViewIncomes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewIncomes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewIncomes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIncomes.Location = new System.Drawing.Point(258, 32);
@@ -129,24 +133,24 @@
             // 
             // dateTimePickerStart
             // 
+            this.dateTimePickerStart.Checked = false;
             this.dateTimePickerStart.Location = new System.Drawing.Point(6, 24);
             this.dateTimePickerStart.MaxDate = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.MinDate = new System.DateTime(2009, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerStart.TabIndex = 1;
-            this.dateTimePickerStart.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerEnd
             // 
+            this.dateTimePickerEnd.Checked = false;
             this.dateTimePickerEnd.Location = new System.Drawing.Point(6, 63);
             this.dateTimePickerEnd.MaxDate = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.MinDate = new System.DateTime(2009, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerEnd.TabIndex = 2;
-            this.dateTimePickerEnd.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePickerEnd_ValueChanged);
             // 
             // btnNewIncome
