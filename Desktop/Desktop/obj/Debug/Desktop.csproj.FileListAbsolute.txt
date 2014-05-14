@@ -114,7 +114,6 @@ C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\D
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.pdb
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.exe
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.pdb
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.AboutBox.resources
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Main.resources
 C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.HelpForm.resources
