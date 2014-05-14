@@ -420,8 +420,7 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
-            }
-            MessageBox.Show(Convert.ToString(sum));
+            }            
             _Connection.Close(); 
             return sum;         
            

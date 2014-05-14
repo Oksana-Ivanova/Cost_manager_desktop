@@ -63,7 +63,7 @@ namespace Desktop
             string ID_limit = create_limit(limit);          
             try
             {
-                string qry = " insert into  heroku_9e3361f1a2a704a.cost_types values('" + id + "','" + ID_user + "','" + ID_limit + "','" + type_name + "','" + Date + "','" + Date + "')";
+                string qry = " insert into cost_types values('" + id + "','" + ID_user + "','" + ID_limit + "','" + type_name + "','" + Date + "','" + Date + "')";
                 MessageBox.Show(qry);
                 _Connection.Open();
                 MySqlCommand comandInsert = new MySqlCommand(qry,  _Connection);
@@ -75,10 +75,10 @@ namespace Desktop
         }
         private string create_limit(double limit) 
         {
-            const string host = "127.0.0.1";
+            const string host = "eu-cdbr-west-01.cleardb.com";
             const string database = "heroku_9e3361f1a2a704a";
-            const string user = "root";
-            const string password = "123";
+            const string user = "b7d511d516e6e4";
+            const string password = "e2941bb5";
 
             SqlFunction connect = new SqlFunction(host, database, user, password);          
             //string id = connect.generator_id(table_name, column_name);
@@ -86,7 +86,7 @@ namespace Desktop
             string Date = secondary_methods.date();
             try
             {
-                string qry = " insert into  heroku_9e3361f1a2a704a.limits values('" + id + "','"+LoginForm.user_ID+" ','Another','" + limit + "','" + Date + "','" + Date + "')";
+                string qry = " insert into  limits values('" + id + "','"+LoginForm.user_ID+" ','Another','" + limit + "','" + Date + "','" + Date + "')";
                 MessageBox.Show(qry);
                 _Connection.Open();
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
@@ -101,7 +101,7 @@ namespace Desktop
                                 
             try
             {
-                string qry = "insert into heroku_9e3361f1a2a704a.costs values('" + id + "','" + ID_user + "','" + ID_cost_type + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
+                string qry = "insert into costs values('" + id + "','" + ID_user + "','" + ID_cost_type + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
                  _Connection.Open();
                  MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
                 comandInsert.ExecuteNonQuery();
@@ -115,7 +115,7 @@ namespace Desktop
 
             try
             {
-                string qry = "insert into heroku_9e3361f1a2a704a.incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
+                string qry = "insert into incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
                 _Connection.Open();
                 MessageBox.Show(qry);
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
