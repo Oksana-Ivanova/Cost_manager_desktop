@@ -200,7 +200,7 @@ namespace Desktop
         private void draw_chart_outlays_by_week()
         {
             DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
-            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value).AddHours(23);
             int number_of_periods = 6;
             chart_outlays.Series[0].Points.Clear();
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
@@ -216,7 +216,7 @@ namespace Desktop
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
                 // chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
-                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), costs_sum_from_period);
                 period_begin_date = period_begin_date.AddDays(1);
             }
         }
@@ -271,7 +271,7 @@ namespace Desktop
                 
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddMonths(1));
-                chart_outlays.Series[0].Points.AddXY(period_begin_date, i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date, costs_sum_from_period);
                 period_begin_date = period_begin_date.AddMonths(1);
             }
         }
@@ -303,7 +303,7 @@ namespace Desktop
                 //i++;
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
-                chart_outlays.Series[0].Points.AddXY(period_begin_date, i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date, costs_sum_from_period);
                 period_begin_date = period_begin_date.AddDays(1);
             }
 
@@ -359,10 +359,11 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_email)[1];
+                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
 
                 New_cost_form costForm = new New_cost_form(cost);
                 costForm.Show();
+
             }
         }
 

@@ -34,8 +34,8 @@ namespace Desktop
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            user_email = tbEmail.Text;
-            user_pasword = tbPassword.Text;
+            user_email = "user@test.com";
+            user_pasword = "123456user";
 
             if (user_email.Equals(String.Empty) && user_pasword.Equals(String.Empty))
             { 
