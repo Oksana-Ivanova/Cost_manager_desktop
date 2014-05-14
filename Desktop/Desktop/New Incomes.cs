@@ -167,7 +167,7 @@ namespace Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you realy wish to remove entry?",
+            if (MessageBox.Show("Do you realy want to remove entry?",
                                 "Are you sure?",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question,

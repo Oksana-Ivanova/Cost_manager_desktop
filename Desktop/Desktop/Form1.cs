@@ -248,10 +248,10 @@ namespace Desktop
                     this.dataGridViewRecentIncomes.Columns["user_id"].Visible = false;
                     //   this.dataGridViewRecentIncomes.Columns["created_at"].Visible = false;
                     this.dataGridViewRecentIncomes.Columns["updated_at"].Visible = false;
-                    this.dataGridViewRecentIncomes.Columns["name"].HeaderText = "Назва доходу";
-                    this.dataGridViewRecentIncomes.Columns["description"].HeaderText = "Нотатки";
-                    this.dataGridViewRecentIncomes.Columns["price"].HeaderText = " сумма доходу";
-                    this.dataGridViewRecentIncomes.Columns["created_at"].HeaderText = "Дата";
+                    this.dataGridViewRecentIncomes.Columns["name"].HeaderText = "Title";
+                    this.dataGridViewRecentIncomes.Columns["description"].HeaderText = "Notes";
+                    this.dataGridViewRecentIncomes.Columns["price"].HeaderText = "Income value";
+                    this.dataGridViewRecentIncomes.Columns["created_at"].HeaderText = "Date";
                 }
 
                 catch { }
@@ -276,7 +276,7 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you realy wish to remove entry?",
+                    if (MessageBox.Show("Do you realy want to remove entry?",
                                        "Are you sure?",
                                        MessageBoxButtons.YesNo,
                                        MessageBoxIcon.Question,

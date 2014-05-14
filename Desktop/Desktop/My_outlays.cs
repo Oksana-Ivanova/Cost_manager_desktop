@@ -370,10 +370,10 @@ namespace Desktop
                     this.dataGridViewOutlays.Columns["cost_type_id"].Visible = false;
                  //   this.dataGridViewOutlays.Columns["created_at"].Visible = false;
                     this.dataGridViewOutlays.Columns["updated_at"].Visible = false;
-                    this.dataGridViewOutlays.Columns["name"].HeaderText = "Назва витрати";
-                    this.dataGridViewOutlays.Columns["description"].HeaderText = "Нотатки";
-                    this.dataGridViewOutlays.Columns["price"].HeaderText = "затрачена сумма";
-                    this.dataGridViewOutlays.Columns["created_at"].HeaderText = "Дата";
+                    this.dataGridViewOutlays.Columns["name"].HeaderText = "Title";
+                    this.dataGridViewOutlays.Columns["description"].HeaderText = "Notes";
+                    this.dataGridViewOutlays.Columns["price"].HeaderText = "Cost value";
+                    this.dataGridViewOutlays.Columns["created_at"].HeaderText = "Date";
                 }
 
                 catch { }
@@ -394,7 +394,7 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you realy wish to remove entry?",
+                    if (MessageBox.Show("Do you realy want to remove entry?",
                                         "Are you sure?",
                                         MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question,
