@@ -139,25 +139,23 @@ namespace Desktop
             DBHandler controller = new DBHandler(host, database, user, password);
             List<double> sum_of_costs = new List<double>();
             double Sum = 0;
-            int n = 0, i = 0; string name = ""; 
-            // Dictionary<string, int> dict = new Dictionary<string, int>();
+            int  i = 0; string name = "";            
 
             List<CostType> categoryName = new List<CostType>();
             categoryName = controller.getCategoriesByUserID(LoginForm.user_ID);
             
             categoryName.ForEach(delegate(CostType cost_type)
             {
-                string limit_id = controller.get_limit_id_by_cost_type_id(cost_type.Id);
-                
+                string limit_id = controller.get_limit_id_by_cost_type_id(cost_type.Id);              
 
                sum_of_costs.Add(controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type.Id, period_begin_date, period_end_date));
-               if (sum_of_costs.Max() > controller.get_limit_value_by_id(limit_id)) { n = i; Sum = sum_of_costs.Max(); name = cost_type.Name; cost_type_id = cost_type.Id; Out = true; }
+               if (sum_of_costs.Max() > controller.get_limit_value_by_id(limit_id)) { Sum = sum_of_costs.Max(); name = cost_type.Name; cost_type_id = cost_type.Id; Out = true; }
 
                 i++;
               
             });
-            
-      
+
+          
             return Out;
         }
     }

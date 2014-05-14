@@ -17,7 +17,7 @@ namespace Desktop
             InitializeComponent();
 
             initControls();
-
+            secondary_methods.out_of_limit();
            
              //  period_begin_date = DateTime.Today.AddDays(-6);
             //   period_end_date = DateTime.Today;

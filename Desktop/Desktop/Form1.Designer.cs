@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageStart = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -354,14 +354,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
             this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea2.Name = "ChartArea1";
-            this.chart_recent_cost.ChartAreas.Add(chartArea2);
+            chartArea3.Name = "ChartArea1";
+            this.chart_recent_cost.ChartAreas.Add(chartArea3);
             this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chart_recent_cost.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            this.chart_recent_cost.Series.Add(series3);
             this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
             this.chart_recent_cost.TabIndex = 8;
             this.chart_recent_cost.Text = "Last week";
@@ -577,7 +577,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.10";
+            this.Text = "Cost Manager v0.12";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);
