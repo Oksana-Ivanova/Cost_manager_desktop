@@ -118,7 +118,15 @@ namespace Desktop
             New_Incomes newIncomeWindow = new New_Incomes();
             newIncomeWindow.Show();
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerStart.MaxDate = dateTimePickerEnd.Value;

@@ -92,7 +92,15 @@ namespace Desktop
                 editable = true;
             }
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (editable)

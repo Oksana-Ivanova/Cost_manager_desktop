@@ -436,7 +436,7 @@ namespace Desktop
             {
 
                 MySqlDataAdapter adap = new MySqlDataAdapter("select * from  heroku_9e3361f1a2a704a.incomes where user_id='" + LoginForm.user_ID + "' and created_at>'" + period_begin + "' and created_at<'" + period_end + "';", _Connection);
-                MessageBox.Show("select * from  heroku_9e3361f1a2a704a.incomes where user_id='" + LoginForm.user_ID + "'and created_at>'" + period_begin + "' and created_at<'" + period_end + "';");
+               // MessageBox.Show("select * from  heroku_9e3361f1a2a704a.incomes where user_id='" + LoginForm.user_ID + "'and created_at>'" + period_begin + "' and created_at<'" + period_end + "';");
                 ds = new System.Data.DataSet();
                 adap.Fill(ds, "incomes");
 
