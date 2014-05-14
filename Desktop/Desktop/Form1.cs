@@ -251,5 +251,10 @@ namespace Desktop
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

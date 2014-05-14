@@ -17,7 +17,7 @@ namespace Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Main());
             connectionString = "Database=heroku_9e3361f1a2a704a;Data Source=127.0.0.1;User=root;Password=123";
 
         }
