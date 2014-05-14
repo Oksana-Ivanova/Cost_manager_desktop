@@ -206,6 +206,35 @@ namespace Desktop
             return resultList;
         }
 
+        public Cost getCostById(string costId, string userName)
+        {
+            string userId = LoginForm.user_ID.ToString();
+
+            Cost resultCost = new Cost();
+
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT * FROM costs WHERE id =\"" + costId + "\" AND user_id = " + userId + "  LIMIT 1;";
+            //MessageBox.Show("SELECT * FROM costs WHERE name =\"" + costName + "\" AND user_id = " + userId + ";");
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            while (mysqlResult.Read())
+            {
+                resultCost.Id = mysqlResult.GetString(0);
+                resultCost.UserId = Convert.ToInt32(mysqlResult.GetString(1));
+                resultCost.CostTypeId = mysqlResult.GetString(2);
+                resultCost.Name = mysqlResult.GetString(3);
+                resultCost.Description = mysqlResult.GetString(4);
+                resultCost.Price = Convert.ToDouble(mysqlResult.GetString(5));
+                resultCost.CreateDate = Convert.ToDateTime(mysqlResult.GetString(6));
+                resultCost.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(7));
+            }
+            // MessageBox.Show(resultList[1].ToString());
+            _Connection.Close();
+            return resultCost;
+        }
+
+
         public List<Cost> getCostByCategory(string categoryName, string userName)
         {
             
@@ -529,6 +558,35 @@ namespace Desktop
             _Connection.Close();
             return resultList;
         }
+        public Income getIncomeById(string incomeId, string userName)
+        {
+            string userId = LoginForm.user_ID.ToString();
+
+            Income resultIncome = new Income();
+
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT * FROM incomes WHERE id =\"" + incomeId + "\" AND user_id = " + userId + "  LIMIT 1;";
+
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            while (mysqlResult.Read())
+            {
+                resultIncome.Id = mysqlResult.GetString(0);
+                resultIncome.UserId = Convert.ToInt32(mysqlResult.GetString(1));
+                resultIncome.Name = mysqlResult.GetString(2);
+                resultIncome.Description = mysqlResult.GetString(3);
+                resultIncome.Price = Convert.ToDouble(mysqlResult.GetString(4));
+                resultIncome.CreateDate = Convert.ToDateTime(mysqlResult.GetString(5));
+                resultIncome.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(6));
+            }
+
+            _Connection.Close();
+            return resultIncome;
+        }
+
+
+
         public double get_limit_value_by_id(string limit_id)
         {
           

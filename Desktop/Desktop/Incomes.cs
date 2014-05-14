@@ -37,6 +37,7 @@ namespace Desktop
         const string password = "e2941bb5";
 
         DBHandler controller = new DBHandler(host, database, user, password);
+        SqlFunction connect = new SqlFunction(host, database, user, password);
     
         private void fillDateBoundsByPeriod()
         {
@@ -58,13 +59,15 @@ namespace Desktop
                     break;
             }
         }
-        private void get_incomes_by_selected_period()
+
+        private void refreshForm()
         {
             this.dataGridViewIncomes.DataSource = null;
             this.dataGridViewIncomes.Rows.Clear();
             try
             {
                 this.dataGridViewIncomes.Columns.Remove("ColumnEdit");
+                this.dataGridViewIncomes.Columns.Remove("ColumnDelete");
             }
             catch { }
             DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
@@ -74,7 +77,12 @@ namespace Desktop
             ds = controller.getAllIncomesBySelectedPeriod( period_begin_date, period_end_date);
             dataGridViewIncomes.DataSource = ds.Tables["incomes"];
             add_column_edit();
+            add_column_delete();
+        }
 
+        private void get_incomes_by_selected_period()
+        {
+            refreshForm();
         }
         private void add_column_edit()
         {
@@ -92,6 +100,23 @@ namespace Desktop
             this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
         }
+        private void add_column_delete()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnDelete;
+            ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+
+            ColumnDelete.HeaderText = "";
+            ColumnDelete.Name = "ColumnDelete";
+            ColumnDelete.ReadOnly = true;
+            ColumnDelete.Text = "Delete";
+            ColumnDelete.ToolTipText = "Delete";
+            ColumnDelete.UseColumnTextForButtonValue = true;
+            ColumnDelete.Width = 50;
+            ColumnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnDelete});
+        }
+
         public Incomes()
         {
             InitializeComponent();
@@ -169,7 +194,18 @@ namespace Desktop
 
                 New_Incomes incomeForm = new New_Incomes(income);
                 incomeForm.Show();
+
+                refreshForm();
             }
+            else
+                if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
+                {
+                    Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+
+                    connect.Delete_income(income.Id, LoginForm.user_ID);
+
+                    refreshForm();
+                }
         }
 
     }

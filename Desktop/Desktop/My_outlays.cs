@@ -150,30 +150,38 @@ namespace Desktop
             draw_chart_outlays_by_custom();
         }
 
-        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void refreshForm()
         {
             fillDateBoundsByPeriod();
-                this.dataGridViewOutlays.DataSource = null;
-                this.dataGridViewOutlays.Rows.Clear();
-                try
-                {
-                    this.dataGridViewOutlays.Columns.Remove("ColumnEdit");
-                }
-                catch { }
-               // this.dataGridViewOutlays.DataSource = this.GetNewValues();
-         
-           DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
-           DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
-            string categoryName = cboCategory.Text;   
-           string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
-                   // MessageBox.Show(connectionString);
+            //this.dataGridViewOutlays.DataSource = null;
+            //this.dataGridViewOutlays.Rows.Clear();
+            try
+            {
+                this.dataGridViewOutlays.Columns.Remove("ColumnEdit");
+                this.dataGridViewOutlays.Columns.Remove("ColumnDelete");
+            }
+            catch { }
+            // this.dataGridViewOutlays.DataSource = this.GetNewValues();
+
+            DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
+            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
+            string categoryName = cboCategory.Text;
+            string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
+            // MessageBox.Show(connectionString);
             DataSet ds = new DataSet();
             ds = controller.getAllCostsBySelectedPeriod(cost_type_id, period_begin_date, period_end_date);
-          
+
             dataGridViewOutlays.DataSource = ds.Tables["costs"]; // ataGridViewOutlays end     
-           // draw_chart_outlays(cost_type_id);
+            // draw_chart_outlays(cost_type_id);
             add_column_edit();
+            add_column_delete();
+
             label_sum_for_period.Text = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date.AddDays(1)).ToString();
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshForm();
         }
         private void add_column_edit()
         {
@@ -186,7 +194,23 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
-            ColumnEdit.Width = 50;
+            ColumnEdit.Width = 75;
+            ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewOutlays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnEdit});
+        }
+        private void add_column_delete()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnEdit;
+            ColumnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+
+            ColumnEdit.HeaderText = "";
+            ColumnEdit.Name = "ColumnDelete";
+            ColumnEdit.ReadOnly = true;
+            ColumnEdit.Text = "Delete";
+            ColumnEdit.ToolTipText = "Delete";
+            ColumnEdit.UseColumnTextForButtonValue = true;
+            ColumnEdit.Width = 75;
             ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewOutlays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
@@ -354,8 +378,8 @@ namespace Desktop
                 catch { }
             }
         }
-
-       private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        
+        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
@@ -364,17 +388,28 @@ namespace Desktop
                 New_cost_form costForm = new New_cost_form(cost);
                 costForm.Show();
 
+                refreshForm();
             }
+            else
+                if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
+                {
+                    Cost cost = controller.getCostById(dataGridViewOutlays.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+
+                    connect.Delete_cost(cost.Id, cost.CostTypeId, LoginForm.user_ID);
+
+                    refreshForm();
+                }
         }
-      // private void set_sum_from_period() { }
-       protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-       {
-           if (keyData == Keys.Escape)
-           {
-               this.Close();
-               return true;
-           }
-           return base.ProcessCmdKey(ref msg, keyData);
+        
+        // private void set_sum_from_period() { }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
        }
 
     }

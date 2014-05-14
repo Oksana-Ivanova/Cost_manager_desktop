@@ -35,6 +35,8 @@ namespace Desktop
         const string user = "b7d511d516e6e4";
         const string password = "e2941bb5";
         DBHandler controller = new DBHandler(host, database, user, password);
+        SqlFunction connect = new SqlFunction(host, database, user, password);
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -173,16 +175,17 @@ namespace Desktop
 
         private void closeApplication()
         {
-            Application.Exit();
-           
+            Application.Exit();           
         }
-        private void get_all_incomes_by_week()
+
+        private void refreshForm()
         {
             this.dataGridViewRecentIncomes.DataSource = null;
             this.dataGridViewRecentIncomes.Rows.Clear();
             try
             {
                 this.dataGridViewRecentIncomes.Columns.Remove("ColumnEdit");
+                this.dataGridViewRecentIncomes.Columns.Remove("ColumnDelete");
             }
             catch { }
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
@@ -193,8 +196,14 @@ namespace Desktop
 
             dataGridViewRecentIncomes.DataSource = ds.Tables["incomes"];
             add_column_edit();
-
+            add_column_delete();
         }
+
+        private void get_all_incomes_by_week()
+        {
+            refreshForm();
+        }
+
         private void add_column_edit()
         {
             System.Windows.Forms.DataGridViewButtonColumn ColumnEdit;
@@ -206,11 +215,29 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
-            ColumnEdit.Width = 50;
+            ColumnEdit.Width = 75;
             ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
+
         }
+        private void add_column_delete()
+        {
+            System.Windows.Forms.DataGridViewButtonColumn ColumnDelete;
+            ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+
+            ColumnDelete.HeaderText = "";
+            ColumnDelete.Name = "ColumnDelete";
+            ColumnDelete.ReadOnly = true;
+            ColumnDelete.Text = "Delete";
+            ColumnDelete.ToolTipText = "Delete";
+            ColumnDelete.UseColumnTextForButtonValue = true;
+            ColumnDelete.Width = 75;
+            ColumnDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewRecentIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    ColumnDelete});
+        }
+
         private void dataGridViewRecentIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
         {
             if (dataGridViewRecentIncomes.Columns.Contains("updated_at"))
@@ -239,9 +266,24 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("a");
+                Income income = controller.getIncomeByName(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+
+                New_Incomes incomeForm = new New_Incomes(income);
+                incomeForm.Show();
+
+                refreshForm();
             }
+            else
+                if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
+                {
+                    Income income = controller.getIncomeById(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+
+                    connect.Delete_income(income.Id, LoginForm.user_ID);
+
+                    refreshForm();
+                }
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
