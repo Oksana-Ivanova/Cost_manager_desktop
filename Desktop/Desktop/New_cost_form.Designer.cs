@@ -84,6 +84,7 @@
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnOk_KeyUp);
             // 
             // lblValue
             // 
@@ -120,6 +121,7 @@
             this.tbNameNewCost.Name = "tbNameNewCost";
             this.tbNameNewCost.Size = new System.Drawing.Size(170, 20);
             this.tbNameNewCost.TabIndex = 0;
+            this.tbNameNewCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbNameNewCost_KeyUp);
             // 
             // lblNameNewCost
             // 

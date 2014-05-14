@@ -109,21 +109,40 @@ D:\Projects\Git\Cost_Manager_desktop2\Cost_manager_desktop\Desktop\Desktop\obj\D
 D:\Projects\Git\Cost_Manager_desktop2\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
 D:\Projects\Git\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
 C:\Users\ad\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.exe.config
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.exe
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.pdb
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.exe
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\bin\Debug\Desktop.pdb
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.AboutBox.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Main.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.HelpForm.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Incomes.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Limits_Form.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.LoginForm.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.My_outlays.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.New_Incomes.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.New_Category_Form.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.New_cost_form.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.ProfileForm.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
-C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.AboutBox.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Main.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.HelpForm.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Incomes.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Limits_Form.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.LoginForm.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.My_outlays.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_Incomes.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_Category_Form.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_cost_form.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.ProfileForm.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\Oksana\Desktop\Cost_manager_desktop-master (1)\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.AboutBox.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Main.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.HelpForm.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Incomes.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Limits_Form.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.LoginForm.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.My_outlays.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_Incomes.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_Category_Form.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.New_cost_form.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.ProfileForm.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\ad\Desktop\Навчання\Cost_manager_desktop-master\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache

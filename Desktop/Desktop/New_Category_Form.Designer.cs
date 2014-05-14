@@ -56,6 +56,7 @@
             this.tbCategoryTitle.Size = new System.Drawing.Size(151, 20);
             this.tbCategoryTitle.TabIndex = 0;
             this.tbCategoryTitle.TextChanged += new System.EventHandler(this.tbCategoryTitle_TextChanged);
+            this.tbCategoryTitle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbCategoryTitle_KeyUp);
             // 
             // gbCategoryLimit
             // 
@@ -114,6 +115,7 @@
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnOk_KeyUp);
             // 
             // New_Category_Form
             // 

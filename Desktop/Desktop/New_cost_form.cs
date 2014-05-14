@@ -56,7 +56,7 @@ namespace Desktop
                     btnOk.Text = "Create";
                     btnDelete.Text = String.Empty;
                     btnDelete.Hide();
-                    btnCancel.Text = "Cencel";
+                    btnCancel.Text = "Cancel";
                     break;
 
                 case FormMode.UpdateMode:
@@ -64,7 +64,7 @@ namespace Desktop
                     btnOk.Text = "Update";
                     btnDelete.Text = "Delete";
                     btnDelete.Show();
-                    btnCancel.Text = "Cencel";
+                    btnCancel.Text = "Cancel";
                     break;
 
                 default:
@@ -72,12 +72,9 @@ namespace Desktop
                     btnOk.Text = "Create";
                     btnDelete.Text = String.Empty;
                     btnDelete.Hide();
-                    btnCancel.Text = "Cencel";
+                    btnCancel.Text = "Cancel";
                     break;
             }
-
-            dateTimePickerNewCost.MaxDate = DateTime.Today;
-            dateTimePickerNewCost.Value = DateTime.Today;
         }
         private void initFieldsByCost()
         {
@@ -85,7 +82,7 @@ namespace Desktop
             {
                 tbNameNewCost.Text = currentCost.Name;
                 richTextBoxDescriptionNewCost.Text = currentCost.Description;
-                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_email).Name;
+                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_Email).Name;
                 numValue.Value = (decimal)currentCost.Price;
                 dateTimePickerNewCost.Value = currentCost.CreateDate;
             }
@@ -198,6 +195,25 @@ namespace Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnOk_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tbNameNewCost_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
 
         }
 

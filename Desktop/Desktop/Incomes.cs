@@ -26,10 +26,8 @@ namespace Desktop
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerStart.MaxDate = DateTime.Today;
-            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerEnd.MaxDate = DateTime.Today;
-            dateTimePickerEnd.Value = DateTime.Today;
         }
         const string host = "eu-cdbr-west-01.cleardb.com";
         const string database = "heroku_9e3361f1a2a704a";
@@ -87,8 +85,6 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
-            ColumnEdit.Width = 50;
-            ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
         }
@@ -157,12 +153,8 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Income income = controller.getIncomeByName(dataGridViewIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
-
-                New_Incomes incomeForm = new New_Incomes(income);
-                incomeForm.Show();
+                MessageBox.Show("a");
             }
         }
-
     }
 }

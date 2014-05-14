@@ -32,8 +32,8 @@ namespace Desktop
                 return;
             }
 
-            //string table_name = "cost_types";
-            //string column_name = "id";
+            string table_name = "cost_types";
+            string column_name = "id";
             //string id = connect.generator_id(table_name, column_name);
             string id = SequenceGenerator.GenerateUniqueString();
 
@@ -67,6 +67,25 @@ namespace Desktop
 
         private void tbCategoryTitle_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnOk_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void tbCategoryTitle_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
 
         }
         

@@ -208,10 +208,10 @@ namespace Desktop
         {
 
             try
-            {
+            {//               update heroku_9e3361f1a2a704a.costs set name='aa', description='aa', updated_at='2014-05-04 18:09:45' where  user_id='2' and id='bf9cb1879f' and created_at='2014-05-04 10:23:48' and cost_type_id='4e7c064431';
                 string qry = "update costs set name='" + cost_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "' and cost_type_id='" + ID_cost + "';";
-                _Connection.Open(); MessageBox.Show(qry);
-                MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
+                 _Connection.Open(); MessageBox.Show(qry);
+                 MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
                 comandUpdate.ExecuteNonQuery();
             }
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
@@ -221,7 +221,7 @@ namespace Desktop
         {
 
             try
-            {
+            {//               update heroku_9e3361f1a2a704a.costs set name='aa', description='aa', updated_at='2014-05-04 18:09:45' where  user_id='2' and id='bf9cb1879f' and created_at='2014-05-04 10:23:48' and cost_type_id='4e7c064431';
                 string qry = "update incomes set name='" + income_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
                 _Connection.Open(); MessageBox.Show(qry);
                 MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
@@ -230,7 +230,6 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally { _Connection.Close(); }
         }
-
       // public bool get_id_from_table() { }
         public string generator_id(string table_name, string column_name)
         {
@@ -258,6 +257,24 @@ namespace Desktop
 
           _Connection.Close();
           return genereted_id;
+        }
+
+        
+        public static string UniqueIdGenerator()
+        {
+            long secondsCount = DateTime.Now.DayOfYear * 24 + DateTime.Now.Hour;
+            secondsCount = secondsCount * 60 + DateTime.Now.Minute;
+            secondsCount = secondsCount * 60 + DateTime.Now.Second;
+            secondsCount = secondsCount * 1000 + DateTime.Now.Millisecond;
+            
+            string resultString = secondsCount.ToString("X").ToLower();
+
+            while (resultString.Length < 10)
+            {
+                resultString = "0" + resultString;
+            }
+
+            return resultString;
         }
 
     }
