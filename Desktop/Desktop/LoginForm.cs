@@ -21,7 +21,11 @@ namespace Desktop
         {
 
         }
+<<<<<<< HEAD
         const string host = "eu-cdbr-west-01.cleardb.com";
+=======
+         const string host = "eu-cdbr-west-01.cleardb.com";
+>>>>>>> fcf9aa117903e03853233d22aa830b3f8a1f1013
         const string database = "heroku_9e3361f1a2a704a";
         const string user = "b7d511d516e6e4";
         const string password = "e2941bb5";

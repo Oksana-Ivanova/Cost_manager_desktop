@@ -418,7 +418,11 @@ namespace Desktop
                     sum = mysqlResult.GetDouble(0);
                 }
                 catch { }
+<<<<<<< HEAD
             }           
+=======
+            }            
+>>>>>>> fcf9aa117903e03853233d22aa830b3f8a1f1013
             _Connection.Close(); 
             return sum;         
            
