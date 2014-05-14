@@ -200,7 +200,7 @@ namespace Desktop
         private void draw_chart_outlays_by_week()
         {
             DateTime period_begin_date = Convert.ToDateTime(dateTimePickerStart.Value);
-            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value).AddHours(23);
+            DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
             int number_of_periods = 6;
             chart_outlays.Series[0].Points.Clear();
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
