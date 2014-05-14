@@ -32,8 +32,8 @@ namespace Desktop
                 return;
             }
 
-            string table_name = "cost_types";
-            string column_name = "id";
+            //string table_name = "cost_types";
+            //string column_name = "id";
             //string id = connect.generator_id(table_name, column_name);
             string id = SequenceGenerator.GenerateUniqueString();
 
