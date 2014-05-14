@@ -37,7 +37,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LabelStatusLogin = new System.Windows.Forms.ToolStripStatusLabel();
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(LoginForm_Closed);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +70,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(136, 20);
             this.tbEmail.TabIndex = 0;
+            this.tbEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEmail_KeyUp);
             // 
             // tbPassword
             // 
@@ -80,6 +80,7 @@
             this.tbPassword.Size = new System.Drawing.Size(136, 20);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
+            this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyUp);
             // 
             // lblLogin
             // 
@@ -156,6 +157,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_Closed);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

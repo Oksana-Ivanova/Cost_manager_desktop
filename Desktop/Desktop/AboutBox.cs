@@ -117,5 +117,18 @@ namespace Desktop
 
         }
 
+        private void AboutBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                okButton_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
     }
 }

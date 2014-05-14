@@ -98,5 +98,35 @@ namespace Desktop
         {
 
         }
+
+        private void tbEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void tbPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Tab)
+            {
+                tbPassword.Enabled=true;
+            }
+        }
     }
 }

@@ -178,6 +178,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
             this.Load += new System.EventHandler(this.AboutBox_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AboutBox_KeyUp);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

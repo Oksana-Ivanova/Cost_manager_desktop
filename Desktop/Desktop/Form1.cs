@@ -42,13 +42,23 @@ namespace Desktop
         private void draw_chart_recent_cost() 
         {
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
+
             DateTime period_end_date = DateTime.Today;
             int number_of_periods = 6;
-            chart_recent_cost.Series[0].Points.Clear();            
+            chart_recent_cost.Series[0].Points.Clear();
+            chart_recent_cost.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
+            chart_recent_cost.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
+            chart_recent_cost.Series[0].Color = Color.YellowGreen;
+            chart_recent_cost.ChartAreas[0].AxisX.Interval = 1;
+            period_begin_date = period_begin_date.AddDays(-1);
+            period_end_date = period_end_date.AddDays(1);
+
+
             for (int i = 0; i <= number_of_periods; i++)
             {
-                double costs_sum_from_period = 0;
-                costs_sum_from_period = controller.get_sum_from_all_cost_by_week( period_begin_date, period_begin_date.AddDays(1));
+                //double costs_sum_from_period = 0;
+                // costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
+                // chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
                 chart_recent_cost.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
                 period_begin_date = period_begin_date.AddDays(1);
             }

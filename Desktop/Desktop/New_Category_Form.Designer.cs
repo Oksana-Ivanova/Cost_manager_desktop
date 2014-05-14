@@ -56,6 +56,7 @@
             this.tbCategoryTitle.Size = new System.Drawing.Size(151, 20);
             this.tbCategoryTitle.TabIndex = 0;
             this.tbCategoryTitle.TextChanged += new System.EventHandler(this.tbCategoryTitle_TextChanged);
+            this.tbCategoryTitle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbCategoryTitle_KeyUp);
             // 
             // gbCategoryLimit
             // 
@@ -81,6 +82,7 @@
             this.numLimitValue.Name = "numLimitValue";
             this.numLimitValue.Size = new System.Drawing.Size(151, 20);
             this.numLimitValue.TabIndex = 2;
+            this.numLimitValue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numLimitValue_KeyUp);
             // 
             // cboLimitChecking
             // 
