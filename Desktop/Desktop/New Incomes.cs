@@ -168,7 +168,9 @@ namespace Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Income income = controller.getIncomeByName(tbTitleNewIncome.Text, LoginForm.user_name)[0];
 
+            connect.Delete_income(income.Id, LoginForm.user_ID);
         }
     }
 }

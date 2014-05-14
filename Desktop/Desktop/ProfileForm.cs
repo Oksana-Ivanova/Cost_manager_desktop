@@ -38,7 +38,8 @@ namespace Desktop
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {
-
+            tbName.Text = LoginForm.user_name;
+            tbEmail.Text = LoginForm.user_email;
         }
 
         private bool isFieldsValid()

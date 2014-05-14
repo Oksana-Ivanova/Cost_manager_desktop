@@ -120,7 +120,10 @@ namespace Desktop
         public Incomes()
         {
             InitializeComponent();
+        }
 
+        private void Incomes_Load(object sender, EventArgs e)
+        {
             initControls();
         }
 
@@ -142,6 +145,8 @@ namespace Desktop
         {
             New_Incomes newIncomeWindow = new New_Incomes();
             newIncomeWindow.Show();
+
+            refreshForm();
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -155,11 +160,14 @@ namespace Desktop
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerStart.MaxDate = dateTimePickerEnd.Value;
-        }
 
+            refreshForm();
+        }
         private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePickerEnd.MinDate = dateTimePickerStart.Value;           
+            dateTimePickerEnd.MinDate = dateTimePickerStart.Value;
+
+            refreshForm();
         }
 
         private void dataGridViewIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
@@ -186,11 +194,11 @@ namespace Desktop
         {
         
         }
-        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        private void ColumnEdit_Click(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Income income = controller.getIncomeByName(dataGridViewIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+                Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
                 New_Incomes incomeForm = new New_Incomes(income);
                 incomeForm.Show();
@@ -200,11 +208,18 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+                    if (MessageBox.Show("Do you realy wish to delete entry?",
+                                        "Are you sure?",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question,
+                                        MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes) ;
+                    {
+                        Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
-                    connect.Delete_income(income.Id, LoginForm.user_ID);
+                        connect.Delete_income(income.Id, LoginForm.user_ID);
 
-                    refreshForm();
+                        refreshForm();
+                    }
                 }
         }
 

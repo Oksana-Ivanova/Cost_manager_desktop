@@ -146,3 +146,4 @@ C:\Users\Oksana\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\
 C:\Users\Oksana\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.ProfileForm.resources
 C:\Users\Oksana\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
 C:\Users\Oksana\Documents\GitHub\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\Vasyl\Cost_Manager_new\Cost_manager_desktop\Desktop\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
