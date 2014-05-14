@@ -68,8 +68,10 @@ namespace Desktop
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerStart.MaxDate = DateTime.Today;
+            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerEnd.MaxDate = DateTime.Today;
+            dateTimePickerEnd.Value = DateTime.Today;
 
             initCategoriesComboData();
             cboCategory.SelectedIndex = 0;
@@ -179,6 +181,8 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
+            ColumnEdit.Width = 50;
+            ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewOutlays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
         }

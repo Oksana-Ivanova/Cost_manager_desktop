@@ -26,8 +26,10 @@ namespace Desktop
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerStart.MaxDate = DateTime.Today;
+            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
             dateTimePickerEnd.MaxDate = DateTime.Today;
+            dateTimePickerEnd.Value = DateTime.Today;
         }
         const string host = "eu-cdbr-west-01.cleardb.com";
         const string database = "heroku_9e3361f1a2a704a";
@@ -85,6 +87,8 @@ namespace Desktop
             ColumnEdit.Text = "Edit";
             ColumnEdit.ToolTipText = "Edit";
             ColumnEdit.UseColumnTextForButtonValue = true;
+            ColumnEdit.Width = 50;
+            ColumnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                     ColumnEdit});
         }
@@ -156,5 +160,6 @@ namespace Desktop
                 MessageBox.Show("a");
             }
         }
+
     }
 }

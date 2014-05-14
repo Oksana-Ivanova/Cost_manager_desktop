@@ -75,6 +75,9 @@ namespace Desktop
                     btnCancel.Text = "Cencel";
                     break;
             }
+
+            dateTimePickerNewCost.MaxDate = DateTime.Today;
+            dateTimePickerNewCost.Value = DateTime.Today;
         }
         private void initFieldsByCost()
         {
