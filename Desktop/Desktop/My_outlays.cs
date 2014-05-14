@@ -300,25 +300,11 @@ namespace Desktop
             }
         }
 
-
-        private void chart_outlays_Click(object sender, EventArgs e)
-        {
-
-        }
-              
-
-        private void dataGridViewOutlays_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_Email)[0];
-
-            New_cost_form costForm = new New_cost_form(cost);
-            costForm.Show();
-        }
-        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+       private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_Email)[0];
+                Cost cost = controller.getCostByName(dataGridViewOutlays.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_email)[0];
 
                 New_cost_form costForm = new New_cost_form(cost);
                 costForm.Show();

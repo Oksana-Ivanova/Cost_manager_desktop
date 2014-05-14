@@ -229,7 +229,6 @@
             this.chart_outlays.Size = new System.Drawing.Size(641, 367);
             this.chart_outlays.TabIndex = 0;
             this.chart_outlays.Text = "chart1";
-            this.chart_outlays.Click += new System.EventHandler(this.chart_outlays_Click);
             // 
             // panelTable
             // 

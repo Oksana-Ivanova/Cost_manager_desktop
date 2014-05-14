@@ -157,7 +157,10 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("a");
+                Income income = controller.getIncomeByName(dataGridViewIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+
+                New_Incomes incomeForm = new New_Incomes(income);
+                incomeForm.Show();
             }
         }
 
