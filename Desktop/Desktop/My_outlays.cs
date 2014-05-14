@@ -152,7 +152,7 @@ namespace Desktop
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            fillDateBoundsByPeriod();
                 this.dataGridViewOutlays.DataSource = null;
                 this.dataGridViewOutlays.Rows.Clear();
                 try
@@ -173,7 +173,7 @@ namespace Desktop
             dataGridViewOutlays.DataSource = ds.Tables["costs"]; // ataGridViewOutlays end     
            // draw_chart_outlays(cost_type_id);
             add_column_edit();
-
+            label_sum_for_period.Text = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date.AddDays(1)).ToString();
         }
         private void add_column_edit()
         {
@@ -366,6 +366,7 @@ namespace Desktop
 
             }
         }
+      // private void set_sum_from_period() { }
        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
        {
            if (keyData == Keys.Escape)

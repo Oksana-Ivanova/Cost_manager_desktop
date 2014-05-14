@@ -529,6 +529,46 @@ namespace Desktop
             _Connection.Close();
             return resultList;
         }
+        public double get_limit_value_by_id(string limit_id)
+        {
+          
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "select value from limits where id='" + limit_id + "'";
+            // mysqlQuery.CommandText = "select sum(price) from costs where user_id=2 and cost_type_id='a33b437e46' and created_at>'2014-05-08 00:00:00'and created_at<'2014-05-09 00:00:00';";
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+            double value = 0;
+            while (mysqlResult.Read())
+            {
+                try
+                {
+                    value = mysqlResult.GetDouble(0);
+                }
+                catch { }
+            }
+            _Connection.Close();
+            return value;
+
+        }
+        public string get_limit_id_by_cost_type_id(string cost_type_id)
+        {
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "select limit_id from cost_types where id='" + cost_type_id + "'";
+            
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+            string id="";
+            while (mysqlResult.Read())
+            {
+                try
+                {
+                    id = mysqlResult.GetString(0);
+                }
+                catch { }
+            }
+            _Connection.Close();
+            return id;
+        }
 
     }
 }
