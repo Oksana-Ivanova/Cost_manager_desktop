@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.tabPageStart = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -62,6 +61,7 @@
             this.labelTotalIncomePerWeek = new System.Windows.Forms.Label();
             this.labelTotallIncomePerLastWeek = new System.Windows.Forms.Label();
             this.dataGridViewRecentIncomes = new System.Windows.Forms.DataGridView();
+            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,23 +105,6 @@
             this.tabControl.Size = new System.Drawing.Size(896, 400);
             this.tabControl.TabIndex = 1;
             // 
-            // linkLabelLogOut
-            // 
-            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
-            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelLogOut.AutoSize = true;
-            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
-            this.linkLabelLogOut.Name = "linkLabelLogOut";
-            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
-            this.linkLabelLogOut.TabIndex = 2;
-            this.linkLabelLogOut.TabStop = true;
-            this.linkLabelLogOut.Text = "LogOut";
-            this.linkLabelLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogOut_LinkClicked);
-            // 
             // tabPageStart
             // 
             this.tabPageStart.BackgroundImage = global::Desktop.Properties.Resources.bg;
@@ -151,19 +134,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Desktop.Properties.Resources.foto1;
-            this.pictureBox1.Location = new System.Drawing.Point(653, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(655, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 338);
+            this.pictureBox1.Size = new System.Drawing.Size(580, 387);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelSrartPage
             // 
-            this.labelSrartPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelSrartPage.Location = new System.Drawing.Point(6, 22);
@@ -371,14 +354,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
             this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea6.Name = "ChartArea1";
-            this.chart_recent_cost.ChartAreas.Add(chartArea6);
+            chartArea2.Name = "ChartArea1";
+            this.chart_recent_cost.ChartAreas.Add(chartArea2);
             this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Name = "Series1";
-            this.chart_recent_cost.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chart_recent_cost.Series.Add(series2);
             this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
             this.chart_recent_cost.TabIndex = 8;
             this.chart_recent_cost.Text = "Last week";
@@ -455,6 +438,23 @@
             this.dataGridViewRecentIncomes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Clic);
             this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewRecentIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewRecentIncomes_ColumnAdded);
+            // 
+            // linkLabelLogOut
+            // 
+            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
+            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelLogOut.AutoSize = true;
+            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
+            this.linkLabelLogOut.Name = "linkLabelLogOut";
+            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
+            this.linkLabelLogOut.TabIndex = 2;
+            this.linkLabelLogOut.TabStop = true;
+            this.linkLabelLogOut.Text = "LogOut";
+            this.linkLabelLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogOut_LinkClicked);
             // 
             // menuStrip1
             // 
@@ -583,6 +583,7 @@
             this.tabPageStart.ResumeLayout(false);
             this.tabPageStart.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();

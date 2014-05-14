@@ -39,25 +39,6 @@ namespace Desktop
          DataSet ds;
 
 
-
-        public  void start()
-        {
-            try
-            {               
-                
-                adap = new MySqlDataAdapter("SELECT *  FROM cost_types where user_id=  " + LoginForm.user_ID, _Connection);
-
-                ds = new System.Data.DataSet();
-                adap.Fill(ds, "cost_type");
-
-                ds.Tables["cost_type"].Columns.Add("value");
-                ds.Tables["cost_type"].Columns.Add("sum");
-                ds.Tables["cost_type"].Columns["user_id"].DefaultValue = LoginForm.user_ID;
-
-            }
-            catch { }
-            finally { _Connection.Close(); }
-        }
         public  void Insert_into_cost_type(string id, int ID_user, double limit, string type_name, string Date)//cost_types
         {
             string ID_limit = create_limit(limit);          
@@ -96,9 +77,9 @@ namespace Desktop
             finally { _Connection.Close(); }
             return id;
         }
+       
         public  void Insert_into_cost(string id, int ID_user, string ID_cost_type, string name, string description, double money, string Date)//costs
-        {
-                                
+        {                                
             try
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.costs values('" + id + "','" + ID_user + "','" + ID_cost_type + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
@@ -112,7 +93,6 @@ namespace Desktop
         }
         public void Insert_into_income(string id, int ID_user,  string name, string description, double money, string Date)//costs
         {
-
             try
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
@@ -125,14 +105,15 @@ namespace Desktop
             finally { _Connection.Close(); }
 
         }
-         public void refesh()
+         
+        public void refesh()
         {
             ds = new System.Data.DataSet();
             adap.Fill(ds, "cost_type");
             ds.Tables["cost_type"].Columns.Add("value");
             ds.Tables["cost_type"].Columns.Add("sum");
         }
-        public  void Delete_cost_type(string id, int ID_user, string type_name)//costs_types
+        public void Delete_cost_type(string id, int ID_user, string type_name)
         {
             try
             {
@@ -152,7 +133,7 @@ namespace Desktop
             }
 
         }
-        public  void Delete_cost(string id, string ID_cost, int ID_user)//costs
+        public void Delete_cost(string id, string ID_cost, int ID_user)
         {
             try
             {
@@ -167,11 +148,10 @@ namespace Desktop
             finally {  _Connection.Close(); }
 
         }
-        public void Delete_income(string id,  int ID_user)//costs
+        public void Delete_income(string id, int ID_user)
         {
             try
             {
-                // string qry = " delete from costs where  user_id='" + Form2.ID + "'";
                 string qry = " delete from incomes where  user_id='" + ID_user + "' and id='" + id + "'";
                 _Connection.Open();
                 MessageBox.Show(qry);
@@ -180,22 +160,21 @@ namespace Desktop
             }
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally { _Connection.Close(); }
-
         }
-        public  DataSet drow_dataGridViewOutlays(string ID_cost)
+
+        public DataSet drow_dataGridViewOutlays(string ID_cost)
         {
-            MySqlDataAdapter adap1 = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "and user_id='" + LoginForm.user_ID + "'",  _Connection);
+            MySqlDataAdapter adap1 = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "and user_id='" + LoginForm.user_ID + "'", _Connection);
             // MySqlDataAdapter adap1 = new MySqlDataAdapter("select * from costs where cost_type_id='" + ID_cost + "'", con);
             DataSet dt = new DataSet();
             adap1.Fill(dt, "costs");
             return dt;
         }
-        public  void Update_cost_type(string id, int ID_user, string ID_limit, string type_name, string Date_create, string Date_updadate)//cost_types
-        {
 
+        public void Update_cost_type(string id, int ID_user, string ID_limit, string type_name, string Date_create, string Date_updadate)
+        {
             try
-            {
-                // {string qry="update heroku_9e3361f1a2a704a.cost_types set name='dd', limit_id='ac59dddaf4', updated_at='2014-05-04 15:43:24' where  user_id= '2'  and id='7f84e3df3f' and created_at='2014-05-04 09:21:24'";
+            {                
                 string qry = "update cost_types set name='" + type_name + "', limit_id='" + ID_limit + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
                  _Connection.Open(); MessageBox.Show(qry);
                  MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
@@ -204,9 +183,8 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally {  _Connection.Close(); }
         }
-        public  void Update_cost(string id, int ID_user, string ID_cost, string cost_name, string description, double money, string Date_create, string Date_updadate) //costs
+        public void Update_cost(string id, int ID_user, string ID_cost, string cost_name, string description, double money, string Date_create, string Date_updadate)
         {
-
             try
             {
                 string qry = "update costs set name='" + cost_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "' and cost_type_id='" + ID_cost + "';";
@@ -217,9 +195,8 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally {  _Connection.Close(); }
         }
-        public void Update_income(string id, int ID_user, string income_name, string description, double money, string Date_create, string Date_updadate) //costs
+        public void Update_income(string id, int ID_user, string income_name, string description, double money, string Date_create, string Date_updadate)
         {
-
             try
             {
                 string qry = "update incomes set name='" + income_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
@@ -230,38 +207,34 @@ namespace Desktop
             catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
             finally { _Connection.Close(); }
         }
-
-      // public bool get_id_from_table() { }
+              
         public string generator_id(string table_name, string column_name)
         {
             string genereted_id;
-          bool b = false;
-          _Connection.Open();
-          MySqlCommand mysqlQuery = _Connection.CreateCommand();
-          do
-          {
-              genereted_id = secondary_methods.generator();
-              mysqlQuery.CommandText = "SELECT * FROM " + table_name + " WHERE " + column_name + "='" + genereted_id + "';";
-              MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
-              while (mysqlResult.Read())
-              {
-                  try
-                  {
-                      string id;
-                      id = mysqlResult.GetString(0);
-                      if (genereted_id.Contains(id)) b = true;
-                  }
-                  catch { }
-              }
-             
+            bool b = false;
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            do
+            {
+                genereted_id = secondary_methods.generator();
+                mysqlQuery.CommandText = "SELECT * FROM " + table_name + " WHERE " + column_name + "='" + genereted_id + "';";
+                MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+                while (mysqlResult.Read())
+                {
+                    try
+                    {
+                        string id;
+                        id = mysqlResult.GetString(0);
+                        if (genereted_id.Contains(id)) b = true;
+                    }
+                    catch { }
+                }             
           } while (b);
 
           _Connection.Close();
           return genereted_id;
         }
-
     }
-
 
 }
 
