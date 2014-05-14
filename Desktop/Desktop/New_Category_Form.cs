@@ -69,6 +69,32 @@ namespace Desktop
         {
 
         }
+
+        private void tbCategoryTitle_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void numLimitValue_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                btnOk_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
         
     }
 }
