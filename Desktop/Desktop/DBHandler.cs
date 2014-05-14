@@ -177,14 +177,14 @@ namespace Desktop
         }
         public List<Cost> getCostByName(string costName, string userName)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
 
             List<Cost> resultList = new List<Cost>();
 
             _Connection.Open();
             MySqlCommand mysqlQuery = _Connection.CreateCommand();
             mysqlQuery.CommandText = "SELECT * FROM costs WHERE name =\"" + costName + "\" AND user_id = " + userId + ";";
-
+            //MessageBox.Show("SELECT * FROM costs WHERE name =\"" + costName + "\" AND user_id = " + userId + ";");
             MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
 
             while (mysqlResult.Read())
@@ -201,14 +201,15 @@ namespace Desktop
 
                 resultList.Add(tempObject);
             }
-
+            MessageBox.Show(resultList[1].ToString());
             _Connection.Close();
             return resultList;
         }
 
         public List<Cost> getCostByCategory(string categoryName, string userName)
         {
-            string userId = getUserByName(userName).Id;
+            
+            string userId = LoginForm.user_ID.ToString();
             string categoryId = getCategoryByName(categoryName).Id;
 
             List<Cost> resultList = new List<Cost>();
@@ -246,7 +247,7 @@ namespace Desktop
             if (costs.Count < 1)
                 return null;
 
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string categoryId = costs[0].CostTypeId;
                                    
             _Connection.Open();
@@ -275,7 +276,7 @@ namespace Desktop
 
         public List<Cost> getCostByDate(DateTime date, string userName)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string dateString = sqlDateString(date);
 
             List<Cost> resultList = new List<Cost>();
@@ -315,7 +316,7 @@ namespace Desktop
                 return resultList;
             }
 
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
             string dateString1 = sqlDateString(date1);
             string dateString2 = sqlDateString(date2);
 
@@ -501,7 +502,7 @@ namespace Desktop
 
         public List<Income> getIncomeByName(string incomeName, string userName)
         {
-            string userId = getUserByName(userName).Id;
+            string userId = LoginForm.user_ID.ToString();
 
             List<Income> resultList = new List<Income>();
 
