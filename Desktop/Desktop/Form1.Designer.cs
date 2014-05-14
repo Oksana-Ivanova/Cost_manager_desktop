@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.tabPageStart = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelSrartPage = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelTotalOutlays = new System.Windows.Forms.Panel();
@@ -60,7 +62,6 @@
             this.labelTotalIncomePerWeek = new System.Windows.Forms.Label();
             this.labelTotallIncomePerLastWeek = new System.Windows.Forms.Label();
             this.dataGridViewRecentIncomes = new System.Windows.Forms.DataGridView();
-            this.linkLabelLogOut = new System.Windows.Forms.LinkLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +78,7 @@
             this.tabControl.SuspendLayout();
             this.tabPageStart.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panelTotalOutlays.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,6 +105,23 @@
             this.tabControl.Size = new System.Drawing.Size(896, 400);
             this.tabControl.TabIndex = 1;
             // 
+            // linkLabelLogOut
+            // 
+            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
+            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelLogOut.AutoSize = true;
+            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
+            this.linkLabelLogOut.Name = "linkLabelLogOut";
+            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
+            this.linkLabelLogOut.TabIndex = 2;
+            this.linkLabelLogOut.TabStop = true;
+            this.linkLabelLogOut.Text = "LogOut";
+            this.linkLabelLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogOut_LinkClicked);
+            // 
             // tabPageStart
             // 
             this.tabPageStart.BackgroundImage = global::Desktop.Properties.Resources.bg;
@@ -119,6 +138,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.labelSrartPage);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -129,17 +149,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Як зберегти та примножити гроші (поради фахівців)";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Desktop.Properties.Resources.foto1;
+            this.pictureBox1.Location = new System.Drawing.Point(653, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(224, 338);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // labelSrartPage
             // 
-            this.labelSrartPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSrartPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelSrartPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelSrartPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelSrartPage.Location = new System.Drawing.Point(6, 22);
             this.labelSrartPage.Name = "labelSrartPage";
             this.labelSrartPage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelSrartPage.Size = new System.Drawing.Size(870, 338);
+            this.labelSrartPage.Size = new System.Drawing.Size(640, 338);
             this.labelSrartPage.TabIndex = 1;
             this.labelSrartPage.Text = resources.GetString("labelSrartPage.Text");
             this.labelSrartPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,14 +371,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_recent_cost.BackColor = System.Drawing.Color.Transparent;
             this.chart_recent_cost.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea1.Name = "ChartArea1";
-            this.chart_recent_cost.ChartAreas.Add(chartArea1);
+            chartArea6.Name = "ChartArea1";
+            this.chart_recent_cost.ChartAreas.Add(chartArea6);
             this.chart_recent_cost.Location = new System.Drawing.Point(-4, 14);
             this.chart_recent_cost.Name = "chart_recent_cost";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.chart_recent_cost.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Name = "Series1";
+            this.chart_recent_cost.Series.Add(series6);
             this.chart_recent_cost.Size = new System.Drawing.Size(588, 310);
             this.chart_recent_cost.TabIndex = 8;
             this.chart_recent_cost.Text = "Last week";
@@ -425,23 +455,6 @@
             this.dataGridViewRecentIncomes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Clic);
             this.dataGridViewRecentIncomes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewRecentIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewRecentIncomes_ColumnAdded);
-            // 
-            // linkLabelLogOut
-            // 
-            this.linkLabelLogOut.ActiveLinkColor = System.Drawing.Color.YellowGreen;
-            this.linkLabelLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelLogOut.AutoSize = true;
-            this.linkLabelLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelLogOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.linkLabelLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabelLogOut.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkLabelLogOut.Location = new System.Drawing.Point(755, 2);
-            this.linkLabelLogOut.Name = "linkLabelLogOut";
-            this.linkLabelLogOut.Size = new System.Drawing.Size(64, 22);
-            this.linkLabelLogOut.TabIndex = 2;
-            this.linkLabelLogOut.TabStop = true;
-            this.linkLabelLogOut.Text = "LogOut";
-            this.linkLabelLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogOut_LinkClicked);
             // 
             // menuStrip1
             // 
@@ -570,6 +583,7 @@
             this.tabPageStart.ResumeLayout(false);
             this.tabPageStart.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panelTotalOutlays.ResumeLayout(false);
@@ -637,6 +651,7 @@
         private System.Windows.Forms.Label labelTotallIncomePerLastWeek;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelSrartPage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
