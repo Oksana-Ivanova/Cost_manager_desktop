@@ -64,7 +64,7 @@ namespace Desktop
             const string password = "e2941bb5";
 
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
-            DateTime period_end_date = DateTime.Today.AddDays(1);
+            DateTime period_end_date = DateTime.Now.AddDays(1);
 
             cost_type_id="";
             DBHandler controller = new DBHandler(host, database, user, password);
@@ -98,7 +98,7 @@ namespace Desktop
             const string password = "e2941bb5";
 
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
-            DateTime period_end_date = DateTime.Today.AddDays(1);
+            DateTime period_end_date = DateTime.Now.AddDays(1);
 
             cost_type_id = "";
             DBHandler controller = new DBHandler(host, database, user, password);           
@@ -132,7 +132,7 @@ namespace Desktop
             const string password = "e2941bb5";
 
             DateTime period_begin_date = DateTime.Today.AddMonths(-1);
-            DateTime period_end_date = DateTime.Today.AddDays(1);
+            DateTime period_end_date = DateTime.Now.AddDays(1);
 
             bool Out= false;
             string cost_type_id = "";

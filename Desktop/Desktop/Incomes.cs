@@ -25,11 +25,11 @@ namespace Desktop
             cboPeriod.SelectedIndex = (int)PeriodMode.LastWeek;
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerStart.MaxDate = DateTime.Today;
-            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
+            dateTimePickerStart.MaxDate = DateTime.Now;
+            dateTimePickerStart.Value = DateTime.Now.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerEnd.MaxDate = DateTime.Today;
-            dateTimePickerEnd.Value = DateTime.Today;
+            dateTimePickerEnd.MaxDate = DateTime.Now;
+            dateTimePickerEnd.Value = DateTime.Now;
         }
         const string host = "eu-cdbr-west-01.cleardb.com";
         const string database = "heroku_9e3361f1a2a704a";
@@ -139,6 +139,8 @@ namespace Desktop
             }
 
             fillDateBoundsByPeriod();
+
+            refreshForm();
         }
        
         private void buttonNewIncome_Click(object sender, EventArgs e)
@@ -148,6 +150,7 @@ namespace Desktop
 
             refreshForm();
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -190,10 +193,6 @@ namespace Desktop
             }
         }
 
-        private void dataGridViewIncomes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        
-        }
         private void ColumnEdit_Click(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
@@ -208,11 +207,11 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you realy wish to delete entry?",
+                    if (MessageBox.Show("Do you realy wish to remove entry?",
                                         "Are you sure?",
                                         MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question,
-                                        MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes) ;
+                                        MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
                     {
                         Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 

@@ -75,8 +75,8 @@ namespace Desktop
             }
 
             dateTimePickerNewIncome.MinDate = DateTime.Today.AddYears(-7);
-            dateTimePickerNewIncome.MaxDate = DateTime.Today;
-            dateTimePickerNewIncome.Value = DateTime.Today;
+            dateTimePickerNewIncome.MaxDate = DateTime.Now;
+            dateTimePickerNewIncome.Value = DateTime.Now;
         }
 
         private void initFieldsByIncome()
@@ -120,8 +120,7 @@ namespace Desktop
         {
             if (validateFields() == false)
                 return;
-
-
+            
             if (formMode == FormMode.CreateMode)
             {
                 try
@@ -131,7 +130,7 @@ namespace Desktop
                     int ID_user = LoginForm.user_ID;
                     string name = tbTitleNewIncome.Text;
                     string description = txtDescription.Text;
-                    double money = Convert.ToDouble(numValue.Value);
+                    double money = Double.Parse(numValue.Value.ToString());
                     string Date = secondary_methods.datetime_to_sql_format(dateTimePickerNewIncome.Value);
                     connect.Insert_into_income(id, ID_user, name, description, money, Date);
 
@@ -168,9 +167,18 @@ namespace Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Income income = controller.getIncomeByName(tbTitleNewIncome.Text, LoginForm.user_name)[0];
+            if (MessageBox.Show("Do you realy wish to remove entry?",
+                                "Are you sure?",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Income income = controller.getIncomeByName(tbTitleNewIncome.Text, LoginForm.user_name)[0];
 
-            connect.Delete_income(income.Id, LoginForm.user_ID);
+                connect.Delete_income(income.Id, LoginForm.user_ID);
+
+                this.Close();
+            }
         }
     }
 }

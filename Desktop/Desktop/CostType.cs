@@ -55,8 +55,8 @@ namespace Desktop
             _Id = SequenceGenerator.GenerateUniqueString();
             _Name = "";
 
-            _CreateDate = DateTime.Today;
-            _UpdateDate = DateTime.Today;
+            _CreateDate = DateTime.Now;
+            _UpdateDate = DateTime.Now;
         }  
 
     }

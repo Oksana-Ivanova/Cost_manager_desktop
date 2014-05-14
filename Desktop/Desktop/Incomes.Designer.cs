@@ -62,7 +62,6 @@
             this.dataGridViewIncomes.TabIndex = 1;
             this.dataGridViewIncomes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ColumnEdit_Click);
             this.dataGridViewIncomes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridViewIncomes_ColumnAdded);
-            this.dataGridViewIncomes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewIncomes_RowHeaderMouseDoubleClick);
             // 
             // leftPanel
             // 
