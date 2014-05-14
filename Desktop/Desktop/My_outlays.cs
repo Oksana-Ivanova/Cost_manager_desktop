@@ -216,7 +216,7 @@ namespace Desktop
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
                 // chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
-                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), costs_sum_from_period);
                 period_begin_date = period_begin_date.AddDays(1);
             }
         }
@@ -271,7 +271,7 @@ namespace Desktop
                 
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddMonths(1));
-                chart_outlays.Series[0].Points.AddXY(period_begin_date, i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date, costs_sum_from_period);
                 period_begin_date = period_begin_date.AddMonths(1);
             }
         }
@@ -303,7 +303,7 @@ namespace Desktop
                 //i++;
                 double costs_sum_from_period = 0;
                 costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
-                chart_outlays.Series[0].Points.AddXY(period_begin_date, i);
+                chart_outlays.Series[0].Points.AddXY(period_begin_date, costs_sum_from_period);
                 period_begin_date = period_begin_date.AddDays(1);
             }
 
@@ -365,6 +365,15 @@ namespace Desktop
                 costForm.Show();
             }
         }
+       protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+       {
+           if (keyData == Keys.Escape)
+           {
+               this.Close();
+               return true;
+           }
+           return base.ProcessCmdKey(ref msg, keyData);
+       }
 
     }
 }
