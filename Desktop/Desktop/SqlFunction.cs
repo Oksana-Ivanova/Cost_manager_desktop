@@ -45,21 +45,24 @@ namespace Desktop
             try
             {
                 string qry = " insert into  heroku_9e3361f1a2a704a.cost_types values('" + id + "','" + ID_user + "','" + ID_limit + "','" + type_name + "','" + Date + "','" + Date + "')";
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 _Connection.Open();
                 MySqlCommand comandInsert = new MySqlCommand(qry,  _Connection);
                 comandInsert.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally { _Connection.Close(); }
 
         }
         private string create_limit(double limit) 
         {
-            const string host = "eu-cdbr-west-01.cleardb.com";
+            const string host = "127.0.0.1";
             const string database = "heroku_9e3361f1a2a704a";
-            const string user = "b7d511d516e6e4";
-            const string password = "e2941bb5";
+            const string user = "root";
+            const string password = "123";
 
             SqlFunction connect = new SqlFunction(host, database, user, password);          
             //string id = connect.generator_id(table_name, column_name);
@@ -68,12 +71,15 @@ namespace Desktop
             try
             {
                 string qry = " insert into  heroku_9e3361f1a2a704a.limits values('" + id + "','"+LoginForm.user_ID+" ','Another','" + limit + "','" + Date + "','" + Date + "')";
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 _Connection.Open();
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
                 comandInsert.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption)
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally { _Connection.Close(); }
             return id;
         }
@@ -87,7 +93,10 @@ namespace Desktop
                  MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
                 comandInsert.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally {  _Connection.Close(); }
 
         }
@@ -97,11 +106,14 @@ namespace Desktop
             {
                 string qry = "insert into heroku_9e3361f1a2a704a.incomes values('" + id + "','" + ID_user + "','" + name + "','" + description + "','" + money + "','" + Date + "','" + Date + "')";
                 _Connection.Open();
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 MySqlCommand comandInsert = new MySqlCommand(qry, _Connection);
                 comandInsert.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString());
+            }
             finally { _Connection.Close(); }
 
         }
@@ -119,15 +131,18 @@ namespace Desktop
             {
                 string qry = " delete from  cost_types where id='" + id + "'  and name='" + type_name + "' and user_id='" + ID_user + "'";
                  _Connection.Open();
-                MessageBox.Show(qry);
+                ////MessageBox.Show(qry);
                 MySqlCommand comandDelete = new MySqlCommand(qry, _Connection);
                 comandDelete.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString());
+            }
             finally
             {
                 string qry = " delete from  costs where cost_type_id='" + id + "' and user_id='" + ID_user + "'";
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 MySqlCommand comandDelete = new MySqlCommand(qry, _Connection);
                  _Connection.Close();
             }
@@ -140,11 +155,14 @@ namespace Desktop
                 // string qry = " delete from costs where  user_id='" + Form2.ID + "'";
                 string qry = " delete from costs where cost_type_id='" + ID_cost + "' and user_id='" + ID_user + "' and id='" + id + "'";
                  _Connection.Open();
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 MySqlCommand comandDelete = new MySqlCommand(qry, _Connection);
                 comandDelete.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally {  _Connection.Close(); }
 
         }
@@ -154,11 +172,14 @@ namespace Desktop
             {
                 string qry = " delete from incomes where  user_id='" + ID_user + "' and id='" + id + "'";
                 _Connection.Open();
-                MessageBox.Show(qry);
+                //MessageBox.Show(qry);
                 MySqlCommand comandDelete = new MySqlCommand(qry, _Connection);
                 comandDelete.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption)
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally { _Connection.Close(); }
         }
 
@@ -176,11 +197,15 @@ namespace Desktop
             try
             {                
                 string qry = "update cost_types set name='" + type_name + "', limit_id='" + ID_limit + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
-                 _Connection.Open(); MessageBox.Show(qry);
+                 _Connection.Open(); 
+                //MessageBox.Show(qry);
                  MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
                 comandUpdate.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally {  _Connection.Close(); }
         }
         public void Update_cost(string id, int ID_user, string ID_cost, string cost_name, string description, double money, string Date_create, string Date_updadate)
@@ -188,11 +213,15 @@ namespace Desktop
             try
             {
                 string qry = "update costs set name='" + cost_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "' and cost_type_id='" + ID_cost + "';";
-                _Connection.Open(); MessageBox.Show(qry);
+                _Connection.Open(); 
+                //MessageBox.Show(qry);
                 MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
                 comandUpdate.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally {  _Connection.Close(); }
         }
         public void Update_income(string id, int ID_user, string income_name, string description, double money, string Date_create, string Date_updadate)
@@ -200,11 +229,15 @@ namespace Desktop
             try
             {
                 string qry = "update incomes set name='" + income_name + "', description='" + description + "', updated_at='" + Date_updadate + "' where  user_id='" + ID_user + "' and id='" + id + "' and created_at='" + Date_create + "';";
-                _Connection.Open(); MessageBox.Show(qry);
+                _Connection.Open(); 
+                //MessageBox.Show(qry);
                 MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
                 comandUpdate.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption)
+            { 
+                //MessageBox.Show(exeption.ToString());
+            }
             finally { _Connection.Close(); }
         }
               
@@ -240,11 +273,14 @@ namespace Desktop
             try
             {
                 string qry = "update user set encrypted_password='" +new_password + "',  updated_at='" + Date_updadate + "' where  id='" + LoginForm.user_ID + "';";
-                _Connection.Open(); MessageBox.Show(qry);
+                _Connection.Open(); //MessageBox.Show(qry);
                 MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
                 comandUpdate.ExecuteNonQuery();
             }
-            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            catch (MySqlException exeption) 
+            { 
+                //MessageBox.Show(exeption.ToString()); 
+            }
             finally { _Connection.Close(); }
         }
     }

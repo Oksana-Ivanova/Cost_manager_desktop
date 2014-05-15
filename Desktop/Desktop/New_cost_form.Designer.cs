@@ -236,6 +236,7 @@
             this.MinimizeBox = false;
             this.Name = "New_cost_form";
             this.Text = "New cost";
+            this.Activated += new System.EventHandler(this.New_cost_form_Activated);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).EndInit();

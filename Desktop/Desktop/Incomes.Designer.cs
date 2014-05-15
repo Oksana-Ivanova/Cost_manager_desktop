@@ -139,6 +139,7 @@
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerStart.TabIndex = 1;
+            this.dateTimePickerStart.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePickerStart_ValueChanged);
             // 
             // dateTimePickerEnd
@@ -150,6 +151,7 @@
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(179, 23);
             this.dateTimePickerEnd.TabIndex = 2;
+            this.dateTimePickerEnd.Value = new System.DateTime(2014, 5, 10, 0, 0, 0, 0);
             this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePickerEnd_ValueChanged);
             // 
             // btnNewIncome
@@ -174,6 +176,7 @@
             this.Controls.Add(this.dataGridViewIncomes);
             this.Name = "Incomes";
             this.Text = "Incomes";
+            this.Activated += new System.EventHandler(this.Incomes_Activated);
             this.Load += new System.EventHandler(this.Incomes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncomes)).EndInit();
             this.leftPanel.ResumeLayout(false);

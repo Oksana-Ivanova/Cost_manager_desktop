@@ -21,10 +21,10 @@ namespace Desktop
         {
 
         }
-         const string host = "eu-cdbr-west-01.cleardb.com";
+         const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
-        const string user = "b7d511d516e6e4";
-        const string password = "e2941bb5";
+        const string user = "root";
+        const string password = "123";
 
         DBHandler controller = new DBHandler(host, database, user, password);
         public static int user_ID;
@@ -34,26 +34,26 @@ namespace Desktop
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            user_email = "user@test.com";
-            user_pasword = "123456user";
+            user_email = tbEmail.Text;      // "user@test.com";
+            user_pasword = tbPassword.Text; // "123456user";
 
             if (user_email.Equals(String.Empty) && user_pasword.Equals(String.Empty))
-            { 
-                MessageBox.Show("Заповніть поля Email та Pasword"); 
+            {
+                MessageBox.Show("Please specify Email and Pasword!"); 
                 return; 
             }
             else
             {
                 if (user_email.Equals(String.Empty)) 
                 {
-                    MessageBox.Show("Заповніть поле Email");
+                    MessageBox.Show("Please specify your Email!");
                     return;
                 }
                 else
                 {
                     if (user_pasword.Equals(String.Empty))
                     {
-                        MessageBox.Show("Заповніть поле Pasword");
+                        MessageBox.Show("Please specify Pasword!");
                         return; 
                     } 
                 }
@@ -74,7 +74,7 @@ namespace Desktop
             else
             {                
                 tbPassword.Clear();
-                MessageBox.Show("Неправильно заповнені поля Email або Pasword");
+                MessageBox.Show("Invalid Email or Pasword! Try again please.");
             }
            // if (!mainform.Enabled) { Application.Exit(); }
 
@@ -101,11 +101,11 @@ namespace Desktop
 
         private void tbEmail_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
+            //if (e.KeyCode == Keys.Enter)
+            //{
 
-                btnOk_Click(sender, e);
-            }
+            //    btnOk_Click(sender, e);
+            //}
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
@@ -114,11 +114,11 @@ namespace Desktop
 
         private void tbPassword_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
+            //if (e.KeyCode == Keys.Enter)
+            //{
 
-                btnOk_Click(sender, e);
-            }
+            //    btnOk_Click(sender, e);
+            //}
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();

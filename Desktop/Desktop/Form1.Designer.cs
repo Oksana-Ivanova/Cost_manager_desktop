@@ -171,6 +171,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recent Cost";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage2_Paint);
             // 
             // panelTotalOutlays
             // 
@@ -268,6 +269,7 @@
             this.buttonExamine.TabIndex = 4;
             this.buttonExamine.Text = "Examine";
             this.buttonExamine.UseVisualStyleBackColor = true;
+            this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
             // 
             // labelOutlayRef
             // 
@@ -328,6 +330,7 @@
             this.buttonExamine2.TabIndex = 4;
             this.buttonExamine2.Text = "Examine";
             this.buttonExamine2.UseVisualStyleBackColor = true;
+            this.buttonExamine2.Click += new System.EventHandler(this.buttonExamine2_Click);
             // 
             // labelOutlayRef2
             // 
@@ -378,6 +381,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Recent Incomes";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage3_Paint);
             // 
             // panelTotalIncome
             // 
@@ -577,7 +581,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Cost Manager v0.12";
+            this.Text = "Cost Manager v1.00";
+            this.Activated += new System.EventHandler(this.Main_Activated);
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageStart.ResumeLayout(false);

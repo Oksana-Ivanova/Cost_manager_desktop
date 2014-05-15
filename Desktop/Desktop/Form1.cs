@@ -26,10 +26,10 @@ namespace Desktop
            // if (!loginForm.Visible) { loginForm.Close(); }
         }
 
-        const string host = "eu-cdbr-west-01.cleardb.com";
+        const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
-        const string user = "b7d511d516e6e4";
-        const string password = "e2941bb5";
+        const string user = "root";
+        const string password = "123";
         DBHandler controller = new DBHandler(host, database, user, password);
         SqlFunction connect = new SqlFunction(host, database, user, password);
         
@@ -46,7 +46,7 @@ namespace Desktop
             chart_recent_cost.Series[0].Points.Clear();
             chart_recent_cost.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_recent_cost.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
-            chart_recent_cost.Series[0].Color = Color.YellowGreen;
+            chart_recent_cost.Series[0].Color = Color.DarkBlue;
             chart_recent_cost.ChartAreas[0].AxisX.Interval = 1;
             period_begin_date = period_begin_date.AddDays(-1);
             period_end_date = period_end_date.AddDays(1);
@@ -131,24 +131,32 @@ namespace Desktop
         {
             My_outlays outlaysForm = new My_outlays();
             outlaysForm.ShowDialog();
+
+            refreshForm();
         }
 
         private void buttonDetalisedIncomes_Click(object sender, EventArgs e)
         {
             Incomes incomesForm = new Incomes();
             incomesForm.ShowDialog();
+
+            refreshForm();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox AboutBoxForm = new AboutBox();
             AboutBoxForm.ShowDialog();
+
+            refreshForm();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             labelTotalIncomePerWeek.Visible = false;
             labelTotalOutlayPerWeek.Visible = false;
+            labelTotallIncomePerLastWeek.Visible = false;
+            labelTotalOutlayPerWeekRef2.Visible = false;
         }
 
         private void linkLabelLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -299,6 +307,37 @@ namespace Desktop
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage2_Paint(object sender, PaintEventArgs e)
+        {
+            refreshForm();
+        }
+
+        private void tabPage3_Paint(object sender, PaintEventArgs e)
+        {
+            refreshForm();
+        }
+
+        private void buttonExamine_Click(object sender, EventArgs e)
+        {
+            My_outlays outlaysForm = new My_outlays();
+            outlaysForm.ShowDialog();
+
+            refreshForm();
+        }
+
+        private void buttonExamine2_Click(object sender, EventArgs e)
+        {
+            My_outlays outlaysForm = new My_outlays();
+            outlaysForm.ShowDialog();
+
+            refreshForm();
+        }
+
+        private void Main_Activated(object sender, EventArgs e)
+        {
+            refreshForm();
         }
     }
 }

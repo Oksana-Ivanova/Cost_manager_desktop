@@ -59,19 +59,25 @@ namespace Desktop
             return true;
         }
 
-        private void tryUpdate()
+        private bool tryUpdate()
         {
             if (tbPasswordProfile.Text == tbConfirmPasswordPrifile.Text)
             {
-                const string host = "eu-cdbr-west-01.cleardb.com";
+                const string host = "127.0.0.1";
                 const string database = "heroku_9e3361f1a2a704a";
-                const string user = "b7d511d516e6e4";
-                const string password = "e2941bb5";
+                const string user = "root";
+                const string password = "123";
 
                 SqlFunction con = new SqlFunction(host, database, user, password);
                 con.Update_user_password(tbConfirmPasswordPrifile.Text);
+
+                return true;
             }
-            else { MessageBox.Show("Паролі неспівпадають"); }
+            else 
+            {
+                MessageBox.Show("Type the sama new password twice.");
+                return false;
+            }
 
         }
 
@@ -98,6 +104,10 @@ namespace Desktop
 
                 cbxViewPassword.Checked = false;
 
+                tbCurrentPassword.Clear();
+                tbPasswordProfile.Clear();
+                tbConfirmPasswordPrifile.Clear();
+
                 btnOK.Text = "Accept";
                 btnCancel.Text = "Reject";
 
@@ -119,9 +129,9 @@ namespace Desktop
             {
                 if (isFieldsValid())
                 {
-                    tryUpdate();
-                }
-                makeEditable();
+                    if (tryUpdate() )
+                        makeEditable();
+                }                
             }
             else
             {
