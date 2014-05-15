@@ -85,7 +85,7 @@ namespace Desktop
             {
                 tbNameNewCost.Text = currentCost.Name;
                 richTextBoxDescriptionNewCost.Text = currentCost.Description;
-                cboCategory.SelectedText = controller.getCostCategory(currentCost.Name, LoginForm.user_email).Name;
+                cboCategory.SelectedText = controller.getCostCategory(currentCost.Id).Name;
                 numValue.Value = (decimal)currentCost.Price;
                 dateTimePickerNewCost.Value = currentCost.CreateDate;
             }

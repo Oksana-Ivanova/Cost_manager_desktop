@@ -268,11 +268,11 @@ namespace Desktop
             return resultList;
         }
 
-        public CostType getCostCategory(string costName, string userName)
+        public CostType getCostCategory(string cost_id)
         {
             CostType resultCategory = new CostType();
 
-            List<Cost> costs = getCostByName(costName, userName);
+            List<Cost> costs = getCostById(cost_id);
             if (costs.Count < 1)
                 return null;
 
@@ -626,6 +626,36 @@ namespace Desktop
             }
             _Connection.Close();
             return id;
+        }
+        public List<Cost> getCostById(string cost_id)
+        {
+            string userId = LoginForm.user_ID.ToString();
+
+            List<Cost> resultList = new List<Cost>();
+
+            _Connection.Open();
+            MySqlCommand mysqlQuery = _Connection.CreateCommand();
+            mysqlQuery.CommandText = "SELECT * FROM costs WHERE id=\"" + cost_id + "\" AND user_id = " + userId + ";";
+            //MessageBox.Show("SELECT * FROM costs WHERE name =\"" + costName + "\" AND user_id = " + userId + ";");
+            MySqlDataReader mysqlResult = mysqlQuery.ExecuteReader();
+
+            while (mysqlResult.Read())
+            {
+                Cost tempObject = new Cost();
+                tempObject.Id = mysqlResult.GetString(0);
+                tempObject.UserId = Convert.ToInt32(mysqlResult.GetString(1));
+                tempObject.CostTypeId = mysqlResult.GetString(2);
+                tempObject.Name = mysqlResult.GetString(3);
+                tempObject.Description = mysqlResult.GetString(4);
+                tempObject.Price = Convert.ToDouble(mysqlResult.GetString(5));
+                tempObject.CreateDate = Convert.ToDateTime(mysqlResult.GetString(6));
+                tempObject.UpdateDate = Convert.ToDateTime(mysqlResult.GetString(7));
+
+                resultList.Add(tempObject);
+            }
+            // MessageBox.Show(resultList[1].ToString());
+            _Connection.Close();
+            return resultList;
         }
 
     }
