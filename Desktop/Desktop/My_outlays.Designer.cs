@@ -347,6 +347,7 @@
             this.Controls.Add(this.panelTable);
             this.Name = "My_outlays";
             this.Text = "My Outlays";
+            this.Activated += new System.EventHandler(this.My_outlays_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxCategory.ResumeLayout(false);

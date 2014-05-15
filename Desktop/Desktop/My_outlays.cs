@@ -24,10 +24,10 @@ namespace Desktop
           
         }
 
-        const string host = "eu-cdbr-west-01.cleardb.com";
+        const string host = "127.0.0.1";
         const string database = "heroku_9e3361f1a2a704a";
-        const string user = "b7d511d516e6e4";
-        const string password = "e2941bb5";
+        const string user = "root";
+        const string password = "123";
 
         DBHandler controller = new DBHandler(host, database, user, password);
         BindingSource outlays_binding = new BindingSource();
@@ -67,6 +67,8 @@ namespace Desktop
 
         private void initControls()
         {
+            initCategoriesComboData();
+
             cboPeriod.SelectedIndex = (int)PeriodMode.LastWeek;
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
@@ -237,7 +239,7 @@ namespace Desktop
             chart_outlays.Series[0].Points.Clear();
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
-            chart_outlays.Series[0].Color = Color.YellowGreen;
+            chart_outlays.Series[0].Color = Color.DarkBlue;
             chart_outlays.ChartAreas[0].AxisX.Interval = 1;
            // period_begin_date = period_begin_date.AddDays(-1);
           //  period_end_date = period_end_date.AddDays(1);
@@ -263,7 +265,7 @@ namespace Desktop
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
             chart_outlays.ChartAreas[0].AxisX.Interval = 5;
-            chart_outlays.Series[0].Color = Color.YellowGreen;
+            chart_outlays.Series[0].Color = Color.DarkBlue;
             //int number_of_periods = Convert.ToInt16((Convert.ToDouble(period_end_date.AddHours(-22)) - Convert.ToDouble(period_begin_date.AddHours(-23).ToOADate()))/2);
             string categoryName = cboCategory.Text;
             //chart_outlays.Series[0].Points.AddXY(period_begin_date, 2);
@@ -290,7 +292,7 @@ namespace Desktop
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
 
-            chart_outlays.Series[0].Color = Color.YellowGreen;
+            chart_outlays.Series[0].Color = Color.DarkBlue;
             //int i = 0;
             TimeSpan interval = period_begin_date.AddMonths(1) - period_begin_date;
             double costs_sum_from_period = 0;
@@ -319,7 +321,7 @@ namespace Desktop
             chart_outlays.Series[0].Points.Clear();
             chart_outlays.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_outlays.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
-            chart_outlays.Series[0].Color = Color.YellowGreen;
+            chart_outlays.Series[0].Color = Color.DarkBlue;
 
             if (diff <= 14) chart_outlays.ChartAreas[0].AxisX.Interval = 1;
             if (diff > 14 && diff <= 92) chart_outlays.ChartAreas[0].AxisX.Interval = 7;
@@ -426,6 +428,11 @@ namespace Desktop
             }
             return base.ProcessCmdKey(ref msg, keyData);
        }
+
+        private void My_outlays_Activated(object sender, EventArgs e)
+        {
+            refreshForm();
+        }
 
     }
 }
