@@ -59,7 +59,7 @@ namespace Desktop
             return true;
         }
 
-        private void tryUpdate()
+        private bool tryUpdate()
         {
             if (tbPasswordProfile.Text == tbConfirmPasswordPrifile.Text)
             {
@@ -70,8 +70,14 @@ namespace Desktop
 
                 SqlFunction con = new SqlFunction(host, database, user, password);
                 con.Update_user_password(tbConfirmPasswordPrifile.Text);
+
+                return true;
             }
-            else { MessageBox.Show("Паролі неспівпадають"); }
+            else 
+            {
+                MessageBox.Show("Type the sama new password twice.");
+                return false;
+            }
 
         }
 
@@ -98,6 +104,10 @@ namespace Desktop
 
                 cbxViewPassword.Checked = false;
 
+                tbCurrentPassword.Clear();
+                tbPasswordProfile.Clear();
+                tbConfirmPasswordPrifile.Clear();
+
                 btnOK.Text = "Accept";
                 btnCancel.Text = "Reject";
 
@@ -119,9 +129,9 @@ namespace Desktop
             {
                 if (isFieldsValid())
                 {
-                    tryUpdate();
-                }
-                makeEditable();
+                    if (tryUpdate() )
+                        makeEditable();
+                }                
             }
             else
             {
