@@ -86,7 +86,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Sum for the period";
+            this.label1.Text = "Sum for the month";
             // 
             // groupBoxCategory
             // 
