@@ -63,10 +63,10 @@ namespace Desktop
         {
             if (tbPasswordProfile.Text == tbConfirmPasswordPrifile.Text)
             {
-                const string host = "127.0.0.1";
+                const string host = "eu-cdbr-west-01.cleardb.com";
                 const string database = "heroku_9e3361f1a2a704a";
-                const string user = "root";
-                const string password = "123";
+                const string user = "b7d511d516e6e4";
+                const string password = "e2941bb5";
 
                 SqlFunction con = new SqlFunction(host, database, user, password);
                 con.Update_user_password(tbConfirmPasswordPrifile.Text);
