@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxCategory = new System.Windows.Forms.GroupBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.btnNewCost = new System.Windows.Forms.Button();
@@ -41,6 +42,10 @@
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.cboPeriod = new System.Windows.Forms.ComboBox();
+            this.panel_sum_limit = new System.Windows.Forms.Panel();
+            this.label_cost_out_of_the_limit = new System.Windows.Forms.Label();
+            this.label_out_of_the_limit = new System.Windows.Forms.Label();
+            this.label_sum_for_period = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboViewAs = new System.Windows.Forms.ComboBox();
             this.lblViewAsRef = new System.Windows.Forms.Label();
@@ -48,21 +53,16 @@
             this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewOutlays = new System.Windows.Forms.DataGridView();
             this.panelChart = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_sum_limit = new System.Windows.Forms.Panel();
-            this.label_sum_for_period = new System.Windows.Forms.Label();
-            this.label_out_of_the_limit = new System.Windows.Forms.Label();
-            this.label_cost_out_of_the_limit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBoxCategory.SuspendLayout();
             this.groupBoxPeriod.SuspendLayout();
             this.panelCustomDate.SuspendLayout();
+            this.panel_sum_limit.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).BeginInit();
             this.panelTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).BeginInit();
             this.panelChart.SuspendLayout();
-            this.panel_sum_limit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +78,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(245, 442);
             this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Sum for the period";
             // 
             // groupBoxCategory
             // 
@@ -184,6 +193,47 @@
             this.cboPeriod.TabIndex = 0;
             this.cboPeriod.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriod_SelectedIndexChanged);
             // 
+            // panel_sum_limit
+            // 
+            this.panel_sum_limit.Controls.Add(this.label_cost_out_of_the_limit);
+            this.panel_sum_limit.Controls.Add(this.label_out_of_the_limit);
+            this.panel_sum_limit.Controls.Add(this.label_sum_for_period);
+            this.panel_sum_limit.Location = new System.Drawing.Point(15, 329);
+            this.panel_sum_limit.Name = "panel_sum_limit";
+            this.panel_sum_limit.Size = new System.Drawing.Size(208, 100);
+            this.panel_sum_limit.TabIndex = 6;
+            // 
+            // label_cost_out_of_the_limit
+            // 
+            this.label_cost_out_of_the_limit.AutoSize = true;
+            this.label_cost_out_of_the_limit.ForeColor = System.Drawing.Color.Maroon;
+            this.label_cost_out_of_the_limit.Location = new System.Drawing.Point(104, 31);
+            this.label_cost_out_of_the_limit.Name = "label_cost_out_of_the_limit";
+            this.label_cost_out_of_the_limit.Size = new System.Drawing.Size(92, 13);
+            this.label_cost_out_of_the_limit.TabIndex = 8;
+            this.label_cost_out_of_the_limit.Text = "no cost of the limit";
+            this.label_cost_out_of_the_limit.Visible = false;
+            // 
+            // label_out_of_the_limit
+            // 
+            this.label_out_of_the_limit.AutoSize = true;
+            this.label_out_of_the_limit.ForeColor = System.Drawing.Color.Maroon;
+            this.label_out_of_the_limit.Location = new System.Drawing.Point(7, 31);
+            this.label_out_of_the_limit.Name = "label_out_of_the_limit";
+            this.label_out_of_the_limit.Size = new System.Drawing.Size(74, 13);
+            this.label_out_of_the_limit.TabIndex = 7;
+            this.label_out_of_the_limit.Text = "Out of the limit";
+            this.label_out_of_the_limit.Visible = false;
+            // 
+            // label_sum_for_period
+            // 
+            this.label_sum_for_period.AutoSize = true;
+            this.label_sum_for_period.Location = new System.Drawing.Point(104, 8);
+            this.label_sum_for_period.Name = "label_sum_for_period";
+            this.label_sum_for_period.Size = new System.Drawing.Size(93, 13);
+            this.label_sum_for_period.TabIndex = 7;
+            this.label_sum_for_period.Text = "Sum for the period";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -284,54 +334,6 @@
             this.panelChart.TabIndex = 10;
             this.panelChart.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 337);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Sum for the period";
-            // 
-            // panel_sum_limit
-            // 
-            this.panel_sum_limit.Controls.Add(this.label_cost_out_of_the_limit);
-            this.panel_sum_limit.Controls.Add(this.label_out_of_the_limit);
-            this.panel_sum_limit.Controls.Add(this.label_sum_for_period);
-            this.panel_sum_limit.Location = new System.Drawing.Point(15, 329);
-            this.panel_sum_limit.Name = "panel_sum_limit";
-            this.panel_sum_limit.Size = new System.Drawing.Size(208, 100);
-            this.panel_sum_limit.TabIndex = 6;
-            // 
-            // label_sum_for_period
-            // 
-            this.label_sum_for_period.AutoSize = true;
-            this.label_sum_for_period.Location = new System.Drawing.Point(104, 8);
-            this.label_sum_for_period.Name = "label_sum_for_period";
-            this.label_sum_for_period.Size = new System.Drawing.Size(93, 13);
-            this.label_sum_for_period.TabIndex = 7;
-            this.label_sum_for_period.Text = "Sum for the period";
-            // 
-            // label_out_of_the_limit
-            // 
-            this.label_out_of_the_limit.AutoSize = true;
-            this.label_out_of_the_limit.ForeColor = System.Drawing.Color.Maroon;
-            this.label_out_of_the_limit.Location = new System.Drawing.Point(7, 31);
-            this.label_out_of_the_limit.Name = "label_out_of_the_limit";
-            this.label_out_of_the_limit.Size = new System.Drawing.Size(74, 13);
-            this.label_out_of_the_limit.TabIndex = 7;
-            this.label_out_of_the_limit.Text = "Out of the limit";
-            // 
-            // label_cost_out_of_the_limit
-            // 
-            this.label_cost_out_of_the_limit.AutoSize = true;
-            this.label_cost_out_of_the_limit.ForeColor = System.Drawing.Color.Maroon;
-            this.label_cost_out_of_the_limit.Location = new System.Drawing.Point(104, 31);
-            this.label_cost_out_of_the_limit.Name = "label_cost_out_of_the_limit";
-            this.label_cost_out_of_the_limit.Size = new System.Drawing.Size(92, 13);
-            this.label_cost_out_of_the_limit.TabIndex = 8;
-            this.label_cost_out_of_the_limit.Text = "no cost of the limit";
-            // 
             // My_outlays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,14 +353,14 @@
             this.groupBoxPeriod.ResumeLayout(false);
             this.panelCustomDate.ResumeLayout(false);
             this.panelCustomDate.PerformLayout();
+            this.panel_sum_limit.ResumeLayout(false);
+            this.panel_sum_limit.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_outlays)).EndInit();
             this.panelTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutlays)).EndInit();
             this.panelChart.ResumeLayout(false);
-            this.panel_sum_limit.ResumeLayout(false);
-            this.panel_sum_limit.PerformLayout();
             this.ResumeLayout(false);
 
         }

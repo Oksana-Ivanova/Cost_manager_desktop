@@ -17,11 +17,11 @@ namespace Desktop
             InitializeComponent();
 
             initControls();
-            secondary_methods.out_of_limit();
+            
            
              //  period_begin_date = DateTime.Today.AddDays(-6);
             //   period_end_date = DateTime.Today;
-            
+          
         }
 
         const string host = "eu-cdbr-west-01.cleardb.com";
@@ -48,6 +48,10 @@ namespace Desktop
             Chart = 0,
             Table = 1
         };
+        private void out_of_limit(string cost_type_id) 
+        {
+            if (secondary_methods.out_of_limit(cost_type_id)) { label_out_of_the_limit.Visible = true; label_out_of_the_limit.Text = "OUT OF LIMIT"; }
+        }
 
         private void initCategoriesComboData()
         {
@@ -151,6 +155,7 @@ namespace Desktop
 
         private void refreshForm()
         {
+            label_out_of_the_limit.Visible = false;
             fillDateBoundsByPeriod();
             //this.dataGridViewOutlays.DataSource = null;
             //this.dataGridViewOutlays.Rows.Clear();
@@ -166,6 +171,7 @@ namespace Desktop
             DateTime period_end_date = Convert.ToDateTime(dateTimePickerEnd.Value);
             string categoryName = cboCategory.Text;
             string cost_type_id = controller.getCategoryByNameAndUserID(categoryName).Id;
+            out_of_limit(cost_type_id);
             // MessageBox.Show(connectionString);
             DataSet ds = new DataSet();
             ds = controller.getAllCostsBySelectedPeriod(cost_type_id, period_begin_date, period_end_date);
@@ -176,6 +182,7 @@ namespace Desktop
             add_column_delete();
 
             label_sum_for_period.Text = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date.AddDays(1)).ToString();
+            
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)

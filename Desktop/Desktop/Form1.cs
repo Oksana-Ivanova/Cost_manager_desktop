@@ -19,11 +19,7 @@ namespace Desktop
             //Loginform.Close();
             InitializeComponent();
             double x = 0;
-            for (int i = 0; i < 4; i++)
-            {
-                chart_recent_cost.Series[0].Points.AddXY(x, Math.Sin(x));
-                x += i;
-            } draw_chart_recent_cost();
+            draw_chart_recent_cost();
             get_all_incomes_by_week();
             most_often_cost();
             biggest_cost();
@@ -45,8 +41,8 @@ namespace Desktop
         {
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
 
-            DateTime period_end_date = DateTime.Now;
-            int number_of_periods = 6;
+            DateTime period_end_date = DateTime.Today.AddHours(23);
+            int number_of_periods = 7;
             chart_recent_cost.Series[0].Points.Clear();
             chart_recent_cost.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
             chart_recent_cost.ChartAreas[0].AxisX.Maximum = period_end_date.ToOADate();
@@ -55,13 +51,12 @@ namespace Desktop
             period_begin_date = period_begin_date.AddDays(-1);
             period_end_date = period_end_date.AddDays(1);
 
-
+            double costs_sum_from_period = 0;
             for (int i = 0; i <= number_of_periods; i++)
             {
-                //double costs_sum_from_period = 0;
-                // costs_sum_from_period = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_begin_date.AddDays(1));
-                // chart_outlays.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
-                chart_recent_cost.Series[0].Points.AddXY(period_begin_date.AddDays(1), i);
+                
+                costs_sum_from_period = controller.get_sum_from_all_cost_by_week(period_begin_date, period_begin_date.AddDays(1));                   
+                chart_recent_cost.Series[0].Points.AddXY(period_begin_date.AddDays(1), costs_sum_from_period);
                 period_begin_date = period_begin_date.AddDays(1);
             }
         }

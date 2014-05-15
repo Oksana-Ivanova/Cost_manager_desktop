@@ -477,7 +477,7 @@ namespace Desktop
         public double get_sum_from_all_cost_by_week( DateTime period_begin_date, DateTime period_end_date)
         {
             string period_begin = secondary_methods.datetime_to_sql_format(period_begin_date);
-            string period_end = secondary_methods.datetime_to_sql_format(period_end_date.AddDays(1));
+            string period_end = secondary_methods.datetime_to_sql_format(period_end_date);
             _Connection.Open();
             MySqlCommand mysqlQuery = _Connection.CreateCommand();
             mysqlQuery.CommandText = "select sum(price) from costs where user_id=" + LoginForm.user_ID + " and created_at>'" + period_begin + "' and created_at<'" + period_end + "';";

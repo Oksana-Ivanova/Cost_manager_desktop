@@ -124,7 +124,7 @@ namespace Desktop
             sum = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date);
             return name;
         }   
-        public static bool out_of_limit()
+        public static bool out_of_limits()
         {
             const string host = "eu-cdbr-west-01.cleardb.com";
             const string database = "heroku_9e3361f1a2a704a";
@@ -156,6 +156,28 @@ namespace Desktop
             });
 
           
+            return Out;
+        }
+        public static bool out_of_limit(string cost_type_id)
+        {
+            const string host = "eu-cdbr-west-01.cleardb.com";
+            const string database = "heroku_9e3361f1a2a704a";
+            const string user = "b7d511d516e6e4";
+            const string password = "e2941bb5";
+
+            DateTime period_begin_date = DateTime.Today.AddMonths(-1);
+            DateTime period_end_date = DateTime.Now.AddDays(1);
+
+            bool Out = false;
+           
+            DBHandler controller = new DBHandler(host, database, user, password);
+            List<double> sum_of_costs = new List<double>();
+            double Sum = 0;           
+
+            List<CostType> categoryName = new List<CostType>();      
+            string limit_id = controller.get_limit_id_by_cost_type_id(cost_type_id);
+            sum_of_costs.Add(controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date));
+            if (sum_of_costs.Max() > controller.get_limit_value_by_id(limit_id)) { Sum = sum_of_costs.Max();  Out = true; }
             return Out;
         }
     }
