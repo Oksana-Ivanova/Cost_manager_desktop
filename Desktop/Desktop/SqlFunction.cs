@@ -234,6 +234,19 @@ namespace Desktop
           _Connection.Close();
           return genereted_id;
         }
+        public void Update_user_password(string new_password)
+        {
+            DateTime Date_updadate = DateTime.Today.AddHours(3);
+            try
+            {
+                string qry = "update user set encrypted_password='" +new_password + "',  updated_at='" + Date_updadate + "' where  id='" + LoginForm.user_ID + "';";
+                _Connection.Open(); MessageBox.Show(qry);
+                MySqlCommand comandUpdate = new MySqlCommand(qry, _Connection);
+                comandUpdate.ExecuteNonQuery();
+            }
+            catch (MySqlException exeption) { MessageBox.Show(exeption.ToString()); }
+            finally { _Connection.Close(); }
+        }
     }
 
 }

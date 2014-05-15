@@ -61,6 +61,17 @@ namespace Desktop
 
         private void tryUpdate()
         {
+            if (tbPasswordProfile.Text == tbConfirmPasswordPrifile.Text)
+            {
+                const string host = "127.0.0.1";
+                const string database = "heroku_9e3361f1a2a704a";
+                const string user = "root";
+                const string password = "123";
+
+                SqlFunction con = new SqlFunction(host, database, user, password);
+                con.Update_user_password(tbConfirmPasswordPrifile.Text);
+            }
+            else { MessageBox.Show("Паролі неспівпадають"); }
 
         }
 
