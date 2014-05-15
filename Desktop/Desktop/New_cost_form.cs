@@ -76,8 +76,8 @@ namespace Desktop
                     break;
             }
 
-            dateTimePickerNewCost.MaxDate = DateTime.Today;
-            dateTimePickerNewCost.Value = DateTime.Today;
+            dateTimePickerNewCost.MaxDate = DateTime.Now;
+            dateTimePickerNewCost.Value = DateTime.Now;
         }
         private void initFieldsByCost()
         {
@@ -162,7 +162,7 @@ namespace Desktop
                     string updateDate = secondary_methods.datetime_to_sql_format(dateTimePickerNewCost.Value);
 
                     connect.Update_cost(currentCost.Id,
-                                   currentCost.UserId,
+                                   LoginForm.user_ID,
                                    currentCost.CostTypeId,
                                    tbNameNewCost.Text,
                                    richTextBoxDescriptionNewCost.Text,
@@ -189,18 +189,23 @@ namespace Desktop
         {
             New_Category_Form newCategoryForm = new New_Category_Form();
             newCategoryForm.Show();
-        }
 
-
-        private void richTextBoxDescriptionNewCost_TextChanged(object sender, EventArgs e)
-        {
+            comboBoxCategoryNewCost_Set();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Do you realy want to remove entry?",
+                                "Are you sure?",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                connect.Delete_cost(currentCost.Id, currentCost.CostTypeId, LoginForm.user_ID);
 
+                this.Close();
+            }
         }
-
        
     }
 }

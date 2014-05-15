@@ -121,9 +121,9 @@
             this.lblNewPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblNewPassword.Location = new System.Drawing.Point(21, 35);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblNewPassword.Size = new System.Drawing.Size(78, 13);
             this.lblNewPassword.TabIndex = 11;
-            this.lblNewPassword.Text = "Password";
+            this.lblNewPassword.Text = "New Password";
             // 
             // tbCurrentPassword
             // 

@@ -79,8 +79,8 @@ namespace Desktop
             _Email = "";
             _Pasword = "";
             _SignInCount = 0;
-            _CreateDate = DateTime.Today;
-            _UpdateDate = DateTime.Today;
+            _CreateDate = DateTime.Now;
+            _UpdateDate = DateTime.Now;
         }
 
     }

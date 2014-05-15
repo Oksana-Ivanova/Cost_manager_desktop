@@ -45,7 +45,7 @@ namespace Desktop
         {
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
 
-            DateTime period_end_date = DateTime.Today;
+            DateTime period_end_date = DateTime.Now;
             int number_of_periods = 6;
             chart_recent_cost.Series[0].Points.Clear();
             chart_recent_cost.ChartAreas[0].AxisX.Minimum = period_begin_date.ToOADate();
@@ -189,7 +189,7 @@ namespace Desktop
             }
             catch { }
             DateTime period_begin_date = DateTime.Today.AddDays(-6);
-            DateTime period_end_date = DateTime.Today;
+            DateTime period_end_date = DateTime.Now;
 
             DataSet ds = new DataSet();
             ds = controller.getAllIncomesBySelectedPeriod(period_begin_date, period_end_date);
@@ -248,10 +248,10 @@ namespace Desktop
                     this.dataGridViewRecentIncomes.Columns["user_id"].Visible = false;
                     //   this.dataGridViewRecentIncomes.Columns["created_at"].Visible = false;
                     this.dataGridViewRecentIncomes.Columns["updated_at"].Visible = false;
-                    this.dataGridViewRecentIncomes.Columns["name"].HeaderText = "Назва доходу";
-                    this.dataGridViewRecentIncomes.Columns["description"].HeaderText = "Нотатки";
-                    this.dataGridViewRecentIncomes.Columns["price"].HeaderText = " сумма доходу";
-                    this.dataGridViewRecentIncomes.Columns["created_at"].HeaderText = "Дата";
+                    this.dataGridViewRecentIncomes.Columns["name"].HeaderText = "Title";
+                    this.dataGridViewRecentIncomes.Columns["description"].HeaderText = "Notes";
+                    this.dataGridViewRecentIncomes.Columns["price"].HeaderText = "Income value";
+                    this.dataGridViewRecentIncomes.Columns["created_at"].HeaderText = "Date";
                 }
 
                 catch { }
@@ -266,7 +266,7 @@ namespace Desktop
         {
             if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Income income = controller.getIncomeByName(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+                Income income = controller.getIncomeById(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
                 New_Incomes incomeForm = new New_Incomes(income);
                 incomeForm.Show();
@@ -276,11 +276,18 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewRecentIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    Income income = controller.getIncomeById(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+                    if (MessageBox.Show("Do you realy want to remove entry?",
+                                       "Are you sure?",
+                                       MessageBoxButtons.YesNo,
+                                       MessageBoxIcon.Question,
+                                       MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Income income = controller.getIncomeById(dataGridViewRecentIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
-                    connect.Delete_income(income.Id, LoginForm.user_ID);
+                        connect.Delete_income(income.Id, LoginForm.user_ID);
 
-                    refreshForm();
+                        refreshForm();
+                    }
                 }
         }
 

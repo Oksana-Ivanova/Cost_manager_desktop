@@ -25,11 +25,11 @@ namespace Desktop
             cboPeriod.SelectedIndex = (int)PeriodMode.LastWeek;
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerStart.MaxDate = DateTime.Today;
-            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
+            dateTimePickerStart.MaxDate = DateTime.Now;
+            dateTimePickerStart.Value = DateTime.Now.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerEnd.MaxDate = DateTime.Today;
-            dateTimePickerEnd.Value = DateTime.Today;
+            dateTimePickerEnd.MaxDate = DateTime.Now;
+            dateTimePickerEnd.Value = DateTime.Now;
         }
         const string host = "eu-cdbr-west-01.cleardb.com";
         const string database = "heroku_9e3361f1a2a704a";
@@ -120,7 +120,10 @@ namespace Desktop
         public Incomes()
         {
             InitializeComponent();
+        }
 
+        private void Incomes_Load(object sender, EventArgs e)
+        {
             initControls();
         }
 
@@ -136,13 +139,18 @@ namespace Desktop
             }
 
             fillDateBoundsByPeriod();
+
+            refreshForm();
         }
        
         private void buttonNewIncome_Click(object sender, EventArgs e)
         {
             New_Incomes newIncomeWindow = new New_Incomes();
             newIncomeWindow.Show();
+
+            refreshForm();
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -155,11 +163,14 @@ namespace Desktop
         private void dateTimePickerEnd_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerStart.MaxDate = dateTimePickerEnd.Value;
-        }
 
+            refreshForm();
+        }
         private void dateTimePickerStart_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePickerEnd.MinDate = dateTimePickerStart.Value;           
+            dateTimePickerEnd.MinDate = dateTimePickerStart.Value;
+
+            refreshForm();
         }
 
         private void dataGridViewIncomes_ColumnAdded(Object sender, DataGridViewColumnEventArgs e)
@@ -172,25 +183,21 @@ namespace Desktop
                     this.dataGridViewIncomes.Columns["user_id"].Visible = false;                    
                     //   this.dataGridViewIncomes.Columns["created_at"].Visible = false;
                     this.dataGridViewIncomes.Columns["updated_at"].Visible = false;
-                    this.dataGridViewIncomes.Columns["name"].HeaderText = "Назва доходу";
-                    this.dataGridViewIncomes.Columns["description"].HeaderText = "Нотатки";
-                    this.dataGridViewIncomes.Columns["price"].HeaderText = " сумма доходу";
-                    this.dataGridViewIncomes.Columns["created_at"].HeaderText = "Дата";
+                    this.dataGridViewIncomes.Columns["name"].HeaderText = "Title";
+                    this.dataGridViewIncomes.Columns["description"].HeaderText = "Notes";
+                    this.dataGridViewIncomes.Columns["price"].HeaderText = "Income value";
+                    this.dataGridViewIncomes.Columns["created_at"].HeaderText = "Date";
                 }
 
                 catch { }
             }
         }
 
-        private void dataGridViewIncomes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        
-        }
-        private void ColumnEdit_Clic(object sender, DataGridViewCellEventArgs e)
+        private void ColumnEdit_Click(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnEdit"].Index && e.RowIndex >= 0)
             {
-                Income income = controller.getIncomeByName(dataGridViewIncomes.Rows[e.RowIndex].Cells["name"].Value.ToString(), LoginForm.user_name)[0];
+                Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
                 New_Incomes incomeForm = new New_Incomes(income);
                 incomeForm.Show();
@@ -200,11 +207,18 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewIncomes.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+                    if (MessageBox.Show("Do you realy want to remove entry?",
+                                        "Are you sure?",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question,
+                                        MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Income income = controller.getIncomeById(dataGridViewIncomes.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
-                    connect.Delete_income(income.Id, LoginForm.user_ID);
+                        connect.Delete_income(income.Id, LoginForm.user_ID);
 
-                    refreshForm();
+                        refreshForm();
+                    }
                 }
         }
 

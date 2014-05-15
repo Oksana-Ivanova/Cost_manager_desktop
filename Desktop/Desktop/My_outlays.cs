@@ -53,8 +53,7 @@ namespace Desktop
         {
             List<CostType> categoryName = new List<CostType>();
             categoryName = controller.getCategoriesByUserID(LoginForm.user_ID);
-            CostType tempObject = new CostType();
-            categoryName.Insert(0, new CostType(tempObject.Id = "", tempObject.Name = "Any", tempObject.CreateDate = DateTime.Today, tempObject.UpdateDate = DateTime.Today));
+            //categoryName.Insert(0, new CostType("", "Any", DateTime.Now, DateTime.Now));
           
             outlays_binding.DataSource = categoryName;
             cboCategory.DataSource = outlays_binding.DataSource;
@@ -67,11 +66,11 @@ namespace Desktop
             cboPeriod.SelectedIndex = (int)PeriodMode.LastWeek;
 
             dateTimePickerStart.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerStart.MaxDate = DateTime.Today;
-            dateTimePickerStart.Value = DateTime.Today.AddDays(-6);
+            dateTimePickerStart.MaxDate = DateTime.Now;
+            dateTimePickerStart.Value = DateTime.Now.AddDays(-6);
             dateTimePickerEnd.MinDate = DateTime.Today.AddYears(-5);
-            dateTimePickerEnd.MaxDate = DateTime.Today;
-            dateTimePickerEnd.Value = DateTime.Today;
+            dateTimePickerEnd.MaxDate = DateTime.Now;
+            dateTimePickerEnd.Value = DateTime.Now;
 
             initCategoriesComboData();
             cboCategory.SelectedIndex = 0;
@@ -220,6 +219,8 @@ namespace Desktop
         {
             New_cost_form newCostForm = new New_cost_form();
             newCostForm.Show();
+
+            refreshForm();
         }
         private void draw_chart_outlays_by_week()
         {
@@ -369,10 +370,10 @@ namespace Desktop
                     this.dataGridViewOutlays.Columns["cost_type_id"].Visible = false;
                  //   this.dataGridViewOutlays.Columns["created_at"].Visible = false;
                     this.dataGridViewOutlays.Columns["updated_at"].Visible = false;
-                    this.dataGridViewOutlays.Columns["name"].HeaderText = "Назва витрати";
-                    this.dataGridViewOutlays.Columns["description"].HeaderText = "Нотатки";
-                    this.dataGridViewOutlays.Columns["price"].HeaderText = "затрачена сумма";
-                    this.dataGridViewOutlays.Columns["created_at"].HeaderText = "Дата";
+                    this.dataGridViewOutlays.Columns["name"].HeaderText = "Title";
+                    this.dataGridViewOutlays.Columns["description"].HeaderText = "Notes";
+                    this.dataGridViewOutlays.Columns["price"].HeaderText = "Cost value";
+                    this.dataGridViewOutlays.Columns["created_at"].HeaderText = "Date";
                 }
 
                 catch { }
@@ -393,11 +394,18 @@ namespace Desktop
             else
                 if (e.ColumnIndex == dataGridViewOutlays.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
                 {
-                    Cost cost = controller.getCostById(dataGridViewOutlays.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
+                    if (MessageBox.Show("Do you realy want to remove entry?",
+                                        "Are you sure?",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question,
+                                        MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Cost cost = controller.getCostById(dataGridViewOutlays.Rows[e.RowIndex].Cells["id"].Value.ToString(), LoginForm.user_name);
 
-                    connect.Delete_cost(cost.Id, cost.CostTypeId, LoginForm.user_ID);
+                        connect.Delete_cost(cost.Id, cost.CostTypeId, LoginForm.user_ID);
 
-                    refreshForm();
+                        refreshForm();
+                    }
                 }
         }
         
