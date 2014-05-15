@@ -178,8 +178,8 @@ namespace Desktop
 
             dataGridViewOutlays.DataSource = ds.Tables["costs"]; // ataGridViewOutlays end     
             // draw_chart_outlays(cost_type_id);
-            add_column_edit();
-            add_column_delete();
+           // add_column_edit();
+            //add_column_delete();
 
             label_sum_for_period.Text = controller.get_sum_from_cost_by_date_and_cost_type_id(cost_type_id, period_begin_date, period_end_date.AddDays(1)).ToString();
             
